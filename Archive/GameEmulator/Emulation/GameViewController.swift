@@ -176,7 +176,7 @@ class GameViewController: DeltaCore.GameViewController {
     private var isPreparingAchievements = false
 
     // Custom SNES Controller
-    private var customSNESController: SNESGameController?
+    private var customSNESController: SNESDirectController?
     private var customSNESControllerHosting: UIHostingController<SNESControllerView>?
 
     // Custom NES Controller
@@ -691,14 +691,12 @@ private extension GameViewController
         // Hide standard controller view
         self.controllerView.isHidden = true
 
-        // Create custom controller using generic base class
-        let controller = SNESGameController(name: "SNES Custom Controller", systemPrefix: "snes", playerIndex: 0)
+        // Create direct SNES controller (bypassing DeltaCore)
+        let controller = SNESDirectController(name: "SNES Direct Controller", playerIndex: 0)
         self.customSNESController = controller
 
-        // Add as receiver to emulator core
-        if let emulatorCore = self.emulatorCore {
-            controller.addReceiver(emulatorCore, inputMapping: controller.defaultInputMapping)
-        }
+        // Note: Direct controller doesn't use DeltaCore's receiver system
+        // Input goes directly to Snes9x via SNESInputBridge
 
         // Determine layout based on orientation
         let screenSize = self.view.bounds.size
@@ -713,7 +711,7 @@ private extension GameViewController
         // Create SwiftUI view
         let controllerView = SNESControllerView(controller: controller, layout: layout)
         let hostingController = UIHostingController(rootView: controllerView)
-        hostingController.view.backgroundColor = .clear
+        hostingController.view.backgroundColor = UIColor.clear
         hostingController.view.isUserInteractionEnabled = true
         hostingController.view.isMultipleTouchEnabled = true
         hostingController.view.isExclusiveTouch = false
@@ -850,19 +848,20 @@ private extension GameViewController
     }
 
     func resetSustainedInputs() {
-        let controllers: [GameController]
-
-        if let customController = customSNESController {
-            controllers = [customController]
+        // Direct controllers (SNES, NES) don't support sustained inputs
+        // Only reset for DeltaCore controllers
+        if customSNESController != nil {
+            // SNES direct controller - no sustained inputs
+            return
         } else if let customController = customNESController {
-            controllers = [customController]
+            // NES uses DeltaCore controller
+            for input in customController.sustainedInputs.keys {
+                customController.unsustain(input)
+            }
         } else {
-            controllers = [self.controllerView]
-        }
-
-        for controller in controllers {
-            for input in controller.sustainedInputs.keys {
-                controller.unsustain(input)
+            // Default DeltaCore controller
+            for input in self.controllerView.sustainedInputs.keys {
+                self.controllerView.unsustain(input)
             }
         }
     }

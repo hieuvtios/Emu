@@ -45,6 +45,24 @@ enum SNESButtonType: Int, CaseIterable, GameButtonType {
         return self.rawValue
     }
 
+    // Map to SNESGameInput enum values (matching SNESDeltaCore)
+    var buttonMask: Int32 {
+        switch self {
+        case .up:     return 1      // SNESGameInput.up
+        case .down:   return 2      // SNESGameInput.down
+        case .left:   return 4      // SNESGameInput.left
+        case .right:  return 8      // SNESGameInput.right
+        case .a:      return 16     // SNESGameInput.a
+        case .b:      return 32     // SNESGameInput.b
+        case .x:      return 64     // SNESGameInput.x
+        case .y:      return 128    // SNESGameInput.y
+        case .l:      return 256    // SNESGameInput.l
+        case .r:      return 512    // SNESGameInput.r
+        case .start:  return 1024   // SNESGameInput.start
+        case .select: return 2048   // SNESGameInput.select
+        }
+    }
+
     // Map to DeltaCore's SNESGameInput
     var gameInput: Input {
         switch self {

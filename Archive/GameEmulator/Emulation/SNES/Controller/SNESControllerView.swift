@@ -2,13 +2,13 @@
 //  SNESControllerView.swift
 //  GameEmulator
 //
-//  Main SNES controller view
+//  Main SNES controller view with direct Snes9x integration
 //
 
 import SwiftUI
 
 struct SNESControllerView: View {
-    let controller: SNESGameController
+    let controller: SNESDirectController
     let layout: SNESControllerLayoutDefinition
 
     @State private var buttonStates: [SNESButtonType: Bool] = [:]
@@ -198,7 +198,7 @@ struct SNESCenterButtonView: View {
 // Preview provider
 struct SNESControllerView_Previews: PreviewProvider {
     static var previews: some View {
-        let controller = SNESGameController(name: "SNES Custom Controller", systemPrefix: "snes", playerIndex: 0)
+        let controller = SNESDirectController(name: "SNES Direct Controller", playerIndex: 0)
 
         let layout = SNESControllerLayout.landscapeLayout(
             screenSize: CGSize(width: 844, height: 390)

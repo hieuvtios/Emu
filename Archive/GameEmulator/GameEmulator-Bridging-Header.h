@@ -11,4 +11,7 @@
 // Direct bridge to Nestopia C++ core for NES input
 #import "NESInputBridge.h"
 
+// Direct bridge to Snes9x C++ core for SNES input
+#import "SNESInputBridge.h"
+
 #endif /* GameEmulator_Bridging_Header_h */
