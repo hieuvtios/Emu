@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		656D87392E90159C004F341D /* GBCDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656D87362E901552004F341D /* GBCDeltaCore.framework */; };
-		656D873A2E90159C004F341D /* GBCDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 656D87362E901552004F341D /* GBCDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65CA65A02E8E31E1008374B5 /* NESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA65842E8E25B5008374B5 /* NESDeltaCore.framework */; };
 		65CA65A12E8E31E1008374B5 /* NESDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA65842E8E25B5008374B5 /* NESDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		65CBF28F2E90C486008A7E49 /* N64DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CBF2882E90C47B008A7E49 /* N64DeltaCore.framework */; };
-		65CBF2902E90C486008A7E49 /* N64DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65CBF2882E90C47B008A7E49 /* N64DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65CB1B952E91355B008A7E49 /* GBCDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CB1B922E91354E008A7E49 /* GBCDeltaCore.framework */; };
+		65CB1B962E91355B008A7E49 /* GBCDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65CB1B922E91354E008A7E49 /* GBCDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F490BC852E83D377001F129E /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F490BC3E2E83A04A001F129E /* DeltaCore.framework */; };
 		F490BC862E83D377001F129E /* DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F490BC3E2E83A04A001F129E /* DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4D073B42E83F5DA00A8DB4C /* SNESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D073B12E83F5D300A8DB4C /* SNESDeltaCore.framework */; };
@@ -22,13 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		656D87352E901552004F341D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 656D87302E901552004F341D /* GBCDeltaCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BF8F2AAE1E9C879300F89F15;
-			remoteInfo = GBCDeltaCore;
-		};
 		65CA65832E8E25B5008374B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F490BC5E2E83C9CF001F129E /* NESDeltaCore.xcodeproj */;
@@ -36,12 +27,12 @@
 			remoteGlobalIDString = BF3C12F320438F3F0079A4B5;
 			remoteInfo = NESDeltaCore;
 		};
-		65CBF2872E90C47B008A7E49 /* PBXContainerItemProxy */ = {
+		65CB1B912E91354E008A7E49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 65CBF27D2E90C47B008A7E49 /* N64DeltaCore.xcodeproj */;
+			containerPortal = 65CB1B8C2E91354E008A7E49 /* GBCDeltaCore.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BF799014224BF59E009B094F;
-			remoteInfo = N64DeltaCore;
+			remoteGlobalIDString = BF8F2AAE1E9C879300F89F15;
+			remoteInfo = GBCDeltaCore;
 		};
 		F490BC3D2E83A04A001F129E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -74,8 +65,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F490BC862E83D377001F129E /* DeltaCore.framework in Embed Frameworks */,
-				65CBF2902E90C486008A7E49 /* N64DeltaCore.framework in Embed Frameworks */,
-				656D873A2E90159C004F341D /* GBCDeltaCore.framework in Embed Frameworks */,
+				65CB1B962E91355B008A7E49 /* GBCDeltaCore.framework in Embed Frameworks */,
 				F4D074BB2E859E3100A8DB4C /* Roxas.framework in Embed Frameworks */,
 				F4D073B52E83F5DA00A8DB4C /* SNESDeltaCore.framework in Embed Frameworks */,
 				65CA65A12E8E31E1008374B5 /* NESDeltaCore.framework in Embed Frameworks */,
@@ -86,8 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		656D87302E901552004F341D /* GBCDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBCDeltaCore.xcodeproj; path = Cores/GBCDeltaCore/GBCDeltaCore.xcodeproj; sourceTree = "<group>"; };
-		65CBF27D2E90C47B008A7E49 /* N64DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = N64DeltaCore.xcodeproj; path = "/Users/hieuvu/Desktop/N64DeltaCore 3/N64DeltaCore.xcodeproj"; sourceTree = "<absolute>"; };
+		65CB1B8C2E91354E008A7E49 /* GBCDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBCDeltaCore.xcodeproj; path = Cores/GBCDeltaCore/GBCDeltaCore.xcodeproj; sourceTree = "<group>"; };
 		F45A79522E7FD08400744A9F /* GameEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F490BB832E830D72001F129E /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = Cores/DeltaCore/DeltaCore.xcodeproj; sourceTree = "<group>"; };
 		F490BC5E2E83C9CF001F129E /* NESDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NESDeltaCore.xcodeproj; path = Cores/NESDeltaCore/NESDeltaCore.xcodeproj; sourceTree = "<group>"; };
@@ -109,8 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F490BC852E83D377001F129E /* DeltaCore.framework in Frameworks */,
-				65CBF28F2E90C486008A7E49 /* N64DeltaCore.framework in Frameworks */,
-				656D87392E90159C004F341D /* GBCDeltaCore.framework in Frameworks */,
+				65CB1B952E91355B008A7E49 /* GBCDeltaCore.framework in Frameworks */,
 				F4D074BA2E859E3100A8DB4C /* Roxas.framework in Frameworks */,
 				F4D073B42E83F5DA00A8DB4C /* SNESDeltaCore.framework in Frameworks */,
 				65CA65A02E8E31E1008374B5 /* NESDeltaCore.framework in Frameworks */,
@@ -120,18 +108,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		656D87312E901552004F341D /* Products */ = {
+		65CB1B8D2E91354E008A7E49 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				656D87362E901552004F341D /* GBCDeltaCore.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		65CBF2812E90C47B008A7E49 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				65CBF2882E90C47B008A7E49 /* N64DeltaCore.framework */,
+				65CB1B922E91354E008A7E49 /* GBCDeltaCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,8 +136,7 @@
 		F45A796F2E82E6C600744A9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65CBF27D2E90C47B008A7E49 /* N64DeltaCore.xcodeproj */,
-				656D87302E901552004F341D /* GBCDeltaCore.xcodeproj */,
+				65CB1B8C2E91354E008A7E49 /* GBCDeltaCore.xcodeproj */,
 				F4D074AE2E859E2500A8DB4C /* Roxas.xcodeproj */,
 				F4D073AA2E83F5D300A8DB4C /* SNESDeltaCore.xcodeproj */,
 				F490BC5E2E83C9CF001F129E /* NESDeltaCore.xcodeproj */,
@@ -259,12 +238,8 @@
 					ProjectRef = F490BB832E830D72001F129E /* DeltaCore.xcodeproj */;
 				},
 				{
-					ProductGroup = 656D87312E901552004F341D /* Products */;
-					ProjectRef = 656D87302E901552004F341D /* GBCDeltaCore.xcodeproj */;
-				},
-				{
-					ProductGroup = 65CBF2812E90C47B008A7E49 /* Products */;
-					ProjectRef = 65CBF27D2E90C47B008A7E49 /* N64DeltaCore.xcodeproj */;
+					ProductGroup = 65CB1B8D2E91354E008A7E49 /* Products */;
+					ProjectRef = 65CB1B8C2E91354E008A7E49 /* GBCDeltaCore.xcodeproj */;
 				},
 				{
 					ProductGroup = F490BC5F2E83C9CF001F129E /* Products */;
@@ -287,13 +262,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		656D87362E901552004F341D /* GBCDeltaCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GBCDeltaCore.framework;
-			remoteRef = 656D87352E901552004F341D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		65CA65842E8E25B5008374B5 /* NESDeltaCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -301,11 +269,11 @@
 			remoteRef = 65CA65832E8E25B5008374B5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		65CBF2882E90C47B008A7E49 /* N64DeltaCore.framework */ = {
+		65CB1B922E91354E008A7E49 /* GBCDeltaCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = N64DeltaCore.framework;
-			remoteRef = 65CBF2872E90C47B008A7E49 /* PBXContainerItemProxy */;
+			path = GBCDeltaCore.framework;
+			remoteRef = 65CB1B912E91354E008A7E49 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		F490BC3E2E83A04A001F129E /* DeltaCore.framework */ = {
