@@ -14,4 +14,7 @@
 // Direct bridge to Snes9x C++ core for SNES input
 #import "SNESInputBridge.h"
 
+// Direct bridge to Gambatte C++ core for GBC input
+#import "GBCInputBridge.h"
+
 #endif /* GameEmulator_Bridging_Header_h */

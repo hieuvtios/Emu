@@ -183,6 +183,10 @@ class GameViewController: DeltaCore.GameViewController {
     private var customNESController: NESGameController?
     private var customNESControllerHosting: UIHostingController<NESControllerView>?
 
+    // Custom GBC Controller
+    private var customGBCController: GBCDirectController?
+    private var customGBCControllerHosting: UIHostingController<GBCControllerView>?
+
     // Game Menu
     private var menuButton: UIButton!
     private var gameMenuViewModel: GameMenuViewModel?
@@ -414,6 +418,11 @@ extension GameViewController
                 self.setupCustomNESController()
             }
 
+            // Update custom GBC controller layout if active
+            if self.customGBCController != nil {
+                self.setupCustomGBCController()
+            }
+
             // Update game views for new orientation
             self.updateGameViews()
 
@@ -476,7 +485,7 @@ extension GameViewController
         let controllerViewFrame: CGRect
         let controllerViewHeight: CGFloat
 
-        if !self.controllerView.isHidden, customSNESController == nil, customNESController == nil
+        if !self.controllerView.isHidden, customSNESController == nil, customNESController == nil, customGBCController == nil
         {
             let intrinsicContentSize = self.controllerView.intrinsicContentSize
             if intrinsicContentSize.height != UIView.noIntrinsicMetric && intrinsicContentSize.width != UIView.noIntrinsicMetric
@@ -650,20 +659,28 @@ private extension GameViewController
             // Check game type and setup appropriate custom controller
             if game.type == .snes {
                 teardownCustomNESController()
+                teardownCustomGBCController()
                 setupCustomSNESController()
             } else if game.type == .nes {
                 teardownCustomSNESController()
+                teardownCustomGBCController()
                 setupCustomNESController()
+            } else if game.type == .gbc {
+                teardownCustomSNESController()
+                teardownCustomNESController()
+                setupCustomGBCController()
             } else {
                 // Use standard DeltaCore controller for other systems
                 teardownCustomSNESController()
                 teardownCustomNESController()
+                teardownCustomGBCController()
                 setupStandardController()
             }
         } else {
             // No game loaded
             teardownCustomSNESController()
             teardownCustomNESController()
+            teardownCustomGBCController()
             self.controllerView.isHidden = true
             self.controllerView.playerIndex = nil
         }
@@ -826,6 +843,76 @@ private extension GameViewController
         }
     }
 
+    func setupCustomGBCController() {
+        // Clean up existing if any
+        teardownCustomGBCController()
+
+        // Hide standard controller view
+        self.controllerView.isHidden = true
+
+        // Create direct GBC controller (bypassing DeltaCore)
+        let controller = GBCDirectController(name: "GBC Direct Controller", playerIndex: 0)
+        self.customGBCController = controller
+
+        // Note: Direct controller doesn't use DeltaCore's receiver system
+        // Input goes directly to Gambatte via GBCInputBridge
+
+        // Determine layout based on orientation
+        let screenSize = self.view.bounds.size
+        let layout: GBCControllerLayoutDefinition
+
+        if screenSize.width > screenSize.height {
+            layout = GBCControllerLayout.landscapeLayout(screenSize: screenSize)
+        } else {
+            layout = GBCControllerLayout.portraitLayout(screenSize: screenSize)
+        }
+
+        // Create SwiftUI view
+        let controllerView = GBCControllerView(controller: controller, layout: layout)
+        let hostingController = UIHostingController(rootView: controllerView)
+        hostingController.view.backgroundColor = UIColor.clear
+        hostingController.view.isUserInteractionEnabled = true
+        hostingController.view.isMultipleTouchEnabled = true
+        hostingController.view.isExclusiveTouch = false
+
+        // Add to view hierarchy
+        self.addChild(hostingController)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(hostingController.view)
+
+        NSLayoutConstraint.activate([
+            hostingController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            hostingController.view.topAnchor.constraint(equalTo: self.view.topAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+
+        hostingController.didMove(toParent: self)
+        self.customGBCControllerHosting = hostingController
+
+        // Ensure controller is on top of game view
+        self.view.bringSubviewToFront(hostingController.view)
+
+        // Ensure menu button stays on top of everything
+        if let menuButton = menuButton {
+            self.view.bringSubviewToFront(menuButton)
+        }
+    }
+
+    func teardownCustomGBCController() {
+        if let hosting = customGBCControllerHosting {
+            hosting.willMove(toParent: nil)
+            hosting.view.removeFromSuperview()
+            hosting.removeFromParent()
+            self.customGBCControllerHosting = nil
+        }
+
+        if let controller = customGBCController {
+            controller.reset()
+            self.customGBCController = nil
+        }
+    }
+
     func setupStandardController() {
         self.controllerView.isHidden = false
         self.controllerView.playerIndex = 0
@@ -848,10 +935,10 @@ private extension GameViewController
     }
 
     func resetSustainedInputs() {
-        // Direct controllers (SNES, NES) don't support sustained inputs
+        // Direct controllers (SNES, GBC) don't support sustained inputs
         // Only reset for DeltaCore controllers
-        if customSNESController != nil {
-            // SNES direct controller - no sustained inputs
+        if customSNESController != nil || customGBCController != nil {
+            // SNES/GBC direct controllers - no sustained inputs
             return
         } else if let customController = customNESController {
             // NES uses DeltaCore controller
@@ -871,7 +958,7 @@ private extension GameViewController
         guard self.isViewLoaded, let game = self.game else { return }
 
         // Skip if using custom controllers
-        if customSNESController != nil || customNESController != nil {
+        if customSNESController != nil || customNESController != nil || customGBCController != nil {
             return
         }
 
