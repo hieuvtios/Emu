@@ -6,13 +6,56 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F4E175612E92DBD1005D0B3A /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */; };
+		F4E175622E92DBD1005D0B3A /* DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4E1755C2E92D4BC005D0B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF46895D1AACF36800A2586D;
+			remoteInfo = DeltaCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F4E175632E92DBD1005D0B3A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4E175622E92DBD1005D0B3A /* DeltaCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F48B71E92E901A6200EF95A7 /* GoEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = Cores/DeltaCore/DeltaCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F4E174D72E90338B005D0B3A /* Exceptions for "GoEmulator" folder in "GoEmulator" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F48B71E82E901A6200EF95A7 /* GoEmulator */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F48B71EB2E901A6200EF95A7 /* GoEmulator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F4E174D72E90338B005D0B3A /* Exceptions for "GoEmulator" folder in "GoEmulator" target */,
+			);
 			path = GoEmulator;
 			sourceTree = "<group>";
 		};
@@ -23,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E175612E92DBD1005D0B3A /* DeltaCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				F48B71EB2E901A6200EF95A7 /* GoEmulator */,
+				F4E175562E92D4BC005D0B3A /* Frameworks */,
 				F48B71EA2E901A6200EF95A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +86,22 @@
 			isa = PBXGroup;
 			children = (
 				F48B71E92E901A6200EF95A7 /* GoEmulator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4E175562E92D4BC005D0B3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4E175582E92D4BC005D0B3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,6 +116,7 @@
 				F48B71E52E901A6200EF95A7 /* Sources */,
 				F48B71E62E901A6200EF95A7 /* Frameworks */,
 				F48B71E72E901A6200EF95A7 /* Resources */,
+				F4E175632E92DBD1005D0B3A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -97,12 +159,28 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F48B71EA2E901A6200EF95A7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F4E175582E92D4BC005D0B3A /* Products */;
+					ProjectRef = F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F48B71E82E901A6200EF95A7 /* GoEmulator */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DeltaCore.framework;
+			remoteRef = F4E1755C2E92D4BC005D0B3A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F48B71E72E901A6200EF95A7 /* Resources */ = {
@@ -255,11 +333,13 @@
 				DEVELOPMENT_TEAM = 875TKZ94AW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoEmulator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,11 +364,13 @@
 				DEVELOPMENT_TEAM = 875TKZ94AW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoEmulator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
