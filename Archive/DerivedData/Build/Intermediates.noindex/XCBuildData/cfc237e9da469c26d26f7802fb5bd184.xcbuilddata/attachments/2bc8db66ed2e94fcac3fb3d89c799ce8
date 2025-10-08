@@ -1,0 +1,5 @@
+ extern const unsigned char NestopiaVersionString[];
+ extern const double NestopiaVersionNumber;
+
+ const unsigned char NestopiaVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Nestopia  PROJECT:NESDeltaCore-1" "\n";
+ const double NestopiaVersionNumber __attribute__ ((used)) = (double)1.;

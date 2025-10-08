@@ -9,13 +9,15 @@ import Foundation
 import DeltaCore
 
 struct Game: GameProtocol {
-    var type: GameType = .gbc
+    var type: GameType = .gba
     // nes game: mario.nes
     var fileURL: URL {
 //        return Bundle.main.url(forResource: "Contra", withExtension: "nes")!
 //        return Bundle.main.url(forResource: "demo", withExtension: "smc")!
-        return Bundle.main.url(forResource: "poke", withExtension: "gbc")!
+//        return Bundle.main.url(forResource: "poke", withExtension: "gbc")!
 //        return Bundle.main.url(forResource: "kombat", withExtension: "z64")!
+//        return Bundle.main.url(forResource: "street", withExtension: "md")!
+        return Bundle.main.url(forResource: "pokemon", withExtension: "gba")!
     }
 
     var name: String = "Pokemon GBC"

@@ -1,0 +1,10 @@
+framework module SNESDeltaCore {
+  umbrella header "SNESDeltaCore.h"
+  export *
+
+  module * { export * }
+}
+
+module SNESDeltaCore.__Swift {
+  exclude header "SNESDeltaCore-Swift.h"
+}

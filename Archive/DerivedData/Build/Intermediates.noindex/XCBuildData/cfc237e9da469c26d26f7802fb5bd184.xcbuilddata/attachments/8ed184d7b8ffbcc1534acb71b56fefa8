@@ -1,0 +1,10 @@
+framework module DeltaCore {
+  umbrella header "DeltaCore.h"
+  export *
+
+  module * { export * }
+}
+
+module DeltaCore.__Swift {
+  exclude header "DeltaCore-Swift.h"
+}

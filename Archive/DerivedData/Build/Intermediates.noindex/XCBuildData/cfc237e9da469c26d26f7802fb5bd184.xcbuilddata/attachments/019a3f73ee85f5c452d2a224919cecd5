@@ -1,0 +1,23 @@
+{
+  "version": 0,
+  "use-external-names": false,
+  "case-sensitive": false,
+  "roots": [{
+    "type": "directory",
+    "name": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Products/Debug-iphoneos/DeltaCore.framework/Modules",
+    "contents": [{
+      "type": "file",
+      "name": "module.modulemap",
+      "external-contents": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    "type": "directory",
+    "name": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Products/Debug-iphoneos/DeltaCore.framework/Headers",
+    "contents": [{
+      "type": "file",
+      "name": "DeltaCore-Swift.h",
+      "external-contents": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/unextended-interface-header.h",
+    }]
+  }]
+}

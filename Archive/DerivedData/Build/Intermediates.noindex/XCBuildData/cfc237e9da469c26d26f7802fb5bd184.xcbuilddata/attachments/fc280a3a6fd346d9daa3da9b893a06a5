@@ -1,0 +1,11 @@
+framework module NESDeltaCore {
+  umbrella header "NESDeltaCore.h"
+  export *
+
+  module * { export * }
+}
+
+module NESDeltaCore.Swift {
+  header "NESDeltaCore-Swift.h"
+  requires objc
+}

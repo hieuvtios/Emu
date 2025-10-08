@@ -17,4 +17,10 @@
 // Direct bridge to Gambatte C++ core for GBC input
 #import "GBCInputBridge.h"
 
+// Direct bridge to Genesis Plus GX core for Genesis input
+#import "GenesisInputBridge.h"
+
+// Direct bridge to mGBA core for GBA input
+#import "GBAInputBridge.h"
+
 #endif /* GameEmulator_Bridging_Header_h */

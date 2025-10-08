@@ -1,0 +1,599 @@
+{
+  "" : {
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCore-primary.dia",
+    "emit-module-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCore-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCore-primary-emit-module.dia",
+    "pch" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCore-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCore-primary.swiftdeps"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Cores/DeltaCoreProtocol.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/DeltaCoreProtocol~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Cores/EmulatorBridging.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorBridging~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Delta.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Delta~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/Audio/AudioManager.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioManager~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/Audio/RingBuffer.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RingBuffer~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/EmulatorCore.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/EmulatorCore~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/Video/BitmapProcessor.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/BitmapProcessor~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/Video/OpenGLESProcessor.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/OpenGLESProcessor~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/Video/RenderThread.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/RenderThread~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/Video/VideoFormat.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoFormat~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Emulator Core/Video/VideoManager.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoManager~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/Bundle+Resources.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Bundle+Resources~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/CGGeometry+Conveniences.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CGGeometry+Conveniences~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/CharacterSet+Hexadecimals.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CharacterSet+Hexadecimals~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/ProcessInfo+visionOS.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ProcessInfo+visionOS~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/Thread+RealTime.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Thread+RealTime~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/UIApplication+AppExtension.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIApplication+AppExtension~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/UIDevice+Vibration.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIDevice+Vibration~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/UIImage+PDF.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIImage+PDF~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/UIResponder+FirstResponder.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIResponder+FirstResponder~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/UIScene+KeyboardFocus.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScene+KeyboardFocus~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/UIScreen+ControllerSkin.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIScreen+ControllerSkin~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Extensions/UIWindowScene+StageManager.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/UIWindowScene+StageManager~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Filters/FilterChain.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/FilterChain~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Game Controllers/ExternalGameControllerManager.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExternalGameControllerManager~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Game Controllers/Keyboard/KeyboardGameController.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardGameController~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Game Controllers/Keyboard/KeyboardResponder.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/KeyboardResponder~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Game Controllers/MFi/MFiGameController.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/MFiGameController~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/Cheat.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Cheat~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/CheatFormat.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatFormat~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/ControllerSkin.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkin~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/ControllerSkinTraits.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinTraits~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/Game.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Game~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/GameControllerInputMapping.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMapping~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/GameControllerStateManager.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerStateManager~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/Inputs/AnyInput.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AnyInput~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/Inputs/StandardGameControllerInput.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/StandardGameControllerInput~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Model/SaveState.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveState~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Inputs/GameController.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameController~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Inputs/Input.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/Input~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Model/CheatProtocol.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/CheatProtocol~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Model/ControllerSkinProtocol.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerSkinProtocol~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Model/GameControllerInputMappingProtocol.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameControllerInputMappingProtocol~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Model/GameProtocol.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameProtocol~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Model/SaveStateProtocol.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/SaveStateProtocol~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Rendering/AudioRendering.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/AudioRendering~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Protocols/Rendering/VideoRendering.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/VideoRendering~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/Types/ExtensibleEnums.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ExtensibleEnums~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/ButtonsInputView.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ButtonsInputView~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/ControllerDebugView.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerDebugView~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/ControllerInputView.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerInputView~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/ControllerView.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ControllerView~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/ImmediatePanGestureRecognizer.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ImmediatePanGestureRecognizer~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/ThumbstickInputView.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/ThumbstickInputView~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/TouchControllerSkin.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchControllerSkin~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Controller/TouchInputView.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/TouchInputView~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Game/GameView.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameView~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Game/GameViewController.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameViewController~partial.swiftmodule"
+  },
+  "/Users/hieuvu/Documents/GitHub/Emu/Archive/Cores/DeltaCore/DeltaCore/UI/Game/GameWindow.swift" : {
+    "const-values" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow.swiftconstvalues",
+    "dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow.d",
+    "diagnostics" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow.dia",
+    "index-unit-output-path" : "/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow.o",
+    "llvm-bc" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow.bc",
+    "object" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow.o",
+    "swift-dependencies" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow.swiftdeps",
+    "swiftmodule" : "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/DeltaCore.build/Debug-iphoneos/DeltaCore.build/Objects-normal/arm64/GameWindow~partial.swiftmodule"
+  }
+}

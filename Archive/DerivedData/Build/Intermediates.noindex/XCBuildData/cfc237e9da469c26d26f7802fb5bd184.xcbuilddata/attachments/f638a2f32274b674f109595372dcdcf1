@@ -1,0 +1,5 @@
+ extern const unsigned char DeltaCoreVersionString[];
+ extern const double DeltaCoreVersionNumber;
+
+ const unsigned char DeltaCoreVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:DeltaCore  PROJECT:DeltaCore-1" "\n";
+ const double DeltaCoreVersionNumber __attribute__ ((used)) = (double)1.;

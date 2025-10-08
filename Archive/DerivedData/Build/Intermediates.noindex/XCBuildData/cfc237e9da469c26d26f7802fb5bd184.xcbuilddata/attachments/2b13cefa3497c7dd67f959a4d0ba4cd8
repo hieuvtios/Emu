@@ -1,0 +1,10 @@
+framework module GBCDeltaCore {
+  umbrella header "GBCDeltaCore.h"
+  export *
+
+  module * { export * }
+}
+
+module GBCDeltaCore.__Swift {
+  exclude header "GBCDeltaCore-Swift.h"
+}

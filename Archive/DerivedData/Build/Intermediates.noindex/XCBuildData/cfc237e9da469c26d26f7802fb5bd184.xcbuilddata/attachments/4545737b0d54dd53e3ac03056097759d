@@ -1,0 +1,23 @@
+{
+  "version": 0,
+  "use-external-names": false,
+  "case-sensitive": false,
+  "roots": [{
+    "type": "directory",
+    "name": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Products/Debug-iphoneos/GPGXDeltaCore.framework/Modules",
+    "contents": [{
+      "type": "file",
+      "name": "module.modulemap",
+      "external-contents": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/GPGXDeltaCore.build/Debug-iphoneos/GPGXDeltaCore.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    "type": "directory",
+    "name": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Products/Debug-iphoneos/GPGXDeltaCore.framework/Headers",
+    "contents": [{
+      "type": "file",
+      "name": "GPGXDeltaCore-Swift.h",
+      "external-contents": "/Users/hieuvu/Documents/GitHub/Emu/Archive/DerivedData/Build/Intermediates.noindex/GPGXDeltaCore.build/Debug-iphoneos/GPGXDeltaCore.build/unextended-interface-header.h",
+    }]
+  }]
+}
