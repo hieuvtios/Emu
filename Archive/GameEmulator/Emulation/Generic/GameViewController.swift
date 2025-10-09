@@ -508,7 +508,7 @@ class GameViewController: DeltaCore.GameViewController {
         // Layout constraints
         NSLayoutConstraint.activate([
 //            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
-            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50), // 👈 Updated bottom padding
+            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40), // 👈 Updated bottom padding
             menuButton.widthAnchor.constraint(equalToConstant: 70),
             menuButton.heightAnchor.constraint(equalToConstant: 50)
         ])

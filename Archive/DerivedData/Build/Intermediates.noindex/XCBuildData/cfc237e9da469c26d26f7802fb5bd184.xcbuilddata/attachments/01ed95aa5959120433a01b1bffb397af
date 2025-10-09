@@ -1,5 +1,0 @@
- extern const unsigned char GambatteVersionString[];
- extern const double GambatteVersionNumber;
-
- const unsigned char GambatteVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Gambatte  PROJECT:GBCDeltaCore-1" "\n";
- const double GambatteVersionNumber __attribute__ ((used)) = (double)1.;

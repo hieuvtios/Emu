@@ -1,5 +1,0 @@
- extern const unsigned char GPGXDeltaCoreVersionString[];
- extern const double GPGXDeltaCoreVersionNumber;
-
- const unsigned char GPGXDeltaCoreVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:GPGXDeltaCore  PROJECT:GPGXDeltaCore-1" "\n";
- const double GPGXDeltaCoreVersionNumber __attribute__ ((used)) = (double)1.;

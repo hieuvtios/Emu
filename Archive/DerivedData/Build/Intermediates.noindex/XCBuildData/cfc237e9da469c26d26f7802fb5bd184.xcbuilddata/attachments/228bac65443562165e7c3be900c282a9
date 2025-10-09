@@ -1,5 +1,0 @@
- extern const unsigned char RoxasVersionString[];
- extern const double RoxasVersionNumber;
-
- const unsigned char RoxasVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Roxas  PROJECT:Roxas-1" "\n";
- const double RoxasVersionNumber __attribute__ ((used)) = (double)1.;

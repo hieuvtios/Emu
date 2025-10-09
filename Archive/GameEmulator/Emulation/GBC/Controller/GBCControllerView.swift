@@ -80,7 +80,6 @@ struct GBCControllerView: View {
                 .ignoresSafeArea(edges: .bottom)
         }
         .ignoresSafeArea()
-        .frame(height:350)
 
     }
 }

@@ -1,5 +1,0 @@
- extern const unsigned char VBA_MVersionString[];
- extern const double VBA_MVersionNumber;
-
- const unsigned char VBA_MVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:VBA-M  PROJECT:GBADeltaCore-1" "\n";
- const double VBA_MVersionNumber __attribute__ ((used)) = (double)1.;

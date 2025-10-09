@@ -1,5 +1,0 @@
- extern const unsigned char GenesisPlusGXVersionString[];
- extern const double GenesisPlusGXVersionNumber;
-
- const unsigned char GenesisPlusGXVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:GenesisPlusGX  PROJECT:GPGXDeltaCore-1" "\n";
- const double GenesisPlusGXVersionNumber __attribute__ ((used)) = (double)1.;

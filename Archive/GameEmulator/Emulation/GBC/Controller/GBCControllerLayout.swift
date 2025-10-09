@@ -72,28 +72,19 @@ struct GBCControllerLayout {
 
         // Start/Select (center bottom)
         let centerButtons: [ButtonLayout] = [
-            // Select
+            // Select (left)
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 - 60,
+                    x: screenSize.width / 2 - 50,
                     y: screenSize.height - 90
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
-            // Start
+            // Start (right)
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 10,
-                    y: screenSize.height - 90
-                ),
-                size: smallButtonSize,
-                button: .start
-            )
-            ,
-            ButtonLayout(
-                position: CGPoint(
-                    x: 20,
+                    x: screenSize.width / 2 + 50,
                     y: screenSize.height - 90
                 ),
                 size: smallButtonSize,
@@ -154,19 +145,21 @@ struct GBCControllerLayout {
             )
         ]
 
-        // Start/Select
+        // Start/Select (center bottom)
         let centerButtons: [ButtonLayout] = [
+            // Select (left)
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 - 55,
+                    x: screenSize.width / 2 - 40,
                     y: screenSize.height - 90
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
+            // Start (right)
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 10,
+                    x: screenSize.width / 2 + 40,
                     y: screenSize.height - 90
                 ),
                 size: smallButtonSize,

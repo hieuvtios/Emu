@@ -1,5 +1,0 @@
- extern const unsigned char Snes9xVersionString[];
- extern const double Snes9xVersionNumber;
-
- const unsigned char Snes9xVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Snes9x  PROJECT:SNESDeltaCore-1" "\n";
- const double Snes9xVersionNumber __attribute__ ((used)) = (double)1.;

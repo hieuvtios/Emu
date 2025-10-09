@@ -1,5 +1,0 @@
- extern const unsigned char GBADeltaCoreVersionString[];
- extern const double GBADeltaCoreVersionNumber;
-
- const unsigned char GBADeltaCoreVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:GBADeltaCore  PROJECT:GBADeltaCore-1" "\n";
- const double GBADeltaCoreVersionNumber __attribute__ ((used)) = (double)1.;

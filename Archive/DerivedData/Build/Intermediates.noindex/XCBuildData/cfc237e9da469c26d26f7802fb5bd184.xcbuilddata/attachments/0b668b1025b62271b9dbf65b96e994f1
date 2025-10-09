@@ -1,5 +1,0 @@
- extern const unsigned char NESDeltaCoreVersionString[];
- extern const double NESDeltaCoreVersionNumber;
-
- const unsigned char NESDeltaCoreVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:NESDeltaCore  PROJECT:NESDeltaCore-1" "\n";
- const double NESDeltaCoreVersionNumber __attribute__ ((used)) = (double)1.;
