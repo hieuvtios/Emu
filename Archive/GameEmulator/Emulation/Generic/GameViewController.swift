@@ -142,13 +142,12 @@ class ControllerManager {
     // MARK: - GBC
     private func setupGBCController() {
         guard let vc = viewController else { return }
-        
+
         vc.controllerView.isHidden = true
         let controller = GBCDirectController(name: "GBC Direct Controller", playerIndex: 0)
         gbcController = controller
-        
-        let layout = createLayout(for: .gbc)
-        let view = GBCControllerView(controller: controller, layout: layout as! GBCControllerLayoutDefinition)
+
+        let view = GBCControllerView(controller: controller)
         gbcHosting = setupHostingController(for: view, in: vc)
         currentType = .gbc
     }
@@ -508,7 +507,7 @@ class GameViewController: DeltaCore.GameViewController {
         // Layout constraints
         NSLayoutConstraint.activate([
 //            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
-            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40), // 👈 Updated bottom padding
+            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50), // 👈 Updated bottom padding
             menuButton.widthAnchor.constraint(equalToConstant: 70),
             menuButton.heightAnchor.constraint(equalToConstant: 50)
         ])
