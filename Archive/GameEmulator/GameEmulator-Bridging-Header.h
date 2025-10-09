@@ -23,4 +23,7 @@
 // Direct bridge to mGBA core for GBA input
 #import "GBAInputBridge.h"
 
+// Direct bridge to MelonDS core for DS input
+#import "DSInputBridge.h"
+
 #endif /* GameEmulator_Bridging_Header_h */

@@ -25,22 +25,7 @@ struct GBCDPadView: View {
     var body: some View {
         ZStack {
             // Background circle
-            Circle()
-                .fill(Color.gray.opacity(0.4))
-                .frame(width: layout.radius * 2, height: layout.radius * 2)
-
-            // D-Pad shape
-            dpadShape
-                .fill(Color.gray.opacity(0.6))
-                .overlay(
-                    dpadShape
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                )
-                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
-
-            // Direction indicators
-            directionIndicators
-
+            Image(.btnDpad)
             // Touch indicator
             if let location = touchLocation {
                 Circle()

@@ -31,7 +31,7 @@ struct GBCControllerLayout {
 
     static func landscapeLayout(screenSize: CGSize) -> GBCControllerLayoutDefinition {
         let padding: CGFloat = 40
-        let buttonSize = CGSize(width: 60, height: 60)
+        let buttonSize = CGSize(width: 68, height: 68)
         let dpadRadius: CGFloat = 80
         let smallButtonSize = CGSize(width: 50, height: 25)
 
@@ -90,6 +90,15 @@ struct GBCControllerLayout {
                 size: smallButtonSize,
                 button: .start
             )
+            ,
+            ButtonLayout(
+                position: CGPoint(
+                    x: 20,
+                    y: screenSize.height - 90
+                ),
+                size: smallButtonSize,
+                button: .start
+            )
         ]
 
         return GBCControllerLayoutDefinition(
@@ -104,7 +113,7 @@ struct GBCControllerLayout {
 
     static func portraitLayout(screenSize: CGSize) -> GBCControllerLayoutDefinition {
         let padding: CGFloat = 30
-        let buttonSize = CGSize(width: 55, height: 55)
+        let buttonSize = CGSize(width: 68, height: 68)
         let dpadRadius: CGFloat = 70
         let smallButtonSize = CGSize(width: 45, height: 22)
 

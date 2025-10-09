@@ -11,72 +11,74 @@ import SwiftUI
 struct GBAControllerView: View {
     let controller: GBADirectController
     let layout: GBAControllerLayoutDefinition
-
+    
     @State private var buttonStates: [GBAButtonType: Bool] = [:]
     @State private var dpadButtons: Set<GBAButtonType> = []
-
+    
     var body: some View {
         ZStack {
             // Semi-transparent background
+//            Image(.theme4)
             Color.black.opacity(0.1)
                 .edgesIgnoringSafeArea(.all)
                 .allowsHitTesting(false)
 
-            // D-Pad
-            GBADPadView(
-                layout: layout.dpad,
-                pressedButtons: $dpadButtons,
-                onDirectionChange: { buttons in
-                    // Release all d-pad buttons first
-                    controller.releaseAllDPadButtons()
-
-                    // Press new buttons
-                    if !buttons.isEmpty {
-                        controller.pressDPadButtons(buttons)
+                
+                // D-Pad
+                GBADPadView(
+                    layout: layout.dpad,
+                    pressedButtons: $dpadButtons,
+                    onDirectionChange: { buttons in
+                        // Release all d-pad buttons first
+                        controller.releaseAllDPadButtons()
+                        
+                        // Press new buttons
+                        if !buttons.isEmpty {
+                            controller.pressDPadButtons(buttons)
+                        }
+                    },
+                    onRelease: {
+                        controller.releaseAllDPadButtons()
                     }
-                },
-                onRelease: {
-                    controller.releaseAllDPadButtons()
+                )
+                .zIndex(1)
+                
+                // Action buttons (A, B)
+                ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
+                    GBAButtonView(
+                        button: buttonLayout.button,
+                        layout: buttonLayout,
+                        isPressed: Binding(
+                            get: { buttonStates[buttonLayout.button] ?? false },
+                            set: { buttonStates[buttonLayout.button] = $0 }
+                        ),
+                        onPress: {
+                            controller.pressButton(buttonLayout.button)
+                        },
+                        onRelease: {
+                            controller.releaseButton(buttonLayout.button)
+                        }
+                    )
                 }
-            )
-            .zIndex(1)
-
-            // Action buttons (A, B)
-            ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
-                GBAButtonView(
-                    button: buttonLayout.button,
-                    layout: buttonLayout,
-                    isPressed: Binding(
-                        get: { buttonStates[buttonLayout.button] ?? false },
-                        set: { buttonStates[buttonLayout.button] = $0 }
-                    ),
-                    onPress: {
-                        controller.pressButton(buttonLayout.button)
-                    },
-                    onRelease: {
-                        controller.releaseButton(buttonLayout.button)
-                    }
-                )
-            }
-
-            // Shoulder buttons (L, R)
-            ForEach(layout.shoulderButtons, id: \.button.rawValue) { buttonLayout in
-                GBAShoulderButtonView(
-                    button: buttonLayout.button,
-                    layout: buttonLayout,
-                    isPressed: Binding(
-                        get: { buttonStates[buttonLayout.button] ?? false },
-                        set: { buttonStates[buttonLayout.button] = $0 }
-                    ),
-                    onPress: {
-                        controller.pressButton(buttonLayout.button)
-                    },
-                    onRelease: {
-                        controller.releaseButton(buttonLayout.button)
-                    }
-                )
-            }
-
+                
+                // Shoulder buttons (L, R)
+                ForEach(layout.shoulderButtons, id: \.button.rawValue) { buttonLayout in
+                    GBAShoulderButtonView(
+                        button: buttonLayout.button,
+                        layout: buttonLayout,
+                        isPressed: Binding(
+                            get: { buttonStates[buttonLayout.button] ?? false },
+                            set: { buttonStates[buttonLayout.button] = $0 }
+                        ),
+                        onPress: {
+                            controller.pressButton(buttonLayout.button)
+                        },
+                        onRelease: {
+                            controller.releaseButton(buttonLayout.button)
+                        }
+                    )
+                }
+                
             // Center buttons (Start, Select)
             ForEach(layout.centerButtons, id: \.button.rawValue) { buttonLayout in
                 GBACenterButtonView(
@@ -96,8 +98,8 @@ struct GBAControllerView: View {
             }
         }
     }
+    
 }
-
 // Shoulder button component (rectangular shape)
 struct GBAShoulderButtonView: View {
     let button: GBAButtonType

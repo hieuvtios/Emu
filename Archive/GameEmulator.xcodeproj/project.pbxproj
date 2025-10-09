@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652E04242E94090300669176 /* MelonDSDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652E04212E9408F000669176 /* MelonDSDeltaCore.framework */; };
+		652E04252E94090300669176 /* MelonDSDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 652E04212E9408F000669176 /* MelonDSDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		652EFED92E93BD8900669176 /* GBADeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EFED62E93B74D00669176 /* GBADeltaCore.framework */; };
 		652EFEDA2E93BD8900669176 /* GBADeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 652EFED62E93B74D00669176 /* GBADeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65CA65A02E8E31E1008374B5 /* NESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA65842E8E25B5008374B5 /* NESDeltaCore.framework */; };
@@ -24,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		652E04202E9408F000669176 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 652E04182E9408F000669176 /* MelonDSDeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF7317852356624000774F10;
+			remoteInfo = MelonDSDeltaCore;
+		};
 		652EFED52E93B74D00669176 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 652EFECF2E93B74C00669176 /* GBADeltaCore.xcodeproj */;
@@ -85,6 +94,7 @@
 				F490BC862E83D377001F129E /* DeltaCore.framework in Embed Frameworks */,
 				65CB1B962E91355B008A7E49 /* GBCDeltaCore.framework in Embed Frameworks */,
 				F4D074BB2E859E3100A8DB4C /* Roxas.framework in Embed Frameworks */,
+				652E04252E94090300669176 /* MelonDSDeltaCore.framework in Embed Frameworks */,
 				F4D073B52E83F5DA00A8DB4C /* SNESDeltaCore.framework in Embed Frameworks */,
 				65CB1BB32E914D37008A7E49 /* GPGXDeltaCore.framework in Embed Frameworks */,
 				65CA65A12E8E31E1008374B5 /* NESDeltaCore.framework in Embed Frameworks */,
@@ -96,6 +106,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		652E04182E9408F000669176 /* MelonDSDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MelonDSDeltaCore.xcodeproj; path = "/Users/hieuvu/Downloads/Telegram Desktop/MelonDSDeltaCore/MelonDSDeltaCore.xcodeproj"; sourceTree = "<absolute>"; };
 		652EFECF2E93B74C00669176 /* GBADeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBADeltaCore.xcodeproj; path = Cores/GBADeltaCore/GBADeltaCore.xcodeproj; sourceTree = "<group>"; };
 		65CB1B8C2E91354E008A7E49 /* GBCDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBCDeltaCore.xcodeproj; path = Cores/GBCDeltaCore/GBCDeltaCore.xcodeproj; sourceTree = "<group>"; };
 		65CB1BA82E914D2F008A7E49 /* GPGXDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPGXDeltaCore.xcodeproj; path = Cores/GPGXDeltaCore/GPGXDeltaCore.xcodeproj; sourceTree = "<group>"; };
@@ -122,6 +133,7 @@
 				F490BC852E83D377001F129E /* DeltaCore.framework in Frameworks */,
 				65CB1B952E91355B008A7E49 /* GBCDeltaCore.framework in Frameworks */,
 				F4D074BA2E859E3100A8DB4C /* Roxas.framework in Frameworks */,
+				652E04242E94090300669176 /* MelonDSDeltaCore.framework in Frameworks */,
 				F4D073B42E83F5DA00A8DB4C /* SNESDeltaCore.framework in Frameworks */,
 				65CB1BB22E914D37008A7E49 /* GPGXDeltaCore.framework in Frameworks */,
 				65CA65A02E8E31E1008374B5 /* NESDeltaCore.framework in Frameworks */,
@@ -132,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		652E041C2E9408F000669176 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				652E04212E9408F000669176 /* MelonDSDeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		652EFED02E93B74C00669176 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				652EFECF2E93B74C00669176 /* GBADeltaCore.xcodeproj */,
+				652E04182E9408F000669176 /* MelonDSDeltaCore.xcodeproj */,
 				65CB1BA82E914D2F008A7E49 /* GPGXDeltaCore.xcodeproj */,
 				65CB1B8C2E91354E008A7E49 /* GBCDeltaCore.xcodeproj */,
 				F4D074AE2E859E2500A8DB4C /* Roxas.xcodeproj */,
@@ -292,6 +313,10 @@
 					ProjectRef = 65CB1BA82E914D2F008A7E49 /* GPGXDeltaCore.xcodeproj */;
 				},
 				{
+					ProductGroup = 652E041C2E9408F000669176 /* Products */;
+					ProjectRef = 652E04182E9408F000669176 /* MelonDSDeltaCore.xcodeproj */;
+				},
+				{
 					ProductGroup = F490BC5F2E83C9CF001F129E /* Products */;
 					ProjectRef = F490BC5E2E83C9CF001F129E /* NESDeltaCore.xcodeproj */;
 				},
@@ -312,6 +337,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		652E04212E9408F000669176 /* MelonDSDeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MelonDSDeltaCore.framework;
+			remoteRef = 652E04202E9408F000669176 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		652EFED62E93B74D00669176 /* GBADeltaCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -523,6 +555,7 @@
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu",
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu/bapu",
 				);
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = OK;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -562,6 +595,7 @@
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu",
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu/bapu",
 				);
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = OK;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
