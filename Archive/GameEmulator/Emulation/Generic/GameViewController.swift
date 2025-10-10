@@ -375,6 +375,7 @@ class GameViewController: DeltaCore.GameViewController {
         view.layoutIfNeeded()
         setupSustainButtonsView()
         setupMenuButton()
+        setupGreenImage()
         updateControllers()
     }
     
@@ -484,7 +485,23 @@ class GameViewController: DeltaCore.GameViewController {
             sustainButtonsContentView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
-    
+    private func setupGreenImage(){
+        // Create the greenButton
+        let greenButton = UIButton(type: .custom)
+        // Set its image with alwaysOriginal rendering
+        let greenImage = UIImage(named: "btn-green")?.withRenderingMode(.alwaysOriginal)
+        greenButton.setImage(greenImage, for: .normal)
+        // Configure appearance
+        greenButton.backgroundColor = .clear
+        greenButton.translatesAutoresizingMaskIntoConstraints = false
+        // Add to view hierarchy
+        view.addSubview(greenButton)
+        // Layout constraints
+        NSLayoutConstraint.activate([
+            greenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40 ),
+            greenButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+        ])
+    }
     private func setupMenuButton() {
         menuButton = UIButton(type: .custom)
         
@@ -507,7 +524,7 @@ class GameViewController: DeltaCore.GameViewController {
         // Layout constraints
         NSLayoutConstraint.activate([
 //            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
-            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50), // 👈 Updated bottom padding
+            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -36), // 👈 Updated bottom padding
             menuButton.widthAnchor.constraint(equalToConstant: 70),
             menuButton.heightAnchor.constraint(equalToConstant: 50)
         ])
