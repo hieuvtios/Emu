@@ -13,11 +13,34 @@ struct GBCControllerView: View {
                 // MARK: - Main Controller Area
                 ZStack(alignment:.bottom) {
                     // Background
-                    Image("bg 1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: geometry.size.height * 0.4)
-                        .clipped()
+                    if geometry.size.width > geometry.size.height {
+                        Image("bg_landscape")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .ignoresSafeArea()
+                    } else {
+                        ZStack(alignment:.top){
+                          Image("bg 1")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                                .clipped()
+                            HStack(alignment:.top) {
+                                Image(.btnLeft)
+                                    .aspectRatio(contentMode: .fit)
+                                    .offset(CGSizeMake(0, -7))
+                                Spacer()
+                                Image(.btnRight)
+                                    .aspectRatio(contentMode: .fit)
+                                    .offset(CGSizeMake(0, -7))
+                                  
+                            }
+                            .frame(maxWidth: .infinity, alignment: .top)
+                        }
+                        
+                        
+                    }
+               
 
                     if let layout = currentLayout {
                         // D-Pad
@@ -72,10 +95,10 @@ struct GBCControllerView: View {
                 .ignoresSafeArea()
 
                 // MARK: - Bottom Black Bar
-                Rectangle()
-                    .fill(Color.black)
-                    .frame(height: 60)
-                    .ignoresSafeArea(edges: .bottom)
+//                Rectangle()
+//                    .fill(Color.black)
+//                    .frame(height: 60)
+//                    .ignoresSafeArea(edges: .bottom)
             }
             .ignoresSafeArea()
             .onAppear {
@@ -140,69 +163,65 @@ struct GBCControllerLayout {
     // MARK: - Landscape Layout
 
     static func landscapeLayout(screenSize: CGSize) -> GBCControllerLayoutDefinition {
-        // Account for 60px bottom black bar
-        let effectiveHeight = screenSize.height - 60
+        let baseWidth: CGFloat = 852
+        let baseHeight: CGFloat = 393
 
-        let buttonSize = CGSize(width: 55, height: 55)
-        let dpadRadius: CGFloat = 60
-        let smallButtonSize = CGSize(width: 45, height: 20)
+        let widthRatio = screenSize.width / baseWidth
+        let heightRatio = screenSize.height / baseHeight
 
-        // D-Pad (left side, positioned closer to center for better thumb reach)
+        let buttonSize = CGSize(width: 55 * heightRatio, height: 55 * heightRatio)
+        let dpadRadius: CGFloat = 60 * heightRatio
+        let smallButtonSize = CGSize(width: 45 * heightRatio, height: 20 * heightRatio)
+
+        // D-Pad (bottom-left corner)
         let dpadCenter = CGPoint(
-            x: 115,  // Fixed position from left edge
-            y: effectiveHeight / 2 + 40
+            x: screenSize.width * 0.2,
+            y: screenSize.height * 0.75
         )
 
-        // Action buttons (right side) - Authentic GBC diagonal layout
-        // B is upper-left, A is lower-right (diagonal arrangement)
-        // Positioned closer together and more centered like reference image
-        let actionButtonsCenter = CGPoint(
-            x: screenSize.width - 115,  // Mirror position from right edge
-            y: effectiveHeight / 2
-        )
-
-        // Smaller diagonal offset for tighter button clustering (like real GBC)
-        let diagonalOffset: CGFloat = 28
+        // Action buttons (right side, stacked vertically with slight offset)
+        // A button (red) - top right
+        // B button (yellow) - below and slightly left of A
+        let actionButtonsBaseX = screenSize.width * 0.95
+        let actionButtonsBaseY = screenSize.height * 0.68
+        let verticalSpacing: CGFloat = 70 * heightRatio
 
         let actionButtons: [ButtonLayout] = [
-            // B (upper-left position)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x - diagonalOffset + 60,
-                    y: actionButtonsCenter.y - diagonalOffset + 30
-                ),
-                size: buttonSize,
-                button: .b
-            ),
-            // A (lower-right position)
-            ButtonLayout(
-                position: CGPoint(
-                    x: actionButtonsCenter.x + diagonalOffset + 60,
-                    y: actionButtonsCenter.y + diagonalOffset + 50
+                    x: actionButtonsBaseX,
+                    y: actionButtonsBaseY
                 ),
                 size: buttonSize,
                 button: .a
+            ),
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsBaseX - 50 * widthRatio,
+                    y: actionButtonsBaseY + verticalSpacing
+                ),
+                size: buttonSize,
+                button: .b
             )
         ]
 
-        // Start/Select (center, positioned just above the black bar)
-        let centerButtonsY = effectiveHeight - 35
+        // Center Buttons (Select/Start) - positioned below the screen area
+        let centerButtonsY = screenSize.height * 0.90
+        let centerSpacing = 80 * widthRatio
 
         let centerButtons: [ButtonLayout] = [
-            // Select (left)
             ButtonLayout(
                 position: CGPoint(
                     x: screenSize.width / 2 ,
-                    y: centerButtonsY + 50
+                    y: centerButtonsY
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
-            // Start (right)
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 100,
-                    y: centerButtonsY + 50
+                    x: screenSize.width / 2 + 80,
+                    y: centerButtonsY
                 ),
                 size: smallButtonSize,
                 button: .start
@@ -220,30 +239,36 @@ struct GBCControllerLayout {
     // MARK: - Portrait Layout
 
     static func portraitLayout(screenSize: CGSize) -> GBCControllerLayoutDefinition {
-        let buttonSize = CGSize(width: 55, height: 55)
-        let dpadRadius: CGFloat = 60
-        let smallButtonSize = CGSize(width: 45, height: 20)
-
-        // Controls positioned in lower area for comfortable one-handed play
-        let controlsY = screenSize.height * 0.72
-
-        // D-Pad (lower left, positioned inward for better reach)
+        // iPhone 17 reference
+        let baseWidth: CGFloat = 393
+        let baseHeight: CGFloat = 852
+        
+        let widthRatio = screenSize.width / baseWidth
+        let heightRatio = screenSize.height / baseHeight
+        
+        // Scaled constants
+        let buttonSize = CGSize(width: 55 * widthRatio, height: 55 * widthRatio)
+        let dpadRadius: CGFloat = 60 * widthRatio
+        let smallButtonSize = CGSize(width: 45 * widthRatio, height: 20 * heightRatio)
+        
+        // Controls area (same relative position)
+        let controlsY = screenSize.height * 0.72 * heightRatio
+        
+        // D-Pad (bottom-left)
         let dpadCenter = CGPoint(
-            x: 95,  // Fixed position from left
-            y: controlsY + 70
+            x: 95 * widthRatio,
+            y: controlsY + (110 * heightRatio)
         )
-
-        // Action buttons (lower right) - Authentic GBC diagonal layout
+        
+        // Action buttons (bottom-right)
         let actionButtonsCenter = CGPoint(
-            x: screenSize.width - 95,  // Mirror position from right
-            y: controlsY + 70
+            x: screenSize.width - (95 * widthRatio),
+            y: controlsY + (110 * heightRatio)
         )
-
-        // Tighter diagonal offset for authentic GBC clustering
-        let diagonalOffset: CGFloat = 28
-
+        
+        let diagonalOffset: CGFloat = 28 * widthRatio
+        
         let actionButtons: [ButtonLayout] = [
-            // B (upper-left position)
             ButtonLayout(
                 position: CGPoint(
                     x: actionButtonsCenter.x - diagonalOffset,
@@ -252,7 +277,6 @@ struct GBCControllerLayout {
                 size: buttonSize,
                 button: .b
             ),
-            // A (lower-right position)
             ButtonLayout(
                 position: CGPoint(
                     x: actionButtonsCenter.x + diagonalOffset,
@@ -262,31 +286,29 @@ struct GBCControllerLayout {
                 button: .a
             )
         ]
-
-        // Start/Select (center, positioned above bottom for easy access)
-        let centerButtonsY = screenSize.height - 70
-
+        
+        // Start/Select (centered above bottom edge)
+        let centerButtonsY = screenSize.height - (70 * heightRatio)
+        
         let centerButtons: [ButtonLayout] = [
-            // Select (left)
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 - 40,
-                    y: centerButtonsY + 70
+                    x: screenSize.width / 2 - (40 * widthRatio),
+                    y: centerButtonsY + (100 * heightRatio)
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
-            // Start (right)
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 40,
-                    y: centerButtonsY + 70
+                    x: screenSize.width / 2 + (40 * widthRatio),
+                    y: centerButtonsY + (100 * heightRatio)
                 ),
                 size: smallButtonSize,
                 button: .start
             )
         ]
-
+        
         return GBCControllerLayoutDefinition(
             mode: .portrait,
             dpad: DPadLayout(center: dpadCenter, radius: dpadRadius),

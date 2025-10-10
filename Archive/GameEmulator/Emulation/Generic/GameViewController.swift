@@ -498,7 +498,7 @@ class GameViewController: DeltaCore.GameViewController {
         view.addSubview(greenButton)
         // Layout constraints
         NSLayoutConstraint.activate([
-            greenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40 ),
+            greenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 5),
             greenButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
         ])
     }
@@ -524,8 +524,9 @@ class GameViewController: DeltaCore.GameViewController {
         // Layout constraints
         NSLayoutConstraint.activate([
 //            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
-            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -36), // 👈 Updated bottom padding
-            menuButton.widthAnchor.constraint(equalToConstant: 70),
+            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            
+            menuButton.widthAnchor.constraint(equalToConstant: 60),
             menuButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
