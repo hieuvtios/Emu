@@ -14,6 +14,7 @@ struct GBCCenterButtonView: View {
     @Binding var isPressed: Bool
     let onPress: () -> Void
     let onRelease: () -> Void
+    let theme: GBCControllerTheme
 
     var body: some View {
         ZStack {
@@ -47,11 +48,11 @@ struct GBCCenterButtonView: View {
     private var buttonImageName: String {
         switch button {
         case .start:
-            return isPressed ? "btn-start-gba" : "btn-start-gba"
+            return theme.startButtonImageName
         case .select:
-            return isPressed ? "btn-select-gba" : "btn-select-gba"
+            return theme.selectButtonImageName
         default:
-            return isPressed ? "button_default_pressed" : "button_default"
+            return "button_default"
         }
     }
 }

@@ -12,20 +12,22 @@ struct GBCDPadView: View {
     @Binding var pressedButtons: Set<GBCButtonType>
     let onDirectionChange: ([GBCButtonType]) -> Void
     let onRelease: () -> Void
+    let theme: GBCControllerTheme
 
     @State private var touchLocation: CGPoint?
 
-    init(layout: GBCControllerLayout.DPadLayout, pressedButtons: Binding<Set<GBCButtonType>>, onDirectionChange: @escaping ([GBCButtonType]) -> Void, onRelease: @escaping () -> Void) {
+    init(layout: GBCControllerLayout.DPadLayout, pressedButtons: Binding<Set<GBCButtonType>>, onDirectionChange: @escaping ([GBCButtonType]) -> Void, onRelease: @escaping () -> Void, theme: GBCControllerTheme) {
         self.layout = layout
         self._pressedButtons = pressedButtons
         self.onDirectionChange = onDirectionChange
         self.onRelease = onRelease
+        self.theme = theme
     }
 
     var body: some View {
         ZStack {
             // Background circle
-            Image(.btnDpad)
+            Image(theme.dpadImageName)
             // Touch indicator
             if let location = touchLocation {
                 Circle()

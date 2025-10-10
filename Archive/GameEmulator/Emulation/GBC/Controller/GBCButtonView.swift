@@ -12,6 +12,7 @@ struct GBCButtonView: View {
     @Binding var isPressed: Bool
     let onPress: () -> Void
     let onRelease: () -> Void
+    let theme: GBCControllerTheme
 
     @State private var touchLocation: CGPoint?
 
@@ -69,11 +70,11 @@ struct GBCButtonView: View {
 
     private var buttonImageName: String {
         switch button {
-        case .a: return isPressed ? "button-a-gba" : "button-a-gba"
-        case .b: return isPressed ? "button-b-gba" : "button-b-gba"
-        case .start: return isPressed ? "btn-start-gba" : "btn-start-gba"
-        case .select: return isPressed ? "btn-select-gba" : "btn-select-gba"
-        default: return isPressed ? "btn-menu-gba" : "btn-menu-gba"
+        case .a: return theme.buttonAImageName
+        case .b: return theme.buttonBImageName
+        case .start: return theme.startButtonImageName
+        case .select: return theme.selectButtonImageName
+        default: return "btn-menu-gba"
         }
     }
 }
