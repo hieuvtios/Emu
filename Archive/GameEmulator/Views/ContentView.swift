@@ -9,9 +9,13 @@ import SwiftUI
 import DeltaCore
 
 struct ContentView: View {
-    
-    let game = Game()
-    
+
+    let game: Game
+
+    init(game: Game? = nil) {
+        self.game = game ?? Game()
+    }
+
     var body: some View {
             GameViewControllerRepresentable(game: game)
                 .ignoresSafeArea() // Full screen experience

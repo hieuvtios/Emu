@@ -12,12 +12,17 @@ import Foundation
 import SwiftUI
 import Combine
 
+extension Notification.Name {
+    static let gbcThemeDidChange = Notification.Name("GBCThemeDidChangeNotification")
+}
+
 class GBCThemeManager: ObservableObject {
     private static let themeStorageKey = "GBCControllerTheme"
 
     @Published var currentTheme: GBCControllerTheme {
         didSet {
             saveTheme()
+            NotificationCenter.default.post(name: .gbcThemeDidChange, object: currentTheme)
         }
     }
 

@@ -15,15 +15,15 @@ import GBADeltaCore
 import MelonDSDeltaCore
 //import N64DeltaCore
 
-enum System: CaseIterable
+enum System: String, CaseIterable
 {
-    case nes
-    case genesis
-    case snes
-    //case n64
-    case gbc
-    case gba
-    case ds
+    case nes = "NES"
+    case genesis = "SEGA"
+    case snes = "SNES"
+//    case n64 = "N64"
+    case gbc = "GBC"
+    case gba = "GBA"
+    case ds = "2DS"
 
     static var registeredSystems: [System] {
         let systems = System.allCases.filter { Delta.registeredCores.keys.contains($0.gameType) }

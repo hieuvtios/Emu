@@ -367,6 +367,13 @@ class GameViewController: DeltaCore.GameViewController {
         nc.addObserver(self, selector: #selector(emulationDidQuit), name: EmulatorCore.emulationDidQuitNotification, object: nil)
         nc.addObserver(self, selector: #selector(sceneWillConnect), name: UIScene.willConnectNotification, object: nil)
         nc.addObserver(self, selector: #selector(sceneDidDisconnect), name: UIScene.didDisconnectNotification, object: nil)
+
+        #if DEBUG
+        // Observe GBC theme changes to update menu button
+        if #available(iOS 15.0, *) {
+            nc.addObserver(self, selector: #selector(gbcThemeDidChange), name: NSNotification.Name("GBCThemeDidChangeNotification"), object: nil)
+        }
+        #endif
     }
     
     // MARK: - View Lifecycle
@@ -398,15 +405,16 @@ class GameViewController: DeltaCore.GameViewController {
     private func handleGameChange(from oldGame: (any GameProtocol)?) {
         let game = self.game as? Game
         viewModel.updateGame(game)
-        
+
         emulatorCore?.saveHandler = { _ in }
-        
+
         if oldGame?.fileURL != game?.fileURL {
             shouldResetSustainedInputs = true
         }
-        
+
         updateControllers()
         updateAudio()
+        updateMenuButtonImage()
         presentedGyroAlert = false
     }
     
@@ -504,31 +512,48 @@ class GameViewController: DeltaCore.GameViewController {
     }
     private func setupMenuButton() {
         menuButton = UIButton(type: .custom)
-        
-        // Set button image
-        let menuImage = UIImage(named: "btn-menu-gba")?.withRenderingMode(.alwaysOriginal)
-        menuButton.setImage(menuImage, for: .normal)
 
-        
+        // Set initial button image
+        updateMenuButtonImage()
+
         // Button appearance
         menuButton.backgroundColor = .clear
         menuButton.translatesAutoresizingMaskIntoConstraints = false
-        
+
         // Touch handler
         menuButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
-        
+
         // Add to view
         view.addSubview(menuButton)
         view.bringSubviewToFront(menuButton)
-        
+
         // Layout constraints
         NSLayoutConstraint.activate([
 //            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
             menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
-            
+
             menuButton.widthAnchor.constraint(equalToConstant: 60),
             menuButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+
+    private func updateMenuButtonImage() {
+        guard let menuButton = menuButton else { return }
+
+        var imageName = "btn-menu-gba"
+
+        // Check if playing GBC game and get theme-specific menu button
+        #if DEBUG
+        if let game = game as? Game, game.type == .gbc {
+            if let themeData = UserDefaults.standard.data(forKey: "GBCControllerTheme"),
+               let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
+                imageName = theme.menuButtonImageName
+            }
+        }
+        #endif
+
+        let menuImage = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
+        menuButton.setImage(menuImage, for: .normal)
     }
     
     // MARK: - Menu Actions
@@ -604,6 +629,13 @@ class GameViewController: DeltaCore.GameViewController {
     
     @objc private func sceneWillConnect(with notification: Notification) {}
     @objc private func sceneDidDisconnect(with notification: Notification) {}
+
+    #if DEBUG
+    @objc private func gbcThemeDidChange(with notification: Notification) {
+        // Update menu button image when theme changes
+        updateMenuButtonImage()
+    }
+    #endif
 }
 
 // MARK: - Delegates

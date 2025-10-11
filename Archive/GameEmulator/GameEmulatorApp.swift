@@ -14,7 +14,7 @@ struct GameEmulatorApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabScreenView()
         }
     }
 }
