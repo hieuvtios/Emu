@@ -19,9 +19,9 @@ enum GuidePageEnum: String, Identifiable, CaseIterable, View {
         case .step:
             GuideStepScreenView()
         case .site:
-            EmptyView()
+            GuideSiteScreenView()
         case .controller:
-            EmptyView()
+            GuideControllerScreenView()
         }
     }
 }
