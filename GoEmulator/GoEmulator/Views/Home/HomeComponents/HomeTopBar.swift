@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct HomeTopBar: View {
+    
+    let title: String
+    
     var body: some View {
         HStack(alignment: .center) {
-            Text("Home")
+            Text(title)
                 .font(Font.custom("SVN-Determination Sans", size: 32))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
@@ -26,8 +29,4 @@ struct HomeTopBar: View {
         .padding(.vertical, 16)
         .frame(maxWidth: .infinity, alignment: .center)
     }
-}
-
-#Preview {
-    HomeTopBar()
 }

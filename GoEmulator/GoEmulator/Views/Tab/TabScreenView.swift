@@ -73,7 +73,7 @@ extension AppScreen {
         case .guide:
             EmptyView()
         case .console:
-            EmptyView()
+            ConsoleScreenView()
         case .setting:
             SettingScreenView()
         case .addGame:

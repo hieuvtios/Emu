@@ -8,7 +8,7 @@
 import SwiftUI
 
 class TabViewModel: ObservableObject {
-    @Published var tabSelection: AppScreen = .setting
+    @Published var tabSelection: AppScreen = .console
     
     @Published var isExpanded: Bool = false
     

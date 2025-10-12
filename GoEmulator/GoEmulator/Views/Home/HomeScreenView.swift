@@ -13,7 +13,7 @@ struct HomeScreenView: View {
     
     var body: some View {
         VStack {
-            HomeTopBar()
+            HomeTopBar(title: "Home")
             
             HomeSearchBar(searchText: $homeViewModel.searchText)
             
