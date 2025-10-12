@@ -30,8 +30,8 @@ struct GBCControllerTheme: Codable, Identifiable, Equatable {
         startButtonImageName: "btn-start-gba",
         selectButtonImageName: "btn-select-gba",
         menuButtonImageName: "btn-menu-gba",
-        backgroundPortraitImageName: "bg 1",
-        backgroundLandscapeImageName: "bg_landscape"
+        backgroundPortraitImageName: "bg1",
+        backgroundLandscapeImageName: "bg1"
     )
 
     static let theme2 = GBCControllerTheme(
@@ -70,7 +70,7 @@ struct GBCControllerTheme: Codable, Identifiable, Equatable {
         selectButtonImageName: "btn-select-gba-4",
         menuButtonImageName: "btn-menu-gba-4",
         backgroundPortraitImageName: "bg4",
-        backgroundLandscapeImageName: "bg_landscape"
+        backgroundLandscapeImageName: "bg4"
     )
 
     static let theme5 = GBCControllerTheme(
@@ -83,21 +83,10 @@ struct GBCControllerTheme: Codable, Identifiable, Equatable {
         selectButtonImageName: "btn-select-gba-5",
         menuButtonImageName: "btn-menu-gba-5",
         backgroundPortraitImageName: "bg5",
-        backgroundLandscapeImageName: "bg_landscape"
+        backgroundLandscapeImageName: "bg5"
     )
 
-    static let theme6 = GBCControllerTheme(
-        id: "theme6",
-        name: "Theme 6",
-        dpadImageName: "btn-dpad-6",
-        buttonAImageName: "button-a-gba",
-        buttonBImageName: "button-b-gba",
-        startButtonImageName: "btn-start-gba-6",
-        selectButtonImageName: "btn-select-gba-6",
-        menuButtonImageName: "btn-menu-gba-6",
-        backgroundPortraitImageName: "bg6",
-        backgroundLandscapeImageName: "bg6"
-    )
+
 
     
     // MARK: - All Available Themes
@@ -108,6 +97,5 @@ struct GBCControllerTheme: Codable, Identifiable, Equatable {
         theme3,
         theme4,
         theme5,
-        theme6,
     ]
 }

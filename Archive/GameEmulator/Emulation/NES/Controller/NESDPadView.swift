@@ -12,35 +12,22 @@ struct NESDPadView: View {
     @Binding var pressedButtons: Set<NESButtonType>
     let onDirectionChange: ([NESButtonType]) -> Void
     let onRelease: () -> Void
+    let theme: NESControllerTheme
 
     @State private var touchLocation: CGPoint?
 
-    init(layout: NESControllerLayout.DPadLayout, pressedButtons: Binding<Set<NESButtonType>>, onDirectionChange: @escaping ([NESButtonType]) -> Void, onRelease: @escaping () -> Void) {
+    init(layout: NESControllerLayout.DPadLayout, pressedButtons: Binding<Set<NESButtonType>>, onDirectionChange: @escaping ([NESButtonType]) -> Void, onRelease: @escaping () -> Void, theme: NESControllerTheme) {
         self.layout = layout
         self._pressedButtons = pressedButtons
         self.onDirectionChange = onDirectionChange
         self.onRelease = onRelease
+        self.theme = theme
     }
 
     var body: some View {
         ZStack {
             // Background circle
-            Circle()
-                .fill(Color.gray.opacity(0.4))
-                .frame(width: layout.radius * 2, height: layout.radius * 2)
-
-            // D-Pad shape
-            dpadShape
-                .fill(Color.gray.opacity(0.6))
-                .overlay(
-                    dpadShape
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                )
-                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
-
-            // Direction indicators
-            directionIndicators
-
+            Image(theme.dpadImageName)
             // Touch indicator
             if let location = touchLocation {
                 Circle()
