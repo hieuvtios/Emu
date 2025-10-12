@@ -92,6 +92,7 @@ struct TabScreenView: View {
                 ForEach(AppScreen.allCases) { screen in
                     screen.destination
                         .tag(screen as AppScreen?)
+                        .environmentObject(tabViewModel)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -118,6 +119,20 @@ struct TabScreenView: View {
             if let game = tabViewModel.selectedGame {
                 ContentView(game: game)
             }
+        }
+        .alert("Success", isPresented: .constant(tabViewModel.importSuccessMessage != nil), presenting: tabViewModel.importSuccessMessage) { _ in
+            Button("OK") {
+                tabViewModel.importSuccessMessage = nil
+            }
+        } message: { message in
+            Text(message)
+        }
+        .alert("Error", isPresented: .constant(tabViewModel.importErrorMessage != nil), presenting: tabViewModel.importErrorMessage) { _ in
+            Button("OK") {
+                tabViewModel.importErrorMessage = nil
+            }
+        } message: { message in
+            Text(message)
         }
     }
 }

@@ -9,10 +9,6 @@ import UIKit
 import AVFoundation
 import DeltaCore
 
-private extension CFNotificationName {
-    static let altstoreRequestAppState: CFNotificationName = CFNotificationName("com.altstore.RequestAppState.com.rileytestut.Delta" as CFString)
-    static let altstoreAppIsRunning: CFNotificationName = CFNotificationName("com.altstore.AppState.Running.com.rileytestut.Delta" as CFString)
-}
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
