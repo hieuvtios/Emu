@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct BottomTabElement: View {
-    @Binding var tabSelection: AppScreen
+    @ObservedObject var tabViewModel: TabViewModel
     let tab: AppScreen
     
     var body: some View {
         Button {
-            tabSelection = tab
+            if tab == .guide {
+                tabViewModel.showGuideView = true
+            } else {
+                tabViewModel.tabSelection = tab
+            }
         } label: {
             VStack {
-                Image(tab.icon_select)
+                Image(tabViewModel.tabSelection == tab ? tab.icon_select : tab.icon_unselect)
                 
                 // Caption/12px/Bold
                 Text(tab.label)
@@ -25,7 +29,7 @@ struct BottomTabElement: View {
                             .weight(.bold)
                     )
                     .multilineTextAlignment(.center)
-                    .foregroundColor(tabSelection == tab ? Color(.blue3) : Color(.grey500))
+                    .foregroundColor(tabViewModel.tabSelection == tab ? Color(.blue3) : Color(.grey500))
             }
             .padding(.vertical, 16)
         }

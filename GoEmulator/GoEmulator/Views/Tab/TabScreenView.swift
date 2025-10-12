@@ -40,11 +40,11 @@ extension AppScreen {
         case .home:
             "tab_ic_home_select"
         case .guide:
-            "tab_ic_home_select"
+            ""
         case .console:
-            "tab_ic_home_select"
+            "tab_ic_console_select"
         case .setting:
-            "tab_ic_home_select"
+            "tab_ic_setting_select"
         case .addGame:
             ""
         }
@@ -53,13 +53,13 @@ extension AppScreen {
     var icon_unselect: String {
         switch self {
         case .home:
-            "tab_ic_home_select"
+            "tab_ic_home_unselect"
         case .guide:
-            "tab_ic_home_select"
+            "tab_ic_guide_unselect"
         case .console:
-            "tab_ic_home_select"
+            "tab_ic_console_unselect"
         case .setting:
-            "tab_ic_home_select"
+            "tab_ic_setting_unselect"
         case .addGame:
             ""
         }
@@ -75,7 +75,7 @@ extension AppScreen {
         case .console:
             EmptyView()
         case .setting:
-            EmptyView()
+            SettingScreenView()
         case .addGame:
             EmptyView()
         }
@@ -87,7 +87,7 @@ struct TabScreenView: View {
     @StateObject var tabViewModel = TabViewModel()
     
     var body: some View {
-        VStack(spacing: 0) {
+        NavigationView {
             TabView(selection: $tabViewModel.tabSelection) {
                 ForEach(AppScreen.allCases) { screen in
                     screen.destination
@@ -95,22 +95,51 @@ struct TabScreenView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .background(
+                AppBackGround()
+            )
+            .background(
+                navigationView()
+            )
             .overlay(content: {
                 if tabViewModel.isExpanded {
                     Color(.color000000).opacity(0.8)
+                        .onTapGesture {
+                            tabViewModel.isExpanded = false
+                        }
                 }
             })
             .overlay(alignment: .bottom) {
                 BottomTabView(tabViewModel: tabViewModel, addGameAction: { action in
                     tabViewModel.showDocumentPicker = true
                 })
-                .padding(.bottom, 30)
             }
+            .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
+                DocumentPicker(documentTypes: [])
+            })
+            .navigationTitle("")
+            .navigationBarHidden(true)
         }
-        .edgesIgnoringSafeArea(.all)
-        .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
-            DocumentPicker(documentTypes: [])
-        })
+    }
+}
+
+extension TabScreenView {
+    @ViewBuilder
+    func navigationView() -> some  View {
+        VStack {
+            navGuideView()
+        }
+    }
+    
+    @ViewBuilder
+    func navGuideView() -> some View {
+        NavigationLink(isActive: $tabViewModel.showGuideView) {
+            GuideScreenView()
+                .navigationTitle("")
+                .navigationBarHidden(true)
+        } label: {
+            EmptyView()
+        }
     }
 }
 

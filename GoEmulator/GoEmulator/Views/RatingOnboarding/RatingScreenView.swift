@@ -25,9 +25,7 @@ struct RatingScreenView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Color.red.ignoresSafeArea()
-            
+        ZStack(alignment: .bottom) {            
             Rectangle()
                 .fill(.black.opacity(0.8))
                 .shadow(color: .black.opacity(0.25), radius: 7.5, x: 0, y: 4)
@@ -79,9 +77,9 @@ struct RatingScreenView: View {
                     .position(x: 195, y:-13)
             }
             
-            AppBannerNotification(title: "Thank for you feedback", subTitle: "We will improve to enhance the quality")
-                .frame(maxHeight: .infinity, alignment: .top)
-                .padding(.top, 60)
+//            AppBannerNotification(title: "Thank for you feedback", subTitle: "We will improve to enhance the quality")
+//                .frame(maxHeight: .infinity, alignment: .top)
+//                .padding(.top, 60)
         }
         .ignoresSafeArea()
     }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GuideSiteScreenView: View {
+    @Environment(\.openURL) var openURL
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 16) {
@@ -26,12 +28,24 @@ struct GuideSiteScreenView: View {
                 
                 LazyVGrid(columns: columns, spacing: 16) {
                     siteItem(image: "Frame 2084", text: "emulatorgames.net")
+                        .onTapGesture {
+                            openURL(URL(string:"emulatorgames.net")!)
+                        }
                     
                     siteItem(image: "Frame 2083", text: "wowroms.com")
+                        .onTapGesture {
+                            openURL(URL(string:"wowroms.com")!)
+                        }
                     
                     siteItem(image: "Frame 2082", text: "retrostic.com")
+                        .onTapGesture {
+                            openURL(URL(string:"retrostic.com")!)
+                        }
                     
                     siteItem(image: "Frame 2084", text: "Romsfun.com")
+                        .onTapGesture {
+                            openURL(URL(string:"Romsfun.com")!)
+                        }
                 }
             }
         }

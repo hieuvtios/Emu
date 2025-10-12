@@ -12,16 +12,12 @@ struct HomeScreenView: View {
     @StateObject var homeViewModel = HomeViewModel()
     
     var body: some View {
-        ZStack {
-            AppBackGround()
+        VStack {
+            HomeTopBar()
             
-            VStack {
-                HomeTopBar()
-                
-                HomeSearchBar(searchText: $homeViewModel.searchText)
-                
-                HomeGameList()
-            }
+            HomeSearchBar(searchText: $homeViewModel.searchText)
+            
+            HomeGameList()
         }
     }
 }

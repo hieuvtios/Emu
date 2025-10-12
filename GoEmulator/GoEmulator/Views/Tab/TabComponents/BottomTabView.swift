@@ -15,7 +15,7 @@ struct BottomTabView: View {
         let columns = Array(repeating: GridItem(.flexible()), count: 5)
         LazyVGrid(columns: columns) {
             ForEach(AppScreen.allCases) { tab in
-                BottomTabElement(tabSelection: $tabViewModel.tabSelection, tab: tab)
+                BottomTabElement(tabViewModel: tabViewModel, tab: tab)
             }
         }
         .padding(.horizontal, 6)

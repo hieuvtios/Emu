@@ -8,9 +8,11 @@
 import SwiftUI
 
 class TabViewModel: ObservableObject {
-    @Published var tabSelection: AppScreen = .home
+    @Published var tabSelection: AppScreen = .setting
     
     @Published var isExpanded: Bool = false
     
     @Published var showDocumentPicker = false
+    
+    @Published var showGuideView = false
 }

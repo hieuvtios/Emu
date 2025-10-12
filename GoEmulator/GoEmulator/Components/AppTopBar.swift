@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppTopBar: View {
-    
+    @Environment(\.dismiss) var dismiss
     let title: String
     
     var body: some View {
@@ -20,7 +20,7 @@ struct AppTopBar: View {
             
             HStack {
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Image("home_left_arrow")
                 }
