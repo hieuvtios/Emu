@@ -128,7 +128,7 @@ class ControllerManager {
         }
         
         let layout = createLayout(for: .nes)
-        let view = NESControllerView(controller: controller, layout: layout as! NESControllerLayoutDefinition)
+        let view = NESControllerView(controller: controller)
         nesHosting = setupHostingController(for: view, in: vc)
         currentType = .nes
     }
@@ -542,15 +542,29 @@ class GameViewController: DeltaCore.GameViewController {
 
         var imageName = "btn-menu-gba"
 
-        // Check if playing GBC game and get theme-specific menu button
-        #if DEBUG
-        if let game = game as? Game, game.type == .gbc {
-            if let themeData = UserDefaults.standard.data(forKey: "GBCControllerTheme"),
-               let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
-                imageName = theme.menuButtonImageName
+        if let game = game as? Game {
+            switch game.type {
+            case .nes:
+                if let themeData = UserDefaults.standard.data(forKey: "NESControllerTheme"),
+                   let theme = try? JSONDecoder().decode(NESControllerTheme.self, from: themeData) {
+                    imageName = theme.menuButtonImageName
+                    print("image name \(imageName)")
+
+                }
+            case .gbc:
+                if let themeData = UserDefaults.standard.data(forKey: "GBCControllerTheme"),
+                   let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
+                    imageName = theme.menuButtonImageName
+                }
+            case .gba:
+                if let themeData = UserDefaults.standard.data(forKey: "GBCControllerTheme"),
+                   let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
+                    imageName = theme.menuButtonImageName
+                }
+            default:
+                break
             }
         }
-        #endif
 
         let menuImage = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
         menuButton.setImage(menuImage, for: .normal)

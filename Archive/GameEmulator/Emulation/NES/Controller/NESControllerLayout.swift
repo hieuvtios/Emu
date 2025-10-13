@@ -30,62 +30,64 @@ struct NESControllerLayout {
     // MARK: - Landscape Layout
 
     static func landscapeLayout(screenSize: CGSize) -> NESControllerLayoutDefinition {
-        let padding: CGFloat = 40
-        let buttonSize = CGSize(width: 60, height: 60)
-        let dpadRadius: CGFloat = 80
-        let smallButtonSize = CGSize(width: 50, height: 25)
+        let baseWidth: CGFloat = 852
+        let baseHeight: CGFloat = 393
 
-        // D-Pad (left side)
+        let widthRatio = screenSize.width / baseWidth
+        let heightRatio = screenSize.height / baseHeight
+
+        let buttonSize = CGSize(width: 55 * heightRatio, height: 55 * heightRatio)
+        let dpadRadius: CGFloat = 60 * heightRatio
+        let smallButtonSize = CGSize(width: 45 * heightRatio, height: 20 * heightRatio)
+
+        // D-Pad (bottom-left corner)
         let dpadCenter = CGPoint(
-            x: padding + dpadRadius,
-            y: screenSize.height / 2
+            x: screenSize.width * 0.2,
+            y: screenSize.height * 0.75
         )
 
-        // Action buttons (right side) - NES has simple horizontal A/B layout
-        let actionButtonsCenter = CGPoint(
-            x: screenSize.width - padding - dpadRadius,
-            y: screenSize.height / 2
-        )
-
-        let actionButtonSpacing: CGFloat = 75
+        // Action buttons (right side, stacked vertically with slight offset)
+        // A button - top right
+        // B button - below and slightly left of A
+        let actionButtonsBaseX = screenSize.width * 0.95
+        let actionButtonsBaseY = screenSize.height * 0.68
+        let verticalSpacing: CGFloat = 70 * heightRatio
 
         let actionButtons: [ButtonLayout] = [
-            // B (left)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x - actionButtonSpacing / 2,
-                    y: actionButtonsCenter.y
-                ),
-                size: buttonSize,
-                button: .b
-            ),
-            // A (right)
-            ButtonLayout(
-                position: CGPoint(
-                    x: actionButtonsCenter.x + actionButtonSpacing / 2,
-                    y: actionButtonsCenter.y
+                    x: actionButtonsBaseX,
+                    y: actionButtonsBaseY
                 ),
                 size: buttonSize,
                 button: .a
+            ),
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsBaseX - 50 * widthRatio,
+                    y: actionButtonsBaseY + verticalSpacing
+                ),
+                size: buttonSize,
+                button: .b
             )
         ]
 
-        // Start/Select (center-bottom)
+        // Center Buttons (Select/Start) - positioned below the screen area
+        let centerButtonsY = screenSize.height * 0.90
+
         let centerButtons: [ButtonLayout] = [
-            // Select
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 - 60,
-                    y: screenSize.height - 90
+                    x: screenSize.width / 2 ,
+                    y: centerButtonsY
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
-            // Start
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 10,
-                    y: screenSize.height - 90
+                    x: screenSize.width / 2 + 80,
+                    y: centerButtonsY
                 ),
                 size: smallButtonSize,
                 button: .start
@@ -152,22 +154,21 @@ struct NESControllerLayout {
         ]
         
         // Start/Select (centered above bottom edge)
-        let centerButtonsY = screenSize.height * 0.90
-        let centerSpacing = 80 * widthRatio
+        let centerButtonsY = screenSize.height - (70 * heightRatio)
 
         let centerButtons: [ButtonLayout] = [
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 ,
-                    y: centerButtonsY
+                    x: screenSize.width / 2 - (40 * widthRatio),
+                    y: centerButtonsY + (100 * heightRatio)
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 80,
-                    y: centerButtonsY
+                    x: screenSize.width / 2 + (40 * widthRatio),
+                    y: centerButtonsY + (100 * heightRatio)
                 ),
                 size: smallButtonSize,
                 button: .start

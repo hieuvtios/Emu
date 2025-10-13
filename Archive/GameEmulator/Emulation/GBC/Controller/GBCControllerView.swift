@@ -118,11 +118,6 @@ struct GBCControllerView: View {
                 }
                 .ignoresSafeArea()
 
-                // MARK: - Bottom Black Bar
-//                Rectangle()
-//                    .fill(Color.black)
-//                    .frame(height: 60)
-//                    .ignoresSafeArea(edges: .bottom)
             }
             .ignoresSafeArea()
             .onAppear {
