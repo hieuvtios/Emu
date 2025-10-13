@@ -25,29 +25,30 @@ struct SNESDPadView: View {
     var body: some View {
         ZStack {
             // Background circle
-            Circle()
-                .fill(Color.gray.opacity(0.4))
-                .frame(width: layout.radius * 2, height: layout.radius * 2)
+//            Circle()
+//                .fill(Color.gray.opacity(0.4))
+//                .frame(width: layout.radius * 2, height: layout.radius * 2)
 
             // D-Pad shape
-            dpadShape
-                .fill(Color.gray.opacity(0.6))
-                .overlay(
-                    dpadShape
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                )
-                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
+            Image(.btnSnesDpad)
+//            dpadShape
+//                .fill(Color.gray.opacity(0.6))
+//                .overlay(
+//                    dpadShape
+//                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
+//                )
+//                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
 
             // Direction indicators
             directionIndicators
 
             // Touch indicator
-            if let location = touchLocation {
-                Circle()
-                    .fill(Color.white.opacity(0.5))
-                    .frame(width: 30, height: 30)
-                    .position(location)
-            }
+//            if let location = touchLocation {
+//                Circle()
+//                    .fill(Color.white.opacity(0.5))
+//                    .frame(width: 30, height: 30)
+//                    .position(location)
+//            }
         }
         .frame(width: layout.radius * 2, height: layout.radius * 2)
         .position(layout.center)
@@ -69,25 +70,25 @@ struct SNESDPadView: View {
     private var directionIndicators: some View {
         ZStack {
             // Up arrow
-            Image(systemName: "arrowtriangle.up.fill")
+            Image(.btnSnesUp)
                 .font(.system(size: 20))
                 .foregroundColor(pressedButtons.contains(.up) ? .white : .white.opacity(0.5))
                 .offset(y: -layout.radius * 0.5)
 
             // Down arrow
-            Image(systemName: "arrowtriangle.down.fill")
+            Image(.btnSnesDown)
                 .font(.system(size: 20))
                 .foregroundColor(pressedButtons.contains(.down) ? .white : .white.opacity(0.5))
                 .offset(y: layout.radius * 0.5)
 
             // Left arrow
-            Image(systemName: "arrowtriangle.left.fill")
+            Image(.btnSnesLeft)
                 .font(.system(size: 20))
                 .foregroundColor(pressedButtons.contains(.left) ? .white : .white.opacity(0.5))
                 .offset(x: -layout.radius * 0.5)
 
             // Right arrow
-            Image(systemName: "arrowtriangle.right.fill")
+            Image(.btnSnesRight)
                 .font(.system(size: 20))
                 .foregroundColor(pressedButtons.contains(.right) ? .white : .white.opacity(0.5))
                 .offset(x: layout.radius * 0.5)
