@@ -9,6 +9,11 @@ import SwiftUI
 
 struct PayWallScreenView: View {
 
+    @Environment(\.dismiss) var dismiss
+    var isIapAfterOnboarding: Bool = false
+    
+    @State private var showTabView = false
+    
     var body: some View {
         ZStack {
             Image("pw_bg")
@@ -16,6 +21,21 @@ struct PayWallScreenView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 24) {
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        if isIapAfterOnboarding {
+                            showTabView = true
+                        } else {
+                            dismiss()
+                        }
+                    } label: {
+                        Image("home_ic_close")
+                            .padding()
+                    }
+                }
+                
                 Spacer()
                 
                 FeatureView()
@@ -72,11 +92,22 @@ struct PayWallScreenView: View {
                     
                 }
             }
-            
         }
+        .background(
+            navTabView()
+        )
     }
 }
 
-#Preview {
-    PayWallScreenView()
+extension PayWallScreenView {
+    @ViewBuilder
+    func navTabView() -> some View {
+        NavigationLink(isActive: $showTabView) {
+            TabScreenView()
+                .navigationTitle("")
+                .navigationBarHidden(true)
+        } label: {
+            EmptyView()
+        }
+    }
 }

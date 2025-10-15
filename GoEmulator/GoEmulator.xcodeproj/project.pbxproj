@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		F4E175612E92DBD1005D0B3A /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */; };
 		F4E175622E92DBD1005D0B3A /* DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B532E9E5898005D0B3A /* GoogleMobileAds */; };
+		F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B562E9E58E6005D0B3A /* RevenueCat */; };
+		F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B592E9E5EE8005D0B3A /* FirebaseAnalytics */; };
+		F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5B2E9E5EE8005D0B3A /* FirebaseCore */; };
+		F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */; };
+		F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */; };
+		F4E17B8A2EA007C6005D0B3A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B892EA007C6005D0B3A /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +73,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */,
+				F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */,
 				F4E175612E92DBD1005D0B3A /* DeltaCore.framework in Frameworks */,
+				F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */,
+				F4E17B8A2EA007C6005D0B3A /* Shimmer in Frameworks */,
+				F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */,
+				F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */,
+				F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +141,13 @@
 			);
 			name = GoEmulator;
 			packageProductDependencies = (
+				F4E17B532E9E5898005D0B3A /* GoogleMobileAds */,
+				F4E17B562E9E58E6005D0B3A /* RevenueCat */,
+				F4E17B592E9E5EE8005D0B3A /* FirebaseAnalytics */,
+				F4E17B5B2E9E5EE8005D0B3A /* FirebaseCore */,
+				F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */,
+				F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */,
+				F4E17B892EA007C6005D0B3A /* Shimmer */,
 			);
 			productName = GoEmulator;
 			productReference = F48B71E92E901A6200EF95A7 /* GoEmulator.app */;
@@ -156,6 +177,12 @@
 			);
 			mainGroup = F48B71E02E901A6200EF95A7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F4E17B522E9E5898005D0B3A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				F4E17B552E9E58E6005D0B3A /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+				F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F4E17B882EA007C6005D0B3A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F48B71EA2E901A6200EF95A7 /* Products */;
 			projectDirPath = "";
@@ -334,9 +361,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoEmulator/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This will be used to deliver Personalized Ads";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -365,9 +394,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoEmulator/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This will be used to deliver Personalized Ads";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -406,6 +437,79 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4E17B522E9E5898005D0B3A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.0;
+			};
+		};
+		F4E17B552E9E58E6005D0B3A /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.43.0;
+			};
+		};
+		F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.4.0;
+			};
+		};
+		F4E17B882EA007C6005D0B3A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4E17B532E9E5898005D0B3A /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E17B522E9E5898005D0B3A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		F4E17B562E9E58E6005D0B3A /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E17B552E9E58E6005D0B3A /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		F4E17B592E9E5EE8005D0B3A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F4E17B5B2E9E5EE8005D0B3A /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		F4E17B892EA007C6005D0B3A /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E17B882EA007C6005D0B3A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F48B71E12E901A6200EF95A7 /* Project object */;
 }

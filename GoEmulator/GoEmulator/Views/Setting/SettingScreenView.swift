@@ -15,8 +15,12 @@ struct SettingScreenView: View {
         VStack {
             SettingTopTitle()
             
-            SettingPremiumBanner(onTapAction: {})
+            if !UserDefaultsManager.shared.isPurchased {
+                SettingPremiumBanner(onTapAction: {
+                    settingViewModel.showIAPView = true
+                })
                 .padding(.horizontal, 20)
+            }
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 12) {
@@ -62,6 +66,9 @@ struct SettingScreenView: View {
         .background(
             navAiPlayGuide()
         )
+        .fullScreenCover(isPresented: $settingViewModel.showIAPView) {
+            PayWallScreenView()
+        }
         .fullScreenCover(isPresented: $settingViewModel.showFullScreenOption) {
             PlayFullScreenBottomSheet(fullScreenOption: $settingViewModel.fullScreenOption)
                 .background(ClearBackgroundView())

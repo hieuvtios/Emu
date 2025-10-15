@@ -87,39 +87,39 @@ struct TabScreenView: View {
     @StateObject var tabViewModel = TabViewModel()
     
     var body: some View {
-        NavigationView {
-            TabView(selection: $tabViewModel.tabSelection) {
-                ForEach(AppScreen.allCases) { screen in
-                    screen.destination
-                        .tag(screen as AppScreen?)
-                }
+        TabView(selection: $tabViewModel.tabSelection) {
+            ForEach(AppScreen.allCases) { screen in
+                screen.destination
+                    .tag(screen as AppScreen?)
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .background(
-                AppBackGround()
-            )
-            .background(
-                navigationView()
-            )
-            .overlay(content: {
-                if tabViewModel.isExpanded {
-                    Color(.color000000).opacity(0.8)
-                        .onTapGesture {
-                            tabViewModel.isExpanded = false
-                        }
-                }
-            })
-            .overlay(alignment: .bottom) {
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .background(
+            AppBackGround()
+        )
+        .background(
+            navigationView()
+        )
+        .overlay(content: {
+            if tabViewModel.isExpanded {
+                Color(.color000000).opacity(0.8)
+                    .onTapGesture {
+                        tabViewModel.isExpanded = false
+                    }
+            }
+        })
+        .overlay(alignment: .bottom) {
+            VStack(spacing: 0) {
                 BottomTabView(tabViewModel: tabViewModel, addGameAction: { action in
                     tabViewModel.showDocumentPicker = true
                 })
+                
+                BannerAdWithShimmer()
             }
-            .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
-                DocumentPicker(documentTypes: [])
-            })
-            .navigationTitle("")
-            .navigationBarHidden(true)
         }
+        .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
+            DocumentPicker(documentTypes: [])
+        })
     }
 }
 

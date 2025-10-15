@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct GoEmulatorApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    let networkManager = NetworkManager()
+    
     var body: some Scene {
         WindowGroup {
-            TabScreenView()
+            NavigationView {
+                SplashScreenView()
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
+            }
+            .environmentObject(networkManager)
         }
     }
 }

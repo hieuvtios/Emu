@@ -9,6 +9,8 @@ import SwiftUI
 
 class SettingViewModel: ObservableObject {
     
+    @Published var showIAPView = false
+    
     @Published var fullScreenOption: FullScreenEnum = .connectWithController
     @Published var showFullScreenOption = false
     
