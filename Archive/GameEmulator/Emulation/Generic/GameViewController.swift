@@ -104,7 +104,7 @@ class ControllerManager {
         snesController = controller
         
         let layout = createLayout(for: .snes)
-        let view = SNESControllerView(controller: controller, layout: layout as! SNESControllerLayoutDefinition)
+        let view = SNESControllerView(controller: controller)
         snesHosting = setupHostingController(for: view, in: vc)
         currentType = .snes
     }
@@ -127,7 +127,6 @@ class ControllerManager {
             controller.addReceiver(emulatorCore, inputMapping: controller.defaultInputMapping)
         }
         
-        let layout = createLayout(for: .nes)
         let view = NESControllerView(controller: controller)
         nesHosting = setupHostingController(for: view, in: vc)
         currentType = .nes
