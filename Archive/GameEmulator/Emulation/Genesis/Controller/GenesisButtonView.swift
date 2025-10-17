@@ -13,17 +13,20 @@ struct GenesisButtonView: View {
     @Binding var isPressed: Bool
     let onPress: () -> Void
     let onRelease: () -> Void
+    let theme: GenesisControllerTheme
 
     @State private var touchLocation: CGPoint?
 
     var body: some View {
         ZStack {
-            // Button background
-            Circle()
-                .fill(buttonColor)
+            // Button background image
+            Image(buttonImageName)
+                .resizable()
+                .scaledToFit()
+                .opacity(isPressed ? 0.9 : 1.0)
                 .overlay(
                     Circle()
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
+                        .stroke(Color.white.opacity(0.2), lineWidth: 2)
                 )
                 .shadow(
                     color: isPressed ? .clear : Color.black.opacity(0.3),
@@ -32,11 +35,6 @@ struct GenesisButtonView: View {
                     y: isPressed ? 0 : 2
                 )
 
-            // Button label
-            Text(button.displayName)
-                .font(.system(size: 18, weight: .bold, design: .rounded))
-                .foregroundColor(.white)
-                .shadow(color: .black.opacity(0.5), radius: 1, x: 0, y: 1)
         }
         .frame(width: layout.size.width, height: layout.size.height)
         .position(layout.position)
@@ -62,24 +60,16 @@ struct GenesisButtonView: View {
         )
     }
 
-    private var buttonColor: Color {
+    private var buttonImageName: String {
         switch button {
-        case .a:
-            return isPressed ? Color.red.opacity(0.9) : Color.red.opacity(0.7)
-        case .b:
-            return isPressed ? Color.yellow.opacity(0.9) : Color.yellow.opacity(0.7)
-        case .c:
-            return isPressed ? Color.blue.opacity(0.9) : Color.blue.opacity(0.7)
-        case .x:
-            return isPressed ? Color.purple.opacity(0.9) : Color.purple.opacity(0.7)
-        case .y:
-            return isPressed ? Color.green.opacity(0.9) : Color.green.opacity(0.7)
-        case .z:
-            return isPressed ? Color.orange.opacity(0.9) : Color.orange.opacity(0.7)
-        case .start, .mode:
-            return isPressed ? Color.gray.opacity(0.8) : Color.gray.opacity(0.5)
-        default:
-            return isPressed ? Color.gray.opacity(0.9) : Color.gray.opacity(0.7)
+        case .a: return theme.buttonAImageName
+        case .b: return theme.buttonBImageName
+        case .start: return theme.startButtonImageName
+        case .c: return theme.buttonCImageName
+        case .x: return theme.buttonXImageName
+        case .y: return theme.buttonYImageName
+        case .z: return theme.buttonZImageName
+        default: return "btn-menu-gba"
         }
     }
 }

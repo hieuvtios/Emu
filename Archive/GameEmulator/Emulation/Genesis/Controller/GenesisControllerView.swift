@@ -10,6 +10,7 @@ import SwiftUI
 struct GenesisControllerView: View {
     let controller: GenesisGameController
     let layout: GenesisControllerLayoutDefinition
+    @StateObject private var themeManager = GenesisThemeManager()
 
     @State private var buttonStates: [GenesisButtonType: Bool] = [:]
     @State private var dpadButtons: Set<GenesisButtonType> = []
@@ -54,7 +55,7 @@ struct GenesisControllerView: View {
                         },
                         onRelease: {
                             controller.releaseButton(buttonLayout.button)
-                        }
+                        }, theme: themeManager.currentTheme
                     )
                     .zIndex(10)
                 }
@@ -77,24 +78,27 @@ struct GenesisControllerView: View {
                     )
                     .zIndex(10)
                 }
-
-                // 6-button mode buttons (X, Y, Z, Mode) - optional
-                ForEach(layout.sixButtonButtons, id: \.button.rawValue) { buttonLayout in
-                    GenesisButtonView(
-                        button: buttonLayout.button,
-                        layout: buttonLayout,
-                        isPressed: Binding(
-                            get: { buttonStates[buttonLayout.button] ?? false },
-                            set: { buttonStates[buttonLayout.button] = $0 }
-                        ),
-                        onPress: {
-                            controller.pressButton(buttonLayout.button)
-                        },
-                        onRelease: {
-                            controller.releaseButton(buttonLayout.button)
-                        }
-                    )
-                    .zIndex(10)
+                ZStack{
+                    Image("btn_genesis_blue")
+                        .aspectRatio(contentMode: .fit)
+                    // 6-button mode buttons (X, Y, Z, Mode) - optional
+                    ForEach(layout.sixButtonButtons, id: \.button.rawValue) { buttonLayout in
+                        GenesisButtonView(
+                            button: buttonLayout.button,
+                            layout: buttonLayout,
+                            isPressed: Binding(
+                                get: { buttonStates[buttonLayout.button] ?? false },
+                                set: { buttonStates[buttonLayout.button] = $0 }
+                            ),
+                            onPress: {
+                                controller.pressButton(buttonLayout.button)
+                            },
+                            onRelease: {
+                                controller.releaseButton(buttonLayout.button)
+                            }, theme: themeManager.currentTheme
+                        )
+                        .zIndex(10)
+                    }
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
@@ -202,6 +206,32 @@ struct GenesisControllerLayout {
                 ),
                 size: buttonSize,
                 button: .c
+            ),
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsCenter.x + buttonSpacing / 2,
+                    y: actionButtonsCenter.y + buttonSpacing / 3
+                ),
+                size: buttonSize,
+                button: .x
+            ),
+            // B (top-left)
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsCenter.x - buttonSpacing / 2,
+                    y: actionButtonsCenter.y - buttonSpacing / 3
+                ),
+                size: buttonSize,
+                button: .y
+            ),
+            // C (bottom-left)
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsCenter.x - buttonSpacing / 2,
+                    y: actionButtonsCenter.y + buttonSpacing / 3
+                ),
+                size: buttonSize,
+                button: .c
             )
         ]
 
@@ -257,8 +287,10 @@ struct GenesisControllerLayout {
             // A (bottom-right)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x + buttonSpacing / 2,
-                    y: actionButtonsCenter.y + buttonSpacing / 3
+              
+                    
+                    x: actionButtonsCenter.x - buttonSpacing / 2,
+                    y: actionButtonsCenter.y + buttonSpacing / 3 + 60
                 ),
                 size: buttonSize,
                 button: .a
@@ -266,8 +298,8 @@ struct GenesisControllerLayout {
             // B (top-left)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x - buttonSpacing / 2,
-                    y: actionButtonsCenter.y - buttonSpacing / 3
+                    x: actionButtonsCenter.x + buttonSpacing / 2 - 10,
+                    y: actionButtonsCenter.y + buttonSpacing / 3
                 ),
                 size: buttonSize,
                 button: .b
@@ -275,39 +307,39 @@ struct GenesisControllerLayout {
             // C (bottom-left)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x - buttonSpacing / 2,
-                    y: actionButtonsCenter.y + buttonSpacing / 3
+                    x: actionButtonsCenter.x - buttonSpacing / 2 + 100,
+                    y: actionButtonsCenter.y + buttonSpacing / 3 - 50
                 ),
                 size: buttonSize,
                 button: .c
             ),
             // X
-            ButtonLayout(
-                position: CGPoint(
-                    x: actionButtonsCenter.x + buttonSpacing / 2,
-                    y: actionButtonsCenter.y + buttonSpacing / 3 + 200
-                ),
-                size: buttonSize,
-                button: .x
-            ),
-            // Y
-            ButtonLayout(
-                position: CGPoint(
-                    x: actionButtonsCenter.x - buttonSpacing / 2,
-                    y: actionButtonsCenter.y - buttonSpacing / 3 + 100
-                ),
-                size: buttonSize,
-                button: .y
-            ),
-            // Z
-            ButtonLayout(
-                position: CGPoint(
-                    x: actionButtonsCenter.x - buttonSpacing / 2 + 100,
-                    y: actionButtonsCenter.y + buttonSpacing / 3 + 100
-                ),
-                size: buttonSize,
-                button: .z
-            )
+//            ButtonLayout(
+//                position: CGPoint(
+//                    x: actionButtonsCenter.x + buttonSpacing / 2,
+//                    y: actionButtonsCenter.y + buttonSpacing / 3 + 200
+//                ),
+//                size: buttonSize,
+//                button: .x
+//            ),
+//            // Y
+//            ButtonLayout(
+//                position: CGPoint(
+//                    x: actionButtonsCenter.x - buttonSpacing / 2,
+//                    y: actionButtonsCenter.y - buttonSpacing / 3 + 100
+//                ),
+//                size: buttonSize,
+//                button: .y
+//            ),
+//            // Z
+//            ButtonLayout(
+//                position: CGPoint(
+//                    x: actionButtonsCenter.x - buttonSpacing / 2 + 100,
+//                    y: actionButtonsCenter.y + buttonSpacing / 3 + 100
+//                ),
+//                size: buttonSize,
+//                button: .z
+//            )
         ]
 
         // Start button
