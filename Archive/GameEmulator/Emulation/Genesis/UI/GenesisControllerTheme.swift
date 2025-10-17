@@ -29,7 +29,7 @@ struct GenesisControllerTheme: Codable, Identifiable, Equatable {
     static let defaultTheme = GenesisControllerTheme(
         id: "default",
         name: "Theme 1",
-        dpadImageName: "btn-dpad",
+        dpadImageName: "dpad_genesis",
         buttonAImageName: "button-a-gba",
         buttonBImageName: "button-b-gba",
         buttonXImageName: "btn_genesis_x",
@@ -46,7 +46,7 @@ struct GenesisControllerTheme: Codable, Identifiable, Equatable {
     static let theme2 = GenesisControllerTheme(
         id: "theme2",
         name: "Theme 2",
-        dpadImageName: "btn-dpad-2",
+        dpadImageName: "dpad_genesis-2",
         buttonAImageName: "button-a-gba",
         buttonBImageName: "button-b-gba",
         buttonXImageName: "btn_genesis_x",
@@ -63,7 +63,7 @@ struct GenesisControllerTheme: Codable, Identifiable, Equatable {
     static let theme3 = GenesisControllerTheme(
         id: "theme3",
         name: "Theme 3",
-        dpadImageName: "btn-dpad-3",
+        dpadImageName: "dpad_genesis-3",
         buttonAImageName: "button-a-gba",
         buttonBImageName: "button-b-gba",
         buttonXImageName: "btn_genesis_x",
@@ -80,7 +80,7 @@ struct GenesisControllerTheme: Codable, Identifiable, Equatable {
     static let theme4 = GenesisControllerTheme(
         id: "theme4",
         name: "Theme 4",
-        dpadImageName: "btn-dpad-4",
+        dpadImageName: "dpad_genesis-4",
         buttonAImageName: "button-a-gba",
         buttonBImageName: "button-b-gba",
         buttonXImageName: "btn_genesis_x",
@@ -97,7 +97,7 @@ struct GenesisControllerTheme: Codable, Identifiable, Equatable {
     static let theme5 = GenesisControllerTheme(
         id: "theme5",
         name: "Theme 5",
-        dpadImageName: "btn-dpad-5",
+        dpadImageName: "dpad_genesis-5",
         buttonAImageName: "button-a-gba",
         buttonBImageName: "button-b-gba",
         buttonXImageName: "btn_genesis_x",

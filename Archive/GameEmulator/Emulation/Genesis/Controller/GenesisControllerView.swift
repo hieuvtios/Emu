@@ -14,13 +14,26 @@ struct GenesisControllerView: View {
 
     @State private var buttonStates: [GenesisButtonType: Bool] = [:]
     @State private var dpadButtons: Set<GenesisButtonType> = []
-
+    @State private var showThemePicker:Bool = false
     var body: some View {
         GeometryReader { geometry in
-            ZStack(alignment: .topLeading) {
+            ZStack(alignment: .bottom) {
                 // Semi-transparent background (non-interactive)
-                Color.black.opacity(0.1)
-                    .edgesIgnoringSafeArea(.all)
+                if geometry.size.width > geometry.size.height {
+                    Image(themeManager.currentTheme.backgroundPortraitImageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
+                } else {
+                    ZStack(alignment:.top){
+                        Image(themeManager.currentTheme.backgroundPortraitImageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                            .clipped()
+
+                    }
+                }
 
                 // D-Pad
                 GenesisDPadView(
@@ -37,28 +50,50 @@ struct GenesisControllerView: View {
                     },
                     onRelease: {
                         controller.releaseAllDPadButtons()
-                    }
+                    }, theme: themeManager.currentTheme
                 )
                 .zIndex(10)
+                // Action buttons (A, B, C) with shared blue background
+                ZStack {
+                    // Shared blue background behind A, B, C
+                    Image("btn_genesis_blue")
+                        .position(
+                            CGPoint(
+                                x: layout.actionButtons.map { $0.position.x }.reduce(0, +) / CGFloat(layout.actionButtons.count),
+                                y: layout.actionButtons.map { $0.position.y }.reduce(0, +) / CGFloat(layout.actionButtons.count) + 65
+                            )
+                        )
+                        .zIndex(0)
+                    Image("btn_genesis_purple")
+                        .position(
+                            CGPoint(
+                                x: layout.actionButtons.map { $0.position.x }.reduce(0, +) / CGFloat(layout.actionButtons.count),
+                                y: layout.actionButtons.map { $0.position.y }.reduce(0, +) / CGFloat(layout.actionButtons.count) - 55
+                            )
+                        )
+                        .zIndex(0)
 
-                // Action buttons (A, B, C)
-                ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
-                    GenesisButtonView(
-                        button: buttonLayout.button,
-                        layout: buttonLayout,
-                        isPressed: Binding(
-                            get: { buttonStates[buttonLayout.button] ?? false },
-                            set: { buttonStates[buttonLayout.button] = $0 }
-                        ),
-                        onPress: {
-                            controller.pressButton(buttonLayout.button)
-                        },
-                        onRelease: {
-                            controller.releaseButton(buttonLayout.button)
-                        }, theme: themeManager.currentTheme
-                    )
-                    .zIndex(10)
+                    // Buttons A, B, C
+                    ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
+                        GenesisButtonView(
+                            button: buttonLayout.button,
+                            layout: buttonLayout,
+                            isPressed: Binding(
+                                get: { buttonStates[buttonLayout.button] ?? false },
+                                set: { buttonStates[buttonLayout.button] = $0 }
+                            ),
+                            onPress: {
+                                controller.pressButton(buttonLayout.button)
+                            },
+                            onRelease: {
+                                controller.releaseButton(buttonLayout.button)
+                            },
+                            theme: themeManager.currentTheme
+                        )
+                        .zIndex(10)
+                    }
                 }
+                
 
                 // Center buttons (Start)
                 ForEach(layout.centerButtons, id: \.button.rawValue) { buttonLayout in
@@ -79,8 +114,7 @@ struct GenesisControllerView: View {
                     .zIndex(10)
                 }
                 ZStack{
-                    Image("btn_genesis_blue")
-                        .aspectRatio(contentMode: .fit)
+                 
                     // 6-button mode buttons (X, Y, Z, Mode) - optional
                     ForEach(layout.sixButtonButtons, id: \.button.rawValue) { buttonLayout in
                         GenesisButtonView(
@@ -100,9 +134,28 @@ struct GenesisControllerView: View {
                         .zIndex(10)
                     }
                 }
+                
+#if DEBUG
+// Theme Picker Button (Debug Only)
+Button(action: {
+    showThemePicker = true
+}) {
+    Image(systemName: "paintbrush.fill")
+        .font(.system(size: 20))
+        .foregroundColor(.white)
+        .padding(12)
+        .background(Circle().fill(Color.blue.opacity(0.8)))
+        .shadow(radius: 4)
+}
+.position(x: geometry.size.width - 40, y: 40)
+.zIndex(1)
+#endif
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
             .allowsHitTesting(true)
+            .sheet(isPresented: $showThemePicker) {
+                GenesisThemePickerView(themeManager: themeManager)
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .allowsHitTesting(true)
@@ -272,7 +325,7 @@ struct GenesisControllerLayout {
         // D-Pad (lower left)
         let dpadCenter = CGPoint(
             x: padding + dpadRadius,
-            y: controlsY
+            y: controlsY + 50
         )
 
         // Action buttons (lower right)
@@ -289,17 +342,18 @@ struct GenesisControllerLayout {
                 position: CGPoint(
               
                     
-                    x: actionButtonsCenter.x - buttonSpacing / 2,
-                    y: actionButtonsCenter.y + buttonSpacing / 3 + 60
+                    x: actionButtonsCenter.x - buttonSpacing / 2 - 10,
+                    y: actionButtonsCenter.y + buttonSpacing / 3 + 25 + 99
                 ),
                 size: buttonSize,
                 button: .a
-            ),
+            )
+            ,
             // B (top-left)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x + buttonSpacing / 2 - 10,
-                    y: actionButtonsCenter.y + buttonSpacing / 3
+                    x: actionButtonsCenter.x + buttonSpacing / 2 - 15,
+                    y: actionButtonsCenter.y + buttonSpacing / 3 - 5 + 100
                 ),
                 size: buttonSize,
                 button: .b
@@ -308,38 +362,39 @@ struct GenesisControllerLayout {
             ButtonLayout(
                 position: CGPoint(
                     x: actionButtonsCenter.x - buttonSpacing / 2 + 100,
-                    y: actionButtonsCenter.y + buttonSpacing / 3 - 50
+                    y: actionButtonsCenter.y + buttonSpacing / 3 - 30 + 100
                 ),
                 size: buttonSize,
                 button: .c
             ),
-            // X
-//            ButtonLayout(
-//                position: CGPoint(
-//                    x: actionButtonsCenter.x + buttonSpacing / 2,
-//                    y: actionButtonsCenter.y + buttonSpacing / 3 + 200
-//                ),
-//                size: buttonSize,
-//                button: .x
-//            ),
-//            // Y
-//            ButtonLayout(
-//                position: CGPoint(
-//                    x: actionButtonsCenter.x - buttonSpacing / 2,
-//                    y: actionButtonsCenter.y - buttonSpacing / 3 + 100
-//                ),
-//                size: buttonSize,
-//                button: .y
-//            ),
-//            // Z
-//            ButtonLayout(
-//                position: CGPoint(
-//                    x: actionButtonsCenter.x - buttonSpacing / 2 + 100,
-//                    y: actionButtonsCenter.y + buttonSpacing / 3 + 100
-//                ),
-//                size: buttonSize,
-//                button: .z
-//            )
+            
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsCenter.x - buttonSpacing / 2 - 10,
+                    y: actionButtonsCenter.y + buttonSpacing / 3 + 5
+                ),
+                size: buttonSize,
+                button: .x
+            )
+            ,
+            // Y (top-left)
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsCenter.x + buttonSpacing / 2 - 15,
+                    y: actionButtonsCenter.y + buttonSpacing / 3 - 27
+                ),
+                size: buttonSize,
+                button: .y
+            ),
+            // Z (bottom-left)
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsCenter.x - buttonSpacing / 2 + 100,
+                    y: actionButtonsCenter.y + buttonSpacing / 3 - 45
+                ),
+                size: buttonSize,
+                button: .z
+            )
         ]
 
         // Start button
@@ -347,7 +402,7 @@ struct GenesisControllerLayout {
             ButtonLayout(
                 position: CGPoint(
                     x: screenSize.width / 2,
-                    y: screenSize.height - 90
+                    y: screenSize.height / 2 + 50
                 ),
                 size: smallButtonSize,
                 button: .start

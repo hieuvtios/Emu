@@ -32,21 +32,21 @@ struct NESButtonView: View {
                 .resizable()
                 .scaledToFit()
                 .opacity(isPressed ? 0.9 : 1.0)
-                .overlay(
-                    Circle()
-                        .stroke(Color.white.opacity(0.2), lineWidth: 2)
-                )
-                .shadow(
-                    color: isPressed ? .clear : Color.black.opacity(0.3),
-                    radius: isPressed ? 0 : 4,
-                    x: 0,
-                    y: isPressed ? 0 : 2
-                )
+//                .overlay(
+//                    Circle()
+//                        .stroke(Color.white.opacity(0.2), lineWidth: 2)
+//                )
+//                .shadow(
+//                    color: isPressed ? .clear : Color.black.opacity(0.3),
+//                    radius: isPressed ? 0 : 4,
+//                    x: 0,
+//                    y: isPressed ? 0 : 2
+//                )
         }
         .frame(width: layout.size.width, height: layout.size.height)
         .position(layout.position)
-        .scaleEffect(isPressed ? 0.95 : 1.0)
-        .animation(.easeInOut(duration: 0.1), value: isPressed)
+//        .scaleEffect(isPressed ? 0.95 : 1.0)
+//        .animation(.easeInOut(duration: 0.1), value: isPressed)
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { value in

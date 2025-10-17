@@ -32,20 +32,8 @@ struct SNESControllerView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
                             .clipped()
-//                        HStack(alignment:.top) {
-//                            Image(.btnLeft)
-//                                .aspectRatio(contentMode: .fit)
-//                                .offset(CGSizeMake(0, -7))
-//                            Spacer()
-//                            Image(.btnRight)
-//                                .aspectRatio(contentMode: .fit)
-//                                .offset(CGSizeMake(0, -7))
-//                            
-//                        }
-//                        .frame(maxWidth: .infinity, alignment: .top)
+
                     }
-                    
-                    
                 }
                    
                 

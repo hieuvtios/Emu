@@ -37,7 +37,7 @@ struct SNESButtonView: View {
         }
         .frame(width: layout.size.width, height: layout.size.height)
         .position(layout.position)
-        .scaleEffect(isPressed ? 0.95 : 1.0)
+//        .scaleEffect(isPressed ? 0.95 : 1.0)
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { value in

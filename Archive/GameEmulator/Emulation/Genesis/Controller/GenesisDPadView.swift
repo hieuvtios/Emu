@@ -12,35 +12,22 @@ struct GenesisDPadView: View {
     @Binding var pressedButtons: Set<GenesisButtonType>
     let onDirectionChange: ([GenesisButtonType]) -> Void
     let onRelease: () -> Void
+    let theme: GenesisControllerTheme
 
     @State private var touchLocation: CGPoint?
 
-    init(layout: GenesisControllerLayout.DPadLayout, pressedButtons: Binding<Set<GenesisButtonType>>, onDirectionChange: @escaping ([GenesisButtonType]) -> Void, onRelease: @escaping () -> Void) {
+    init(layout: GenesisControllerLayout.DPadLayout, pressedButtons: Binding<Set<GenesisButtonType>>, onDirectionChange: @escaping ([GenesisButtonType]) -> Void, onRelease: @escaping () -> Void,theme: GenesisControllerTheme) {
         self.layout = layout
         self._pressedButtons = pressedButtons
         self.onDirectionChange = onDirectionChange
         self.onRelease = onRelease
+        self.theme = theme
     }
 
     var body: some View {
         ZStack {
             // Background circle
-            Circle()
-                .fill(Color.gray.opacity(0.4))
-                .frame(width: layout.radius * 2, height: layout.radius * 2)
-
-            // D-Pad shape
-            dpadShape
-                .fill(Color.gray.opacity(0.6))
-                .overlay(
-                    dpadShape
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                )
-                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
-
-            // Direction indicators
-            directionIndicators
-
+            Image(theme.dpadImageName)
             // Touch indicator
             if let location = touchLocation {
                 Circle()
@@ -49,6 +36,7 @@ struct GenesisDPadView: View {
                     .position(location)
             }
         }
+        .frame(width: layout.radius * 2, height: layout.radius * 2)
         .frame(width: layout.radius * 2, height: layout.radius * 2)
         .position(layout.center)
         .gesture(
@@ -62,37 +50,7 @@ struct GenesisDPadView: View {
         )
     }
 
-    private var dpadShape: some Shape {
-        GPadShape()
-    }
 
-    private var directionIndicators: some View {
-        ZStack {
-            // Up arrow
-            Image(systemName: "arrowtriangle.up.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.up) ? .white : .white.opacity(0.5))
-                .offset(y: -layout.radius * 0.5)
-
-            // Down arrow
-            Image(systemName: "arrowtriangle.down.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.down) ? .white : .white.opacity(0.5))
-                .offset(y: layout.radius * 0.5)
-
-            // Left arrow
-            Image(systemName: "arrowtriangle.left.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.left) ? .white : .white.opacity(0.5))
-                .offset(x: -layout.radius * 0.5)
-
-            // Right arrow
-            Image(systemName: "arrowtriangle.right.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.right) ? .white : .white.opacity(0.5))
-                .offset(x: layout.radius * 0.5)
-        }
-    }
 
     private func handleTouch(at location: CGPoint) {
         touchLocation = location
@@ -171,38 +129,4 @@ struct GenesisDPadView: View {
     }
 }
 
-// D-Pad shape definition
-struct GPadShape: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
 
-        let width = rect.width
-        let height = rect.height
-        let armWidth = width * 0.35
-        let armHeight = height * 0.35
-
-        // Horizontal bar
-        path.addRoundedRect(
-            in: CGRect(
-                x: 0,
-                y: (height - armHeight) / 2,
-                width: width,
-                height: armHeight
-            ),
-            cornerSize: CGSize(width: 5, height: 5)
-        )
-
-        // Vertical bar
-        path.addRoundedRect(
-            in: CGRect(
-                x: (width - armWidth) / 2,
-                y: 0,
-                width: armWidth,
-                height: height
-            ),
-            cornerSize: CGSize(width: 5, height: 5)
-        )
-
-        return path
-    }
-}

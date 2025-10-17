@@ -598,8 +598,12 @@ class GameViewController: DeltaCore.GameViewController {
                 if let themeData = UserDefaults.standard.data(forKey: "SNESControllerTheme"),
                    let theme = try? JSONDecoder().decode(SNESControllerTheme.self, from: themeData) {
                     imageName = theme.menuButtonImageName
+            }
+            case .genesis:
+                if let themeData = UserDefaults.standard.data(forKey: "GenesisControllerTheme"),
+                   let theme = try? JSONDecoder().decode(GenesisControllerTheme.self, from: themeData) {
+                    imageName = theme.menuButtonImageName
                 }
-
             default:
                 break
             }

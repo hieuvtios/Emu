@@ -556,6 +556,7 @@
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu/bapu",
 				);
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = OK;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app need photo permissions to save screenshots";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,6 +597,7 @@
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu/bapu",
 				);
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = OK;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app need photo permissions to save screenshots";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
