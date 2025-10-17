@@ -10,7 +10,7 @@ extension Notification.Name {
 }
 
 class SNESThemeManager: ObservableObject {
-    private static let themeStorageKey = "NESControllerTheme"
+    private static let themeStorageKey = "SNESControllerTheme"
 
     @Published var currentTheme: SNESControllerTheme {
         didSet {

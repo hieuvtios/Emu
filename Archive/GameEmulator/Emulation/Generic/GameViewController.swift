@@ -368,9 +368,10 @@ class GameViewController: DeltaCore.GameViewController {
         nc.addObserver(self, selector: #selector(sceneDidDisconnect), name: UIScene.didDisconnectNotification, object: nil)
 
         #if DEBUG
-        // Observe GBC theme changes to update menu button
+        // Observe theme changes to update menu button
         if #available(iOS 15.0, *) {
             nc.addObserver(self, selector: #selector(gbcThemeDidChange), name: NSNotification.Name("GBCThemeDidChangeNotification"), object: nil)
+            nc.addObserver(self, selector: #selector(snesThemeDidChange), name: NSNotification.Name("SNESThemeDidChangeNotification"), object: nil)
         }
         #endif
     }
@@ -380,8 +381,8 @@ class GameViewController: DeltaCore.GameViewController {
         super.viewDidLoad()
         view.layoutIfNeeded()
         setupSustainButtonsView()
-        setupMenuButton()
-        setupGreenImage()
+//        setupMenuButton()
+        setupMenuButtonSNES()
         updateControllers()
     }
     
@@ -535,13 +536,41 @@ class GameViewController: DeltaCore.GameViewController {
             menuButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    private func setupMenuButtonSNES() {
+        menuButton = UIButton(type: .custom)
+
+        // Set initial button image
+        updateMenuButtonImage()
+
+        // Button appearance
+        menuButton.backgroundColor = .clear
+        menuButton.translatesAutoresizingMaskIntoConstraints = false
+
+        // Touch handler
+        menuButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
+
+        // Add to view
+        view.addSubview(menuButton)
+        view.bringSubviewToFront(menuButton)
+
+        // Layout constraints
+        NSLayoutConstraint.activate([
+//            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
+            menuButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+
+//            menuButton.widthAnchor.constraint(equalToConstant: 60),
+//            menuButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
 
     private func updateMenuButtonImage() {
         guard let menuButton = menuButton else { return }
-
-        var imageName = "btn-menu-gba"
+        var imageName = "btn_snes_menu" // Default fallback
 
         if let game = game as? Game {
+            print(game.type)
             switch game.type {
             case .nes:
                 if let themeData = UserDefaults.standard.data(forKey: "NESControllerTheme"),
@@ -550,16 +579,27 @@ class GameViewController: DeltaCore.GameViewController {
                     print("image name \(imageName)")
 
                 }
+                
             case .gbc:
                 if let themeData = UserDefaults.standard.data(forKey: "GBCControllerTheme"),
                    let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
                     imageName = theme.menuButtonImageName
                 }
+                setupGreenImage()
+
             case .gba:
                 if let themeData = UserDefaults.standard.data(forKey: "GBCControllerTheme"),
                    let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
                     imageName = theme.menuButtonImageName
                 }
+                setupGreenImage()
+
+            case .snes:
+                if let themeData = UserDefaults.standard.data(forKey: "SNESControllerTheme"),
+                   let theme = try? JSONDecoder().decode(SNESControllerTheme.self, from: themeData) {
+                    imageName = theme.menuButtonImageName
+                }
+
             default:
                 break
             }
@@ -646,6 +686,11 @@ class GameViewController: DeltaCore.GameViewController {
     #if DEBUG
     @objc private func gbcThemeDidChange(with notification: Notification) {
         // Update menu button image when theme changes
+        updateMenuButtonImage()
+    }
+
+    @objc private func snesThemeDidChange(with notification: Notification) {
+        // Update menu button image when SNES theme changes
         updateMenuButtonImage()
     }
     #endif
