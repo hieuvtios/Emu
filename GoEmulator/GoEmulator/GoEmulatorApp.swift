@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct GoEmulatorApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    let networkManager = NetworkManager()
+    @StateObject var networkManager = NetworkManager()
+    @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {
         WindowGroup {
@@ -20,6 +21,25 @@ struct GoEmulatorApp: App {
                     .navigationBarHidden(true)
             }
             .environmentObject(networkManager)
+        }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                print("Scene became active")
+                Task { @MainActor in
+                    // Show ad nếu có sẵn
+                    OpensAdManager.shared.present()
+                    
+                    // Load ad mới cho lần sau
+                    await OpensAdManager.shared.loadAd(place: "app_foreground")
+                }
+            case .background:
+                print("Scene moved to background")
+            case .inactive:
+                print("Scene inactive")
+            @unknown default:
+                break
+            }
         }
     }
 }

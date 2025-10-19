@@ -20,7 +20,7 @@ struct BottomTabView: View {
         }
         .padding(.horizontal, 6)
         .background(
-            VisualEffect(style: .systemUltraThinMaterialDark)
+            VisualEffectRepresentable(style: .systemUltraThinMaterialDark)
         )
         .cornerRadius(16)
         .overlay {

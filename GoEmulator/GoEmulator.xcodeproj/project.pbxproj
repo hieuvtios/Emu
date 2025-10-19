@@ -15,7 +15,6 @@
 		F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5B2E9E5EE8005D0B3A /* FirebaseCore */; };
 		F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */; };
 		F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */; };
-		F4E17B8A2EA007C6005D0B3A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B892EA007C6005D0B3A /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +76,6 @@
 				F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */,
 				F4E175612E92DBD1005D0B3A /* DeltaCore.framework in Frameworks */,
 				F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */,
-				F4E17B8A2EA007C6005D0B3A /* Shimmer in Frameworks */,
 				F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */,
 				F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */,
 				F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */,
@@ -147,7 +145,6 @@
 				F4E17B5B2E9E5EE8005D0B3A /* FirebaseCore */,
 				F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */,
 				F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */,
-				F4E17B892EA007C6005D0B3A /* Shimmer */,
 			);
 			productName = GoEmulator;
 			productReference = F48B71E92E901A6200EF95A7 /* GoEmulator.app */;
@@ -181,7 +178,6 @@
 				F4E17B522E9E5898005D0B3A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				F4E17B552E9E58E6005D0B3A /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 				F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				F4E17B882EA007C6005D0B3A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F48B71EA2E901A6200EF95A7 /* Products */;
@@ -463,14 +459,6 @@
 				minimumVersion = 12.4.0;
 			};
 		};
-		F4E17B882EA007C6005D0B3A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -503,11 +491,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
-		};
-		F4E17B892EA007C6005D0B3A /* Shimmer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4E17B882EA007C6005D0B3A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
-			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BottomTabElement: View {
+    @StateObject private var interstitial = InterstitialAdManager(adUnitID: GoogleAdMobUnitId.interstitial, remote: .is_show_inter_ads)
+    
     @ObservedObject var tabViewModel: TabViewModel
     let tab: AppScreen
     
@@ -16,7 +18,9 @@ struct BottomTabElement: View {
             if tab == .guide {
                 tabViewModel.showGuideView = true
             } else {
-                tabViewModel.tabSelection = tab
+                interstitial.loadAndShow(placement: "") { adResult in
+                    tabViewModel.tabSelection = tab
+                }
             }
         } label: {
             VStack {

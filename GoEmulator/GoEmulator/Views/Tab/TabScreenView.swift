@@ -109,12 +109,12 @@ struct TabScreenView: View {
             }
         })
         .overlay(alignment: .bottom) {
-            VStack(spacing: 0) {
+            VStack {
                 BottomTabView(tabViewModel: tabViewModel, addGameAction: { action in
                     tabViewModel.showDocumentPicker = true
                 })
                 
-                BannerAdWithShimmer()
+                BannerAdSwiftUIView(adUnitID: GoogleAdMobUnitId.banner, remote: .is_show_ads_banner)
             }
         }
         .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
