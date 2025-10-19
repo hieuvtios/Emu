@@ -46,7 +46,7 @@ class GameViewModel: ObservableObject {
 // MARK: - Controller Manager
 class ControllerManager {
     enum ControllerType {
-        case snes, nes, gbc, genesis, gba, ds, standard
+        case snes, nes, gbc, genesis, gba, ds, standard, n64
     }
     
     private weak var viewController: GameViewController?
@@ -59,7 +59,8 @@ class ControllerManager {
     private var genesisController: GenesisGameController?
     private var gbaController: GBADirectController?
     private var dsController: DSGameController?
-    
+    private var n64Controller: N64GameController?
+
     // Hosting Controllers
     private var snesHosting: UIHostingController<SNESControllerView>?
     private var nesHosting: UIHostingController<NESControllerView>?
@@ -67,7 +68,8 @@ class ControllerManager {
     private var genesisHosting: UIHostingController<GenesisControllerView>?
     private var gbaHosting: UIHostingController<GBAControllerView>?
     private var dsHosting: UIHostingController<DSControllerView>?
-    
+    private var n64Hosting: UIHostingController<N64ControllerView>?
+
     init(viewController: GameViewController) {
         self.viewController = viewController
     }
@@ -82,6 +84,7 @@ class ControllerManager {
         case .genesis: setupGenesisController()
         case .gba: setupGBAController()
         case .ds: setupDSController()
+        case .n64: setupN64Controller()
         default: setupStandardController()
         }
     }
@@ -93,7 +96,33 @@ class ControllerManager {
         teardownGenesisController()
         teardownGBAController()
         teardownDSController()
+        teardownN64Controller()
     }
+    
+    // MARK: - N64
+    private func setupN64Controller() {
+        guard let vc = viewController else { return }
+
+        vc.controllerView.isHidden = true
+        let controller = N64GameController(name: "N64 Custom Controller", systemPrefix: "n64", playerIndex: 0)
+        n64Controller = controller
+
+        if let emulatorCore = vc.emulatorCore {
+            controller.addReceiver(emulatorCore, inputMapping: controller.defaultInputMapping)
+        }
+
+        let layout = createLayout(for: .n64)
+        let view = N64ControllerView(controller: controller, layout: layout as! N64ControllerLayoutDefinition)
+        n64Hosting = setupHostingController(for: view, in: vc)
+        currentType = .n64
+    }
+
+    private func teardownN64Controller() {
+        teardownHosting(&n64Hosting)
+        n64Controller?.reset()
+        n64Controller = nil
+    }
+    
     
     // MARK: - SNES
     private func setupSNESController() {
@@ -263,6 +292,10 @@ class ControllerManager {
         case .ds:
             return isLandscape ? DSControllerLayout.landscapeLayout(screenSize: screenSize)
                                : DSControllerLayout.portraitLayout(screenSize: screenSize)
+        case .n64:
+            return isLandscape ? N64ControllerLayout.landscapeLayout(screenSize: screenSize)
+                               : N64ControllerLayout.portraitLayout(screenSize: screenSize)
+
         default:
             fatalError("No layout for standard controller")
         }
@@ -300,10 +333,15 @@ class ControllerManager {
     }
     
     func resetSustainedInputs() {
-        // Direct controllers don't support sustained inputs
-        guard currentType == .nes || currentType == .standard else { return }
-        
+        // Controllers using GenericGameController support sustained inputs
+        // Direct controllers (SNES, GBC, GBA, DS) don't support sustained inputs
+        guard currentType == .nes || currentType == .n64 || currentType == .genesis || currentType == .standard else { return }
+
         if let controller = nesController {
+            controller.sustainedInputs.keys.forEach { controller.unsustain($0) }
+        } else if let controller = n64Controller {
+            controller.sustainedInputs.keys.forEach { controller.unsustain($0) }
+        } else if let controller = genesisController {
             controller.sustainedInputs.keys.forEach { controller.unsustain($0) }
         } else if let vc = viewController {
             vc.controllerView.sustainedInputs.keys.forEach { vc.controllerView.unsustain($0) }
@@ -372,6 +410,7 @@ class GameViewController: DeltaCore.GameViewController {
         if #available(iOS 15.0, *) {
             nc.addObserver(self, selector: #selector(gbcThemeDidChange), name: NSNotification.Name("GBCThemeDidChangeNotification"), object: nil)
             nc.addObserver(self, selector: #selector(snesThemeDidChange), name: NSNotification.Name("SNESThemeDidChangeNotification"), object: nil)
+            nc.addObserver(self, selector: #selector(n64ThemeDidChange), name: NSNotification.Name("N64ThemeDidChangeNotification"), object: nil)
         }
         #endif
     }
@@ -604,6 +643,12 @@ class GameViewController: DeltaCore.GameViewController {
                    let theme = try? JSONDecoder().decode(GenesisControllerTheme.self, from: themeData) {
                     imageName = theme.menuButtonImageName
                 }
+                
+            case .n64:
+                if let themeData = UserDefaults.standard.data(forKey: "N64ControllerTheme"),
+                   let theme = try? JSONDecoder().decode(N64ControllerTheme.self, from: themeData) {
+                    imageName = theme.menuButtonImageName
+                }
             default:
                 break
             }
@@ -695,6 +740,11 @@ class GameViewController: DeltaCore.GameViewController {
 
     @objc private func snesThemeDidChange(with notification: Notification) {
         // Update menu button image when SNES theme changes
+        updateMenuButtonImage()
+    }
+
+    @objc private func n64ThemeDidChange(with notification: Notification) {
+        // Update menu button image when N64 theme changes
         updateMenuButtonImage()
     }
     #endif

@@ -26,4 +26,6 @@
 // Direct bridge to MelonDS core for DS input
 #import "DSInputBridge.h"
 
+// N64 uses N64DeltaCore bridge (no direct bridge needed)
+
 #endif /* GameEmulator_Bridging_Header_h */

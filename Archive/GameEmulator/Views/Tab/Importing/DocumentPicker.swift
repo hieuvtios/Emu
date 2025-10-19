@@ -21,6 +21,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
         // Supported game file extensions from System.swift
         if documentTypes.isEmpty {
             self.documentTypes = [
+                "n64","z64" ,// N64
                 "nes",                          // NES
                 "smc", "sfc", "fig",           // SNES
                 "gbc", "gb",                   // Game Boy Color
