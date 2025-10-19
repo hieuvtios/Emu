@@ -87,7 +87,13 @@ struct OnboardingScreenView: View {
         if currentPageIndex < OnboardingPageEnum.allCases.count - 1 {
             currentPageIndex += 1
         } else {
-            showRateView = true
+            let isShowOnboardingRating = RemoteConfigManager.shared.bool(forKey: .is_show_onboarding_rating)
+            
+            if isShowOnboardingRating {
+                showRateView = true
+            } else {
+                showIAPScreenView = true
+            }
         }
     }
     

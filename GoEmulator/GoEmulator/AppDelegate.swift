@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleMobileAds
+import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
@@ -15,7 +16,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     ) -> Bool {
         // Khởi tạo SDK, config analytics, đăng ký services...
         print("App did finish launching")
-        MobileAds.shared.start { status in }
+        FirebaseApp.configure()
+        RemoteConfigManager.shared.fetchCloudValues()
         return true
     }
     

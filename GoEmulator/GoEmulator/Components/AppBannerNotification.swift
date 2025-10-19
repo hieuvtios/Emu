@@ -12,12 +12,13 @@ enum BannerEnum {
     case error
     case warning
     case info
+    case notSupportGame
     
     var icon: String {
         switch self {
         case .success:
             return "banner_ic_feedback"
-        case .error:
+        case .error, .notSupportGame:
             return "banner_ic_error"
         case .warning:
             return "banner_ic_warning"
@@ -30,7 +31,7 @@ enum BannerEnum {
         switch self {
         case .success:
             return "Thank for you feedback"
-        case .error:
+        case .error, .notSupportGame:
             return "Error"
         case .warning:
             return "Warning"
@@ -49,6 +50,8 @@ enum BannerEnum {
             return "Order Placed Successfully. You can check order delivery status."
         case .info:
             return "Order Placed Successfully. You can check order delivery status."
+        case .notSupportGame:
+            return "This game isn’t supported. Try another while we improve performance"
         }
     }
     
@@ -56,7 +59,7 @@ enum BannerEnum {
         switch self {
         case .success:
             return Color(hex: "#00CC99")
-        case .error:
+        case .error, .notSupportGame:
             return Color(hex: "#EB5757")
         case .warning:
             return Color(hex: "#F2C94C")

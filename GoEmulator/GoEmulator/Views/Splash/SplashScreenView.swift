@@ -14,6 +14,7 @@ struct SplashScreenView: View {
     @State private var showOnboardingScreen = false
     @State private var showTabScreen = false
     @State private var showIAPScreen = false
+    @State private var isMobileAdsStartCalled = false
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -26,20 +27,43 @@ struct SplashScreenView: View {
         .background(
             navigationLink()
         )
-        .onAppear {
+        .onFirstAppear {
             progress = 1.0
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                 ATTAuthorization.requestIfNeeded(onCompleteATTTracking: {
-                    if UserDefaultsManager.shared.isFirstTimeOpen {
-                        self.showOnboardingScreen = true
-                    } else {
-                        if UserDefaultsManager.shared.isPurchased {
-                            self.showTabScreen = true
-                        } else {
-                            self.showIAPScreen = true
-                        }
-                    }
+                    showAdMobConsent()
                 })
+            }
+        }
+    }
+    
+    func showAdMobConsent() {
+        GoogleMobileAdsConsentManager.shared.gatherConsent { consentError in
+            if let consentError {
+                // Consent gathering failed.
+                print("Error: \(consentError.localizedDescription)")
+            }
+            
+            // Check if you can request ads in `startGoogleMobileAdsSDK` before initializing the
+            // Google Mobile Ads SDK.
+            GoogleMobileAdsConsentManager.shared.startGoogleMobileAdsSDK()
+            
+            actionAfterConsent()
+        }
+        
+        GoogleMobileAdsConsentManager.shared.startGoogleMobileAdsSDK()
+    }
+    
+    func actionAfterConsent() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            if UserDefaultsManager.shared.isFirstTimeOpen {
+                self.showOnboardingScreen = true
+            } else {
+                if UserDefaultsManager.shared.isPurchased {
+                    self.showTabScreen = true
+                } else {
+                    self.showIAPScreen = true
+                }
             }
         }
     }

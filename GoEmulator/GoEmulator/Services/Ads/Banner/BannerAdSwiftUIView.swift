@@ -99,7 +99,7 @@ extension BannerAdSwiftUIView {
     }
     
     func isAvailableShowAd(_ remote: RemoteConfigValueKey) -> Bool {
-        return true && !UserDefaultsManager.shared.isPurchased && networkManager.isConnected
+        return RemoteConfigManager.shared.bool(forKey: remote) && !UserDefaultsManager.shared.isPurchased && networkManager.isConnected
     }
 }
 

@@ -142,8 +142,7 @@ final class OpensAdManager: NSObject, ObservableObject, FullScreenContentDelegat
     // MARK: - Private Helpers
     private func remoteConfigIsActive() -> Bool {
         // TODO: Implement remote config check
-        return true
-        // return RemoteConfigHelper.shared.bool(key: remote)
+        return RemoteConfigManager.shared.bool(forKey: remote)
     }
     
     private func getIsAppPurchase() -> Bool {

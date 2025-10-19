@@ -31,7 +31,7 @@ struct GoEmulatorApp: App {
                     OpensAdManager.shared.present()
                     
                     // Load ad mới cho lần sau
-                    await OpensAdManager.shared.loadAd(place: "app_foreground")
+                    await OpensAdManager.shared.loadAd(place: "")
                 }
             case .background:
                 print("Scene moved to background")
