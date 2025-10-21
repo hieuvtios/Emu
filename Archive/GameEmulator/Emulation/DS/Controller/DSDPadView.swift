@@ -28,7 +28,6 @@ struct DSDPadView: View {
             Circle()
                 .fill(Color.gray.opacity(0.4))
                 .frame(width: layout.radius * 2, height: layout.radius * 2)
-
             // D-Pad shape
             dpadShape
                 .fill(Color.gray.opacity(0.6))
@@ -42,12 +41,12 @@ struct DSDPadView: View {
             directionIndicators
 
             // Touch indicator
-            if let location = touchLocation {
-                Circle()
-                    .fill(Color.white.opacity(0.5))
-                    .frame(width: 30, height: 30)
-                    .position(location)
-            }
+//            if let location = touchLocation {
+//                Circle()
+//                    .fill(Color.white.opacity(0.5))
+//                    .frame(width: 30, height: 30)
+//                    .position(location)
+//            }
         }
         .frame(width: layout.radius * 2, height: layout.radius * 2)
         .position(layout.center)

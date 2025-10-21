@@ -12,115 +12,141 @@ struct SNESControllerView: View {
     @State private var layout: SNESControllerLayoutDefinition?
     @State private var buttonStates: [SNESButtonType: Bool] = [:]
     @State private var dpadButtons: Set<SNESButtonType> = []
+    
     @StateObject private var themeManager = SNESThemeManager()
+    let onMenuButtonTap: () -> Void
 
     var body: some View {
         GeometryReader { geometry in
-            
-            ZStack(alignment:.bottom) {
-                
-                // Semi-transparent background
-                if geometry.size.width > geometry.size.height {
-                    Image(themeManager.currentTheme.backgroundPortraitImageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .ignoresSafeArea()
-                } else {
-                    ZStack(alignment:.top){
+            VStack{
+                ZStack(alignment:.bottom) {
+                    
+                    // Semi-transparent background
+                    if geometry.size.width > geometry.size.height {
                         Image(themeManager.currentTheme.backgroundPortraitImageName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
-                            .clipped()
-
-                    }
-                }
-                   
-                
-                // Chỉ render UI khi layout không nil
-                if let layout = layout {
-                    SNESDPadView(
-                        layout: layout.dpad,
-                        pressedButtons: $dpadButtons,
-                        onDirectionChange: { buttons in
-                            controller.releaseAllDPadButtons()
-                            if !buttons.isEmpty {
-                                controller.pressDPadButtons(buttons)
-                            }
-                        },
-                        onRelease: {
-                            controller.releaseAllDPadButtons()
-                        }, theme: themeManager.currentTheme
-                    )
-                    .zIndex(1)
-                    
-                    // Action buttons background
-                    SNESActionButtonBackground(
-                        center: layout.actionButtonsCenter,
-                        radius: 105
-                    )
-                    .zIndex(0)
-                    
-                    // Action buttons (A, B, X, Y)
-                    ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
-                        SNESButtonView(
-                            button: buttonLayout.button,
-                            layout: buttonLayout,
-                            isPressed: Binding(
-                                get: { buttonStates[buttonLayout.button] ?? false },
-                                set: { buttonStates[buttonLayout.button] = $0 }
-                            ),
-                            onPress: {
-                                controller.pressButton(buttonLayout.button)
-                            },
-                            onRelease: {
-                                controller.releaseButton(buttonLayout.button)
-                            },
-                            theme: themeManager.currentTheme
-                        )
-                    }
-                    .zIndex(2)
-                    
-                    // Shoulder buttons (L, R)
-                    ForEach(layout.shoulderButtons, id: \.button.rawValue) { buttonLayout in
-                        SNESShoulderButtonView(button: buttonLayout.button, layout: buttonLayout, isPressed: Binding(
-                            get: { buttonStates[buttonLayout.button] ?? false },
-                            set: { buttonStates[buttonLayout.button] = $0 }
-                        ), theme: themeManager.currentTheme) {
-                            controller.pressButton(buttonLayout.button)
-                        } onRelease: {
-                            controller.releaseButton(buttonLayout.button)
+                            .ignoresSafeArea()
+                    } else {
+                        ZStack(alignment:.top){
+                            Image(themeManager.currentTheme.backgroundPortraitImageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                                .clipped()
+                            
                         }
                     }
-                    .zIndex(2)
                     
                     
-                    // Center buttons (Start, Select)
-                    ForEach(layout.centerButtons, id: \.button.rawValue) { buttonLayout in
-                        SNESCenterButtonView(
-                            button: buttonLayout.button,
-                            layout: buttonLayout,
-                            isPressed: Binding(
-                                get: { buttonStates[buttonLayout.button] ?? false },
-                                set: { buttonStates[buttonLayout.button] = $0 }
-                            ),
-                            onPress: {
-                                controller.pressButton(buttonLayout.button)
+                    // Chỉ render UI khi layout không nil
+                    if let layout = layout {
+                        SNESDPadView(
+                            layout: layout.dpad,
+                            pressedButtons: $dpadButtons,
+                            onDirectionChange: { buttons in
+                                controller.releaseAllDPadButtons()
+                                if !buttons.isEmpty {
+                                    controller.pressDPadButtons(buttons)
+                                }
                             },
                             onRelease: {
-                                controller.releaseButton(buttonLayout.button)
+                                controller.releaseAllDPadButtons()
                             }, theme: themeManager.currentTheme
                         )
-                        .padding(.bottom, 50)
+                        .zIndex(1)
+                        
+                        // Action buttons background
+                        SNESActionButtonBackground(
+                            center: layout.actionButtonsCenter,
+                            radius: 100
+                        )
+                        .zIndex(0)
+                        
+                        // Action buttons (A, B, X, Y)
+                        ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
+                            SNESButtonView(
+                                button: buttonLayout.button,
+                                layout: buttonLayout,
+                                isPressed: Binding(
+                                    get: { buttonStates[buttonLayout.button] ?? false },
+                                    set: { buttonStates[buttonLayout.button] = $0 }
+                                ),
+                                onPress: {
+                                    controller.pressButton(buttonLayout.button)
+                                },
+                                onRelease: {
+                                    controller.releaseButton(buttonLayout.button)
+                                },
+                                theme: themeManager.currentTheme
+                            )
+                        }
+                        .zIndex(0)
+                        
+                        // Shoulder buttons (L, R)
+                        ForEach(layout.shoulderButtons, id: \.button.rawValue) { buttonLayout in
+                            SNESShoulderButtonView(button: buttonLayout.button, layout: buttonLayout, isPressed: Binding(
+                                get: { buttonStates[buttonLayout.button] ?? false },
+                                set: { buttonStates[buttonLayout.button] = $0 }
+                            ), theme: themeManager.currentTheme) {
+                                controller.pressButton(buttonLayout.button)
+                            } onRelease: {
+                                controller.releaseButton(buttonLayout.button)
+                            }
+                        }
+                        .zIndex(2)
+                        
+                        
+                        // Center buttons (Start, Select)
+                        ForEach(layout.centerButtons, id: \.button.rawValue) { buttonLayout in
+                            SNESCenterButtonView(
+                                button: buttonLayout.button,
+                                layout: buttonLayout,
+                                isPressed: Binding(
+                                    get: { buttonStates[buttonLayout.button] ?? false },
+                                    set: { buttonStates[buttonLayout.button] = $0 }
+                                ),
+                                onPress: {
+                                    controller.pressButton(buttonLayout.button)
+                                },
+                                onRelease: {
+                                    controller.releaseButton(buttonLayout.button)
+                                }, theme: themeManager.currentTheme
+                            )
+                            .padding(.bottom, 50)
+                        }
+                        // Menu Button
+                        if let firstCenterButton = layout.centerButtons.first {
+                            Button(action: {
+                                onMenuButtonTap()
+                            }) {
+                                Image(themeManager.currentTheme.menuButtonImageName)
+                            }
+                            .position(x: layout.dpad.center.x, y: firstCenterButton.position.y)
+                            .zIndex(1)
+                        }
                     }
                 }
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
+            .onAppear {
+                updateLayout(for: geometry.size)
+            }
+            .onChange(of: geometry.size) { newSize in
+                updateLayout(for: newSize)
+            }
         }
-        .onAppear {
-            // Tính toán layout dựa trên kích thước màn hình khi view xuất hiện
-            let screenSize = UIScreen.main.bounds.size
-            layout = SNESControllerLayout.portraitLayout(screenSize: screenSize)
+        
+    }
+    private func updateLayout(for size: CGSize) {
+        // Determine orientation based on aspect ratio
+        let isLandscape = size.width > size.height
+
+        // Update layout based on orientation
+        if isLandscape {
+            layout = SNESControllerLayout.landscapeLayout(screenSize: size)
+        } else {
+            layout = SNESControllerLayout.portraitLayout(screenSize: size)
         }
     }
 }
@@ -150,9 +176,7 @@ struct SNESShoulderButtonView: View {
         }
             .frame(width: layout.size.width, height: layout.size.height)
             .position(layout.position)
-            .scaleEffect(isPressed ? 0.95 : 1.0)
 
-            .animation(.easeInOut(duration: 0.1), value: isPressed)
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { _ in
@@ -227,28 +251,22 @@ struct SNESActionButtonBackground: View {
     let radius: CGFloat
 
     var body: some View {
+        let screen = UIScreen.main.bounds
+        let isLandscape = screen.width > screen.height
+
         ZStack {
             // Base purple circle
             Image(.snesbg1)
                 .resizable()
-
+                .zIndex(0)
         }
-        .frame(width: radius * 2 , height: radius * 2 )
-        .position(center)
-    }
-}
-
-struct SNESControllerView_Previews: PreviewProvider {
-    static var previews: some View {
-        let controller = SNESDirectController(name: "SNES Direct Controller", playerIndex: 0)
-
-        let layout = SNESControllerLayout.portraitLayout(
-            screenSize: CGSize(width: 390, height: 844)
-        )
-
-        return SNESControllerView(controller: controller)
-            .previewDevice("iPhone 14 Pro")
-            .previewInterfaceOrientation(.portrait)
+        .frame(width: isLandscape ? radius * 2 + 20 : radius * 2, height:isLandscape ? radius * 2 + 20 : radius * 2 )
+        .position({
+            return CGPoint(
+                x: center.x + (isLandscape ? 110 : 0),
+                y: center.y
+            )
+        }())
     }
 }
 
@@ -277,13 +295,13 @@ struct SNESControllerLayout {
 
     static func landscapeLayout(screenSize: CGSize) -> SNESControllerLayoutDefinition {
         let padding: CGFloat = 40
-        let buttonSize = CGSize(width: 60, height: 60)
+        let buttonSize = CGSize(width: 50, height: 50)
         let dpadRadius: CGFloat = 80
         let smallButtonSize = CGSize(width: 50, height: 25)
 
         // D-Pad (left side)
         let dpadCenter = CGPoint(
-            x: padding + dpadRadius,
+            x: padding + dpadRadius + 10,
             y: screenSize.height / 2
         )
 
@@ -299,7 +317,7 @@ struct SNESControllerLayout {
             // X (top)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x - actionButtonOffset,
+                    x: actionButtonsCenter.x - actionButtonOffset + 111,
                     y: actionButtonsCenter.y
                 ),
                 size: buttonSize,
@@ -308,8 +326,8 @@ struct SNESControllerLayout {
             // A (right)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x + actionButtonOffset,
-                    y: actionButtonsCenter.y
+                    x: actionButtonsCenter.x + actionButtonOffset + 110,
+                    y: actionButtonsCenter.y - 2
                 ),
                 size: buttonSize,
                 button: .a
@@ -317,7 +335,7 @@ struct SNESControllerLayout {
             // Y (top)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x,
+                    x: actionButtonsCenter.x + 108,
                     y: actionButtonsCenter.y - actionButtonOffset
                 ),
                 size: buttonSize,
@@ -329,8 +347,8 @@ struct SNESControllerLayout {
             ButtonLayout(
          
                 position: CGPoint(
-                    x: actionButtonsCenter.x,
-                    y: actionButtonsCenter.y + actionButtonOffset
+                    x: actionButtonsCenter.x + 110,
+                    y: actionButtonsCenter.y + actionButtonOffset - 2
                 ),
                 size: buttonSize,
                 button: .b
@@ -341,13 +359,13 @@ struct SNESControllerLayout {
         let shoulderButtons: [ButtonLayout] = [
             // L
             ButtonLayout(
-                position: CGPoint(x: padding + 60, y: 30),
+                position: CGPoint(x: dpadCenter.x - 15, y: 40),
                 size: CGSize(width: 80, height: 35),
                 button: .l
             ),
             // R
             ButtonLayout(
-                position: CGPoint(x: screenSize.width - padding - 140, y: 30),
+                position: CGPoint(x: screenSize.width -  screenSize.width / 4 / 2 + 90, y:40),
                 size: CGSize(width: 80, height: 35),
                 button: .r
             )
@@ -358,8 +376,8 @@ struct SNESControllerLayout {
             // Select
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 100,
-                    y: screenSize.height - 90
+                    x: screenSize.width + 35,
+                    y: screenSize.height - 10
                 ),
                 size: smallButtonSize,
                 button: .select
@@ -367,14 +385,14 @@ struct SNESControllerLayout {
             // Start
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2,
-                    y: screenSize.height - 90
+                    x: screenSize.width - 50,
+                    y: screenSize.height - 10
                 ),
                 size: smallButtonSize,
                 button: .start
             )
         ]
-
+      
         return SNESControllerLayoutDefinition(
             mode: .landscape,
             dpad: DPadLayout(center: dpadCenter, radius: dpadRadius),
@@ -389,22 +407,22 @@ struct SNESControllerLayout {
 
     static func portraitLayout(screenSize: CGSize) -> SNESControllerLayoutDefinition {
         let padding: CGFloat = 30
-        let buttonSize = CGSize(width: 55, height: 55)
+        let buttonSize = CGSize(width: 50, height: 50)
         let dpadRadius: CGFloat = 70
         let smallButtonSize = CGSize(width: 45, height: 22)
 
-        let controlsY = screenSize.height * 0.8
+        let controlsY = screenSize.height * 0.9
 
         // D-Pad (lower left)
         let dpadCenter = CGPoint(
-            x: padding + dpadRadius,
-            y: controlsY
+            x: padding + dpadRadius - 10,
+            y: controlsY - 20
         )
 
         // Action buttons (lower right)
         let actionButtonsCenter = CGPoint(
             x: screenSize.width - padding - dpadRadius,
-            y: controlsY
+            y: controlsY - 20
         )
 
         let actionButtonOffset: CGFloat = 45
@@ -420,7 +438,7 @@ struct SNESControllerLayout {
             ),
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x + actionButtonOffset,
+                    x: actionButtonsCenter.x + actionButtonOffset - 1,
                     y: actionButtonsCenter.y
                 ),
                 size: buttonSize,
@@ -436,8 +454,8 @@ struct SNESControllerLayout {
             ),
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x,
-                    y: actionButtonsCenter.y + actionButtonOffset
+                    x: actionButtonsCenter.x + 1,
+                    y: actionButtonsCenter.y + actionButtonOffset - 1
                 ),
                 size: buttonSize,
                 button: .b
@@ -448,12 +466,12 @@ struct SNESControllerLayout {
         // Shoulder buttons
         let shoulderButtons: [ButtonLayout] = [
             ButtonLayout(
-                position: CGPoint(x: screenSize.width / 4, y: controlsY - 130),
+                position: CGPoint(x: screenSize.width / 4 - 20, y: controlsY - 160),
                 size: CGSize(width: 70, height: 30),
                 button: .l
             ),
             ButtonLayout(
-                position: CGPoint(x: screenSize.width - screenSize.width / 4, y: controlsY - 130),
+                position: CGPoint(x: screenSize.width - screenSize.width / 4 + 10, y: controlsY - 160),
                 size: CGSize(width: 70, height: 30),
                 button: .r
             )
@@ -464,7 +482,7 @@ struct SNESControllerLayout {
             ButtonLayout(
                 position: CGPoint(
                     x: screenSize.width - smallButtonSize.width - 25 - smallButtonSize.width - 30,
-                    y: screenSize.height - 40
+                    y: screenSize.height + 40
                 ),
                 size: smallButtonSize,
                 button: .select
@@ -472,7 +490,7 @@ struct SNESControllerLayout {
             ButtonLayout(
                 position: CGPoint(
                     x: screenSize.width - smallButtonSize.width - 15,
-                    y: screenSize.height - 40
+                    y: screenSize.height + 40
                 ),
                 size: smallButtonSize,
                 button: .start
@@ -497,4 +515,17 @@ struct SNESControllerLayoutDefinition {
     let shoulderButtons: [SNESControllerLayout.ButtonLayout]
     let centerButtons: [SNESControllerLayout.ButtonLayout]
     let actionButtonsCenter: CGPoint
+}
+// MARK: - Preview
+
+struct SNESControllerView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Landscape Preview
+        SNESControllerView(
+            controller: SNESDirectController(name: "Preview Controller"),
+            onMenuButtonTap: { print("Menu tapped") }
+        )
+            .previewDisplayName("Landscape")
+            .previewInterfaceOrientation(.portrait)
+    }
 }

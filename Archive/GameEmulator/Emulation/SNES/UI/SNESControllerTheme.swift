@@ -1,17 +1,3 @@
-//
-//  GBCControllerTheme.swift
-//  GameEmulator
-//
-//  Created by Hieu Vu on 10/13/25.
-//
-
-
-//
-//  GBCControllerTheme.swift
-//  GameEmulator
-//
-//  Theme configuration for GBC controller appearance
-//
 
 import Foundation
 

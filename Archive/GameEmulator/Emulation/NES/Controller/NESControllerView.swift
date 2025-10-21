@@ -11,6 +11,7 @@ struct NESControllerView: View {
     @StateObject private var themeManager = NESThemeManager()
     @State private var showThemePicker = false
     #endif
+    let onMenuButtonTap: () -> Void
 
     var body: some View {
         GeometryReader { geometry in
@@ -98,7 +99,17 @@ struct NESControllerView: View {
                                 theme: getCurrentTheme()
                             )
                         }
-
+                        // Menu Button
+                        if let firstCenterButton = layout.centerButtons.first {
+                            let isLandscape = geometry.size.width > geometry.size.height
+                            Button(action: {
+                                onMenuButtonTap()
+                            }) {
+                                Image(getCurrentTheme().menuButtonImageName)
+                            }
+                            .position(x: isLandscape ? 50 : 30, y: firstCenterButton.position.y)
+                            .zIndex(1)
+                        }
                         #if DEBUG
                         // Theme Picker Button (Debug Only)
                         Button(action: {
@@ -158,19 +169,4 @@ struct NESControllerView: View {
         #endif
     }
 }
-// Preview this view
-//struct NESControllerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            // Portrait Preview
-//            NESControllerView(controller: NESDirectController(name: "Preview Controller"))
-//                .previewDisplayName("Portrait")
-//                .previewInterfaceOrientation(.portrait)
-//            
-//            // Landscape Preview
-//            NESControllerView(controller: NESDirectController(name: "Preview Controller"))
-//                .previewDisplayName("Landscape")
-//                .previewInterfaceOrientation(.landscapeLeft)
-//        }
-//    }
-//}
+

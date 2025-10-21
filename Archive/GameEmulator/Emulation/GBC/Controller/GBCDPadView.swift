@@ -29,12 +29,6 @@ struct GBCDPadView: View {
             // Background circle
             Image(theme.dpadImageName)
             // Touch indicator
-            if let location = touchLocation {
-                Circle()
-                    .fill(Color.white.opacity(0.5))
-                    .frame(width: 30, height: 30)
-                    .position(location)
-            }
         }
         .frame(width: layout.radius * 2, height: layout.radius * 2)
         .position(layout.center)

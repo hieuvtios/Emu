@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GBCControllerView: View {
     let controller: GBCDirectController
+    let onMenuButtonTap: () -> Void
 
     @State private var buttonStates: [GBCButtonType: Bool] = [:]
     @State private var dpadButtons: Set<GBCButtonType> = []
@@ -42,11 +43,7 @@ struct GBCControllerView: View {
                             }
                             .frame(maxWidth: .infinity, alignment: .top)
                         }
-
-
                     }
-               
-
                     if let layout = currentLayout {
                         // D-Pad
                         GBCDPadView(
@@ -97,6 +94,17 @@ struct GBCControllerView: View {
                                 },
                                 theme: getCurrentTheme()
                             )
+                        }
+
+                        // Menu Button
+                        if let firstCenterButton = layout.centerButtons.first {
+                            let isLandscape = geometry.size.width > geometry.size.height
+                            Button(action: {
+                                onMenuButtonTap()
+                            }) {
+                                Image(getCurrentTheme().menuButtonImageName)
+                            }
+                            .position(x: isLandscape ? 50 : 30, y: firstCenterButton.position.y)                            .zIndex(1)
                         }
 
                         #if DEBUG
@@ -163,12 +171,18 @@ struct GBCControllerView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             // Portrait Preview
-            GBCControllerView(controller: GBCDirectController(name: "Preview Controller"))
+            GBCControllerView(
+                controller: GBCDirectController(name: "Preview Controller"),
+                onMenuButtonTap: { print("Menu tapped") }
+            )
                 .previewDisplayName("Portrait")
                 .previewInterfaceOrientation(.portrait)
-            
+
             // Landscape Preview
-            GBCControllerView(controller: GBCDirectController(name: "Preview Controller"))
+            GBCControllerView(
+                controller: GBCDirectController(name: "Preview Controller"),
+                onMenuButtonTap: { print("Menu tapped") }
+            )
                 .previewDisplayName("Landscape")
                 .previewInterfaceOrientation(.landscapeLeft)
         }

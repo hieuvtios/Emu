@@ -133,7 +133,12 @@ class ControllerManager {
         snesController = controller
         
         let layout = createLayout(for: .snes)
-        let view = SNESControllerView(controller: controller)
+        let view = SNESControllerView(
+            controller: controller,
+            onMenuButtonTap: { [weak vc] in
+                vc?.presentGameMenu()
+            }
+        )
         snesHosting = setupHostingController(for: view, in: vc)
         currentType = .snes
     }
@@ -156,7 +161,12 @@ class ControllerManager {
             controller.addReceiver(emulatorCore, inputMapping: controller.defaultInputMapping)
         }
         
-        let view = NESControllerView(controller: controller)
+        let view = NESControllerView(
+            controller: controller,
+            onMenuButtonTap: { [weak vc] in
+                vc?.presentGameMenu()
+            }
+        )
         nesHosting = setupHostingController(for: view, in: vc)
         currentType = .nes
     }
@@ -175,7 +185,12 @@ class ControllerManager {
         let controller = GBCDirectController(name: "GBC Direct Controller", playerIndex: 0)
         gbcController = controller
 
-        let view = GBCControllerView(controller: controller)
+        let view = GBCControllerView(
+            controller: controller,
+            onMenuButtonTap: { [weak vc] in
+                vc?.presentGameMenu()
+            }
+        )
         gbcHosting = setupHostingController(for: view, in: vc)
         currentType = .gbc
     }
@@ -420,8 +435,6 @@ class GameViewController: DeltaCore.GameViewController {
         super.viewDidLoad()
         view.layoutIfNeeded()
         setupSustainButtonsView()
-//        setupMenuButton()
-        setupMenuButtonSNES()
         updateControllers()
     }
     
@@ -459,26 +472,32 @@ class GameViewController: DeltaCore.GameViewController {
     
     @objc private func updateControllers() {
         guard isViewLoaded else { return }
-        
+
         if let game = game as? Game {
             controllerManager.setupController(for: game.type)
+
+            // Hide GameViewController's menu button for GBC (it has its own in GBCControllerView)
+            if let menuButton = menuButton {
+                menuButton.isHidden = (game.type == .gbc)
+            }
         } else {
             controllerManager.teardownAllControllers()
             controllerView.isHidden = true
             controllerView.playerIndex = nil
+            menuButton?.isHidden = false
         }
-        
+
         view.setNeedsLayout()
         view.layoutIfNeeded()
-        
+
         if shouldResetSustainedInputs {
             controllerManager.resetSustainedInputs()
             shouldResetSustainedInputs = false
         }
-        
+
         updateControllerSkin()
-        
-        if let menuButton = menuButton {
+
+        if let menuButton = menuButton, !menuButton.isHidden {
             view.bringSubviewToFront(menuButton)
         }
     }
@@ -545,7 +564,7 @@ class GameViewController: DeltaCore.GameViewController {
         view.addSubview(greenButton)
         // Layout constraints
         NSLayoutConstraint.activate([
-            greenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 5),
+            greenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
             greenButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
         ])
     }
@@ -569,40 +588,40 @@ class GameViewController: DeltaCore.GameViewController {
         // Layout constraints
         NSLayoutConstraint.activate([
 //            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
-            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 12),
 
             menuButton.widthAnchor.constraint(equalToConstant: 60),
             menuButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
-    private func setupMenuButtonSNES() {
-        menuButton = UIButton(type: .custom)
-
-        // Set initial button image
-        updateMenuButtonImage()
-
-        // Button appearance
-        menuButton.backgroundColor = .clear
-        menuButton.translatesAutoresizingMaskIntoConstraints = false
-
-        // Touch handler
-        menuButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
-
-        // Add to view
-        view.addSubview(menuButton)
-        view.bringSubviewToFront(menuButton)
-
-        // Layout constraints
-        NSLayoutConstraint.activate([
-//            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
-            menuButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
-
-//            menuButton.widthAnchor.constraint(equalToConstant: 60),
-//            menuButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
+//    private func setupMenuButtonSNES() {
+//        menuButton = UIButton(type: .custom)
+//
+//        // Set initial button image
+//        updateMenuButtonImage()
+//
+//        // Button appearance
+//        menuButton.backgroundColor = .clear
+//        menuButton.translatesAutoresizingMaskIntoConstraints = false
+//
+//        // Touch handler
+//        menuButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
+//
+//        // Add to view
+//        view.addSubview(menuButton)
+//        view.bringSubviewToFront(menuButton)
+//
+//        // Layout constraints
+//        NSLayoutConstraint.activate([
+////            menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 60),
+//            menuButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+//            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+//
+////            menuButton.widthAnchor.constraint(equalToConstant: 60),
+////            menuButton.heightAnchor.constraint(equalToConstant: 50)
+//        ])
+//    }
 
     private func updateMenuButtonImage() {
         guard let menuButton = menuButton else { return }
@@ -624,14 +643,14 @@ class GameViewController: DeltaCore.GameViewController {
                    let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
                     imageName = theme.menuButtonImageName
                 }
-                setupGreenImage()
+//                setupGreenImage()
 
             case .gba:
                 if let themeData = UserDefaults.standard.data(forKey: "GBCControllerTheme"),
                    let theme = try? JSONDecoder().decode(GBCControllerTheme.self, from: themeData) {
                     imageName = theme.menuButtonImageName
                 }
-                setupGreenImage()
+//                setupGreenImage()
 
             case .snes:
                 if let themeData = UserDefaults.standard.data(forKey: "SNESControllerTheme"),
@@ -662,14 +681,14 @@ class GameViewController: DeltaCore.GameViewController {
     @objc private func menuButtonTapped() {
         presentGameMenu()
     }
-    
-    private func presentGameMenu() {
+
+    fileprivate func presentGameMenu() {
         viewModel.pauseEmulation()
-        
+
         let viewModel = GameMenuViewModel()
         viewModel.configure(emulatorCore: emulatorCore, gameView: gameView, game: game as? Game)
         gameMenuViewModel = viewModel
-        
+
         let menuView = GameMenuView(viewModel: viewModel)
         let hosting = UIHostingController(rootView: menuView)
         hosting.modalPresentationStyle = .pageSheet
