@@ -204,17 +204,23 @@ class ControllerManager {
     // MARK: - Genesis
     private func setupGenesisController() {
         guard let vc = viewController else { return }
-        
+
         vc.controllerView.isHidden = true
         let controller = GenesisGameController(name: "Genesis Custom Controller", systemPrefix: "genesis", playerIndex: 0)
         genesisController = controller
-        
+
         if let emulatorCore = vc.emulatorCore {
             controller.addReceiver(emulatorCore, inputMapping: controller.defaultInputMapping)
         }
-        
+
         let layout = createLayout(for: .genesis)
-        let view = GenesisControllerView(controller: controller, layout: layout as! GenesisControllerLayoutDefinition)
+        let view = GenesisControllerView(
+            controller: controller,
+            layout: layout as! GenesisControllerLayoutDefinition,
+            onMenuButtonTap: { [weak vc] in
+                vc?.presentGameMenu()
+            }
+        )
         genesisHosting = setupHostingController(for: view, in: vc)
         currentType = .genesis
     }
@@ -476,9 +482,9 @@ class GameViewController: DeltaCore.GameViewController {
         if let game = game as? Game {
             controllerManager.setupController(for: game.type)
 
-            // Hide GameViewController's menu button for GBC (it has its own in GBCControllerView)
+            // Hide GameViewController's menu button for systems that have their own menu button (GBC, Genesis)
             if let menuButton = menuButton {
-                menuButton.isHidden = (game.type == .gbc)
+                menuButton.isHidden = (game.type == .gbc || game.type == .genesis)
             }
         } else {
             controllerManager.teardownAllControllers()
