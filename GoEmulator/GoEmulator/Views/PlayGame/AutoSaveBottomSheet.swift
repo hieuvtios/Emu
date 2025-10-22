@@ -38,38 +38,43 @@ struct AutoSaveBottomSheet: View {
                     
                     Spacer().frame(height: 24)
                     
-                    HStack(alignment: .center, spacing: 12) {
-                        Button {
+                    GeometryReader { geo in
+                        HStack(spacing: 12) {
+                            let width = geo.size.width - 12
+                            let grayButtonWidth = width / 3
+                            let pinkButtonWidth = width * 2 / 3
                             
-                        } label: {
-                            Image("ob_button_2")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 148, height: 48)
-                                .overlay {
-                                    Text("DISMISS")
-                                        .font(Font.custom("SVN-Determination Sans", size: 20))
-                                        .foregroundColor(Color(red: 0.46, green: 0.46, blue: 0.46))
-                                }
-                        }
-                        
-                        Button {
+                            Button {
+                                
+                            } label: {
+                                Image("ob_button_2")
+                                    .resizable()
+                                    .frame(width: grayButtonWidth, height: 48)
+                                    .overlay {
+                                        Text("DISMISS")
+                                            .font(Font.custom("SVN-Determination Sans", size: 20))
+                                            .foregroundColor(Color(red: 0.46, green: 0.46, blue: 0.46))
+                                    }
+                            }
                             
-                        } label: {
-                            Image("ob_button_3")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 190, height: 48)
-                                .overlay {
-                                    Text("ON AUTOSAVE")
-                                        .font(Font.custom("SVN-Determination Sans", size: 20))
-                                        .multilineTextAlignment(.center)
-                                        .foregroundColor(Color(red: 0.54, green: 0.09, blue: 0.61))
-                                }
+                            Button {
+                                
+                            } label: {
+                                Image("ob_button_3")
+                                    .resizable()
+                                    .frame(width: pinkButtonWidth, height: 48)
+                                    .overlay {
+                                        Text("ON AUTOSAVE")
+                                            .font(Font.custom("SVN-Determination Sans", size: 20))
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color(red: 0.54, green: 0.09, blue: 0.61))
+                                    }
+                            }
                         }
                     }
                     .padding(.horizontal, 20)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(height: 48)
                 }
                 .padding(0)
                 .frame(maxWidth: .infinity, alignment: .top)

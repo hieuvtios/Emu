@@ -16,13 +16,14 @@ struct GoEmulatorApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                SplashScreenView()
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-            }
-            .environmentObject(networkManager)
-            .environmentObject(adDisplayManager)
+            DirectoryAlert()
+//            NavigationView {
+//                SplashScreenView()
+//                    .navigationTitle("")
+//                    .navigationBarHidden(true)
+//            }
+//            .environmentObject(networkManager)
+//            .environmentObject(adDisplayManager)
         }
         .onChange(of: scenePhase) { phase in
             switch phase {
