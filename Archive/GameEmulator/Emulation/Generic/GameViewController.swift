@@ -72,6 +72,7 @@ class ControllerManager {
 
     // Background Image Views
     private var gbaBackgroundView: UIImageView?
+    private var nesBackgroundView: UIImageView?
 
     init(viewController: GameViewController) {
         self.viewController = viewController
@@ -135,7 +136,6 @@ class ControllerManager {
         let controller = SNESDirectController(name: "SNES Direct Controller", playerIndex: 0)
         snesController = controller
         
-        let layout = createLayout(for: .snes)
         let view = SNESControllerView(
             controller: controller,
             onMenuButtonTap: { [weak vc] in
@@ -155,15 +155,19 @@ class ControllerManager {
     // MARK: - NES
     private func setupNESController() {
         guard let vc = viewController else { return }
-        
+
         vc.controllerView.isHidden = true
+
+        // Setup background image view (Layer 0 - bottom)
+        setupNESBackground(in: vc)
+
         let controller = NESGameController(name: "NES Custom Controller", systemPrefix: "nes", playerIndex: 0)
         nesController = controller
-        
+
         if let emulatorCore = vc.emulatorCore {
             controller.addReceiver(emulatorCore, inputMapping: controller.defaultInputMapping)
         }
-        
+
         let view = NESControllerView(
             controller: controller,
             onMenuButtonTap: { [weak vc] in
@@ -173,11 +177,48 @@ class ControllerManager {
         nesHosting = setupHostingController(for: view, in: vc)
         currentType = .nes
     }
-    
+
+    private func setupNESBackground(in parent: UIViewController) {
+        let isLandscape = parent.view.bounds.width > parent.view.bounds.height
+
+        // Only show background in landscape mode
+        guard isLandscape else { return }
+
+        // Get background image name from theme
+        #if DEBUG
+        let imageName = NESThemeManager().currentTheme.backgroundLandscapeImageName
+        #else
+        let imageName = NESControllerTheme.defaultTheme.backgroundLandscapeImageName
+        #endif
+
+        guard let image = UIImage(named: imageName) else { return }
+
+        let backgroundView = UIImageView(image: image)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.clipsToBounds = true
+
+        parent.view.addSubview(backgroundView)
+        parent.view.sendSubviewToBack(backgroundView)
+
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: parent.view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: parent.view.trailingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: parent.view.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor)
+        ])
+
+        nesBackgroundView = backgroundView
+    }
+
     private func teardownNESController() {
         teardownHosting(&nesHosting)
         nesController?.reset()
         nesController = nil
+
+        // Remove background view
+        nesBackgroundView?.removeFromSuperview()
+        nesBackgroundView = nil
     }
     
     // MARK: - GBC
@@ -319,15 +360,17 @@ class ControllerManager {
         guard let vc = viewController else { return }
         
         vc.controllerView.isHidden = true
-        let controller = DSGameController(name: "Nintendo DS Controller")
+        let controller = DSGameController(name: "DS Direct Controller", playerIndex: 0)
         dsController = controller
         
-        let layout = createLayout(for: .ds)
-        let view = DSControllerView(controller: controller, layout: layout as! DSControllerLayoutDefinition)
+        let view = DSControllerView(
+            controller: controller,
+            onMenuButtonTap: { [weak vc] in
+                vc?.presentGameMenu()
+            }
+        )
         dsHosting = setupHostingController(for: view, in: vc)
         currentType = .ds
-        
-        NSLog("[ControllerManager] DS controller setup complete")
     }
     
     private func teardownDSController() {

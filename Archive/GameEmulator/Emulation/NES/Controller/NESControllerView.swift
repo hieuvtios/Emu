@@ -16,13 +16,9 @@ struct NESControllerView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
-                // MARK: - Main Controller Area
                 ZStack(alignment:.bottom) {
-                    // Background
                     if geometry.size.width > geometry.size.height {
-                        Image(getCurrentTheme().backgroundLandscapeImageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
+                        Color.clear
                             .ignoresSafeArea()
                     } else {
                         ZStack(alignment:.top){
@@ -49,6 +45,8 @@ struct NESControllerView: View {
                
 
                     if let layout = currentLayout {
+                        let isLandscape = geometry.size.width > geometry.size.height
+
                         // D-Pad
                         NESDPadView(
                             layout: layout.dpad,
@@ -64,6 +62,7 @@ struct NESControllerView: View {
                             },
                             theme: getCurrentTheme()
                         )
+                        .opacity(isLandscape ? 0.8 : 1.0)
                         .zIndex(1)
 
                         // Action Buttons
@@ -79,6 +78,8 @@ struct NESControllerView: View {
                                 onRelease: { controller.releaseButton(buttonLayout.button) },
                                 theme: getCurrentTheme()
                             )
+                            .opacity(isLandscape ? 0.8 : 1.0)
+                            .zIndex(2)
                         }
 
                         // Center Buttons (Start, Select)
@@ -98,6 +99,8 @@ struct NESControllerView: View {
                                 },
                                 theme: getCurrentTheme()
                             )
+                            .opacity(isLandscape ? 0.8 : 1.0)
+                            .zIndex(2)
                         }
                         // Menu Button
                         if let firstCenterButton = layout.centerButtons.first {
@@ -108,7 +111,7 @@ struct NESControllerView: View {
                                 Image(getCurrentTheme().menuButtonImageName)
                             }
                             .position(x: isLandscape ? 50 : 30, y: firstCenterButton.position.y)
-                            .zIndex(1)
+                            .zIndex(3)
                         }
                         #if DEBUG
                         // Theme Picker Button (Debug Only)
@@ -123,7 +126,7 @@ struct NESControllerView: View {
                                 .shadow(radius: 4)
                         }
                         .position(x: geometry.size.width - 40, y: 40)
-                        .zIndex(1)
+                        .zIndex(3)
                         #endif
                     }
                 }

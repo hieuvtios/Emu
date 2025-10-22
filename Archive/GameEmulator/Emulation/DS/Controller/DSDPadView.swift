@@ -12,42 +12,24 @@ struct DSDPadView: View {
     @Binding var pressedButtons: Set<DSButtonType>
     let onDirectionChange: ([DSButtonType]) -> Void
     let onRelease: () -> Void
+    let theme: DSControllerTheme
 
     @State private var touchLocation: CGPoint?
 
-    init(layout: DSControllerLayout.DPadLayout, pressedButtons: Binding<Set<DSButtonType>>, onDirectionChange: @escaping ([DSButtonType]) -> Void, onRelease: @escaping () -> Void) {
+    init(layout: DSControllerLayout.DPadLayout, pressedButtons: Binding<Set<DSButtonType>>, onDirectionChange: @escaping ([DSButtonType]) -> Void, onRelease: @escaping () -> Void, theme: DSControllerTheme) {
         self.layout = layout
         self._pressedButtons = pressedButtons
         self.onDirectionChange = onDirectionChange
         self.onRelease = onRelease
+        self.theme = theme
     }
 
     var body: some View {
         ZStack {
             // Background circle
-            Circle()
-                .fill(Color.gray.opacity(0.4))
-                .frame(width: layout.radius * 2, height: layout.radius * 2)
-            // D-Pad shape
-            dpadShape
-                .fill(Color.gray.opacity(0.6))
-                .overlay(
-                    dpadShape
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                )
-                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
-
-            // Direction indicators
-            directionIndicators
-
+            Image(theme.dpadImageName)
             // Touch indicator
-//            if let location = touchLocation {
-//                Circle()
-//                    .fill(Color.white.opacity(0.5))
-//                    .frame(width: 30, height: 30)
-//                    .position(location)
-//            }
-        }
+            }
         .frame(width: layout.radius * 2, height: layout.radius * 2)
         .position(layout.center)
         .gesture(
@@ -63,34 +45,6 @@ struct DSDPadView: View {
 
     private var dpadShape: some Shape {
         DSDPadShape()
-    }
-
-    private var directionIndicators: some View {
-        ZStack {
-            // Up arrow
-            Image(systemName: "arrowtriangle.up.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.up) ? .white : .white.opacity(0.5))
-                .offset(y: -layout.radius * 0.5)
-
-            // Down arrow
-            Image(systemName: "arrowtriangle.down.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.down) ? .white : .white.opacity(0.5))
-                .offset(y: layout.radius * 0.5)
-
-            // Left arrow
-            Image(systemName: "arrowtriangle.left.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.left) ? .white : .white.opacity(0.5))
-                .offset(x: -layout.radius * 0.5)
-
-            // Right arrow
-            Image(systemName: "arrowtriangle.right.fill")
-                .font(.system(size: 20))
-                .foregroundColor(pressedButtons.contains(.right) ? .white : .white.opacity(0.5))
-                .offset(x: layout.radius * 0.5)
-        }
     }
 
     private func handleTouch(at location: CGPoint) {
