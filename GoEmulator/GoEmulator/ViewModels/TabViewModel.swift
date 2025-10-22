@@ -16,5 +16,5 @@ class TabViewModel: ObservableObject {
     
     @Published var showGuideView = false
     
-    @Published var currentSpot: Int? = 0
+    @Published var currentSpot: Int? = -1
 }

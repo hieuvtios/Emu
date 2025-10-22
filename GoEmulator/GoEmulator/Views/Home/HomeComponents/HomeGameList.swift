@@ -28,7 +28,7 @@ struct HomeGameList: View {
                     YourGameItem()
                 }
                 .frame(height: height)
-                .addSpotlight(0, text: "✋ Hello friend, “we’ve created a game \nthat could make things easier”")
+                .addSpotlight(0, text: "")
                 
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(0..<6, id: \.self) { index in

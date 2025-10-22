@@ -121,6 +121,14 @@ struct TabScreenView: View {
             DocumentPicker(documentTypes: [])
         })
         .applySpotlightOverlay(currentSpot: $tabViewModel.currentSpot)
+        .onChange(of: tabViewModel.currentSpot) { newValue in
+            if newValue == 3 {
+                tabViewModel.tabSelection = .setting
+            }
+        }
+        .onAppear {
+            
+        }
     }
 }
 

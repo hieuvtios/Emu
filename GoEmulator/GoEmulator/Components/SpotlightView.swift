@@ -40,7 +40,6 @@ public extension View {
                                 currentSpot: currentSpot,
                                 totalSpotsCount: values.count,
                                 textContent: preference.value.text)
-                    
                 }
             }
             .ignoresSafeArea()
@@ -60,103 +59,44 @@ private struct OverlayView: View {
     var totalSpotsCount: Int
     var textContent: String
     var blurredViewOpacity: CGFloat = 0.9
+    var tutorials: [TourguideEnum] = [.step1, .step2, .step3, .step4]
     
     var body: some View {
         VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+            .mask {
+                Rectangle()
+                    .overlay(alignment: .topLeading) {
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: currentSpot != 2 ? highlightAnchorPosition.width : 0,
+                                   height: currentSpot != 2 ? highlightAnchorPosition.height : 0)
+                            .offset(x: highlightAnchorPosition.minX,
+                                    y: highlightAnchorPosition.minY)
+                            .blendMode(.destinationOut)
+                    }
+            }
             .opacity((currentSpot != nil) ? blurredViewOpacity : 0)
             .overlay(alignment: .top) {
-                VStack {
-                    Text(textContent)
-                        .padding(.all, 12)
-                    Image(systemName: "chevron.left.circle.fill")
-                        .font(.system(size: 25))
-                    Text("Page count")
-                }
-                .padding()
-                .opacity(0) // this view is just used to estimate the size of the text
-                .overlay {
-                    GeometryReader { proxy in
-                        VStack(spacing: 25) {
-                            LottiePlusView(name: "Click here", loopMode: .loop)
-                                .frame(width: 103, height: 103)
-                                .scaleEffect(x: 1, y: -1)
-                            
-                            Text(textContent)
-                                .padding(.all, 12)
-                                .foregroundColor(Color.white)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 16)
-                                        .foregroundColor(Color(hex: "#5392FF"))
-                                        .shadow(radius: 10)
-                                }
-                            
-                            
-                            
-//                            HStack {
-//                                
-//                                // switch to previous one button
-//                                Button {
-//                                    guard let currentSpotIndex = self.currentSpot else { return }
-//                                    currentSpot = currentSpotIndex - 1
-//                                } label: {
-//                                    Image(systemName: "chevron.left.circle.fill")
-//                                }
-//                                .disabled((currentSpot ?? 0) <= 0)
-//                                .font(.system(size: 25))
-//                                
-//                                // current page index
-//                                Text("\((currentSpot ?? 0) + 1)/\(totalSpotsCount)")
-//                                
-//                                // switch to next one button
-//                                // only shown if this is not the last spotlight
-//                                if (currentSpot ?? 0) < (totalSpotsCount - 1) {
-//                                    Button {
-//                                        guard let currentSpotIndex = self.currentSpot else { return }
-//                                        currentSpot = currentSpotIndex + 1
-//                                    } label: {
-//                                        Image(systemName: "chevron.right.circle.fill")
-//                                    }
-//                                    .font(.system(size: 25))
-//                                }
-//                                
-//                                // skip or close button
-//                                Button {
-//                                    currentSpot = totalSpotsCount
-//                                } label: {
-//                                    Image(systemName: (currentSpot == (totalSpotsCount - 1)) ? "xmark.circle.fill" : "forward.end.circle.fill")
-//                                }
-//                                .font(.system(size: 25))
-//                                
-//                            }
+                tutorials[currentSpot ?? 0].body
+                    .padding()
+                    .opacity(0) // this view is just used to estimate the size of the text
+                    .overlay {
+                        GeometryReader { proxy in
+                            tutorials[currentSpot ?? 0].body
+                                .padding()
+                                .offset(y: (
+                                    highlightAnchorPosition.minY > UIScreen.main.bounds.height / 2 &&
+                                    highlightAnchorPosition.maxY > UIScreen.main.bounds.height / 2
+                                ) ? (highlightAnchorPosition.minY - proxy.size.height) : highlightAnchorPosition.maxY)
                             
                         }
-                        .padding()
-                        .offset(y: (
-                            highlightAnchorPosition.minY > UIScreen.main.bounds.height / 2 &&
-                            highlightAnchorPosition.maxY > UIScreen.main.bounds.height / 2
-                        ) ? (highlightAnchorPosition.minY - proxy.size.height) : highlightAnchorPosition.maxY)
                         
                     }
-                    
-                }
                 
             }
             .onTapGesture {
                 guard let currentSpotIndex = self.currentSpot else { return }
                 currentSpot = currentSpotIndex + 1
             }
-            .mask {
-                Rectangle()
-                    .overlay(alignment: .topLeading) {
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: highlightAnchorPosition.width,
-                                   height: highlightAnchorPosition.height)
-                            .offset(x: highlightAnchorPosition.minX,
-                                    y: highlightAnchorPosition.minY)
-                            .blendMode(.destinationOut)
-                    }
-            }
-        
     }
     
 }

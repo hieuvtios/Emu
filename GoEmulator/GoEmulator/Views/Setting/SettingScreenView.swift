@@ -40,6 +40,7 @@ struct SettingScreenView: View {
                     SettingItem(item: .controller) {
                         settingViewModel.showControllerOption = true
                     }
+                    .addSpotlight(3, text: "")
                     
                     SettingItem(item: .manageSub) {
                         
