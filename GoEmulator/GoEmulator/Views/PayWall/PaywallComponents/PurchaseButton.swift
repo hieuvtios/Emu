@@ -6,23 +6,24 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct PurchaseButton: View {
-    let price: String
-    let packageName: String
-    var showBadge: Bool = false
+    let package: Package
+    var isShowBadge: Bool
+    let onTapAction: () -> ()
     
     var body: some View {
         Button {
-            
+            onTapAction()
         } label: {
             VStack(alignment: .leading) {
-                Text(price)
+                Text(package.localizedPriceString)
                     .font(Font.custom("SVN-Determination Sans", size: 24))
                     .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text(packageName)
+                Text(package.storeProduct.localizedTitle)
                     .font(
                         Font.custom("Chakra Petch", size: 12)
                             .weight(.medium)
@@ -40,9 +41,10 @@ struct PurchaseButton: View {
             )
             .cornerRadius(8)
             .overlay(alignment: .topTrailing) {
-                Image("pw_badge")
-                    .padding(.trailing, 7)
-                
+                if isShowBadge {
+                    Image("pw_badge")
+                        .padding(.trailing, 7)
+                }
             }
         }
     }

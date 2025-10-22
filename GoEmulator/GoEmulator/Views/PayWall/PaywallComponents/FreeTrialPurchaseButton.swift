@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct FreeTrialPurchaseButton: View {
+    let package: Package
+    let onTapAction: () -> ()
+    
     var body: some View {
         Button {
-            
+            onTapAction()
         } label: {
             VStack {
                 Text("3- DAY FREE TRIAL")
@@ -18,7 +22,7 @@ struct FreeTrialPurchaseButton: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                 
-                Text("Then payment 599.000 đ per year")
+                Text("Then payment \(package.localizedPriceString) per year")
                     .font(
                         Font.custom("Chakra Petch", size: 12)
                             .weight(.medium)
@@ -37,8 +41,4 @@ struct FreeTrialPurchaseButton: View {
             .cornerRadius(8)
         }
     }
-}
-
-#Preview {
-    FreeTrialPurchaseButton()
 }

@@ -11,9 +11,9 @@ struct HomeGameList: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 16) {
-                HomeRecentPlay()
+                //HomeRecentPlay()
                 
-                HomeFavorite()
+                //HomeFavorite()
                 
                 HomeTopTitle(title: "Your  Game")
                 
@@ -21,6 +21,15 @@ struct HomeGameList: View {
                 
                 let columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 2)
                 let height: CGFloat = 237
+                
+                HStack(spacing: 16) {
+                    YourGameItem()
+                    
+                    YourGameItem()
+                }
+                .frame(height: height)
+                .addSpotlight(0, text: "✋ Hello friend, “we’ve created a game \nthat could make things easier”")
+                
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(0..<6, id: \.self) { index in
                         YourGameItem()

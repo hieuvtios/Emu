@@ -120,6 +120,7 @@ struct TabScreenView: View {
         .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
             DocumentPicker(documentTypes: [])
         })
+        .applySpotlightOverlay(currentSpot: $tabViewModel.currentSpot)
     }
 }
 

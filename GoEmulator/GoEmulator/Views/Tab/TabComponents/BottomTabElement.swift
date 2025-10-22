@@ -36,6 +36,7 @@ struct BottomTabElement: View {
                     .foregroundColor(tabViewModel.tabSelection == tab ? Color(.blue3) : Color(.grey500))
             }
             .padding(.vertical, 16)
+            .frame(maxWidth: .infinity)
         }
     }
 }

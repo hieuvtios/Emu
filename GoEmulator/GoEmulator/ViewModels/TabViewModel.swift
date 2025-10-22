@@ -15,4 +15,6 @@ class TabViewModel: ObservableObject {
     @Published var showDocumentPicker = false
     
     @Published var showGuideView = false
+    
+    @Published var currentSpot: Int? = 0
 }
