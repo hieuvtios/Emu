@@ -70,6 +70,9 @@ class ControllerManager {
     private var dsHosting: UIHostingController<DSControllerView>?
     private var n64Hosting: UIHostingController<N64ControllerView>?
 
+    // Background Image Views
+    private var gbaBackgroundView: UIImageView?
+
     init(viewController: GameViewController) {
         self.viewController = viewController
     }
@@ -234,21 +237,81 @@ class ControllerManager {
     // MARK: - GBA
     private func setupGBAController() {
         guard let vc = viewController else { return }
-        
+
         vc.controllerView.isHidden = true
+
+        // Setup background image view (Layer 0 - bottom)
+        setupGBABackground(in: vc)
+
         let controller = GBADirectController(name: "GBA Direct Controller", playerIndex: 0)
         gbaController = controller
-        
-        let layout = createLayout(for: .gba)
-        let view = GBAControllerView(controller: controller, layout: layout as! GBAControllerLayoutDefinition)
+
+        let view = GBAControllerView(
+            controller: controller,
+            onMenuButtonTap: { [weak vc] in
+                vc?.presentGameMenu()
+            }
+        )
         gbaHosting = setupHostingController(for: view, in: vc)
         currentType = .gba
+    }
+
+    private func setupGBABackground(in parent: UIViewController) {
+        let isLandscape = parent.view.bounds.width > parent.view.bounds.height
+
+        // Only show background in landscape mode
+        guard isLandscape else { return }
+
+        // Get background image name from theme
+        #if DEBUG
+        let imageName = GBAThemeManager().currentTheme.backgroundLandscapeImageName
+        #else
+        let imageName = GBAControllerTheme.defaultTheme.backgroundLandscapeImageName
+        #endif
+
+        guard let image = UIImage(named: imageName) else { return }
+
+        let backgroundView = UIImageView(image: image)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.clipsToBounds = true
+
+        parent.view.addSubview(backgroundView)
+        parent.view.sendSubviewToBack(backgroundView)
+
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: parent.view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: parent.view.trailingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: parent.view.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor)
+        ])
+
+        gbaBackgroundView = backgroundView
+    }
+
+    func updateGBABackgroundForOrientation() {
+        guard currentType == .gba, let vc = viewController else { return }
+
+        let isLandscape = vc.view.bounds.width > vc.view.bounds.height
+
+        // Remove existing background
+        gbaBackgroundView?.removeFromSuperview()
+        gbaBackgroundView = nil
+
+        // Only recreate in landscape mode
+        if isLandscape {
+            setupGBABackground(in: vc)
+        }
     }
     
     private func teardownGBAController() {
         teardownHosting(&gbaHosting)
         gbaController?.reset()
         gbaController = nil
+
+        // Remove background view
+        gbaBackgroundView?.removeFromSuperview()
+        gbaBackgroundView = nil
     }
     
     // MARK: - DS
@@ -339,10 +402,10 @@ class ControllerManager {
             hosting.view.topAnchor.constraint(equalTo: parent.view.topAnchor),
             hosting.view.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor)
         ])
-        
+
         hosting.didMove(toParent: parent)
-        parent.view.sendSubviewToBack(hosting.view)
-        
+        parent.view.bringSubviewToFront(hosting.view)
+
         return hosting
     }
     

@@ -12,42 +12,23 @@ struct GBADPadView: View {
     @Binding var pressedButtons: Set<GBAButtonType>
     let onDirectionChange: ([GBAButtonType]) -> Void
     let onRelease: () -> Void
+    let theme: GBAControllerTheme
 
     @State private var touchLocation: CGPoint?
 
-    init(layout: GBAControllerLayout.DPadLayout, pressedButtons: Binding<Set<GBAButtonType>>, onDirectionChange: @escaping ([GBAButtonType]) -> Void, onRelease: @escaping () -> Void) {
+    init(layout: GBAControllerLayout.DPadLayout, pressedButtons: Binding<Set<GBAButtonType>>, onDirectionChange: @escaping ([GBAButtonType]) -> Void, onRelease: @escaping () -> Void, theme: GBAControllerTheme) {
         self.layout = layout
         self._pressedButtons = pressedButtons
         self.onDirectionChange = onDirectionChange
         self.onRelease = onRelease
+        self.theme = theme
     }
 
     var body: some View {
         ZStack {
-            // Background circle
-            Circle()
-                .fill(Color.gray.opacity(0.4))
-                .frame(width: layout.radius * 2, height: layout.radius * 2)
-
-            // D-Pad shape
-            dpadShape
-                .fill(Color.gray.opacity(0.6))
-                .overlay(
-                    dpadShape
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                )
-                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
-
-            // Direction indicators
-            directionIndicators
-
-            // Touch indicator
-//            if let location = touchLocation {
-//                Circle()
-//                    .fill(Color.white.opacity(0.5))
-//                    .frame(width: 30, height: 30)
-//                    .position(location)
-//            }
+            // Background image
+            Image(theme.dpadImageName)
+            // Touch indicator (optional)
         }
         .frame(width: layout.radius * 2, height: layout.radius * 2)
         .position(layout.center)

@@ -24,15 +24,24 @@ struct Game: GameProtocol {
 
     /// Default initializer with hardcoded game (for backward compatibility)
     init() {
-        self.type = .gbc
-        // nes game: mario.nes
-        self.fileURL = Bundle.main.url(forResource: "poke", withExtension: "gbc")!
+        self.type = .gba
+        // GBA game: pokemon.gba (add ROM file to project)
+        self.fileURL = Bundle.main.url(forResource: "pokemon", withExtension: "gba")!
+
+        // Other system ROMs (uncomment to test):
+//        self.type = .gbc
+//        self.fileURL = Bundle.main.url(forResource: "poke", withExtension: "gbc")!
+//        self.type = .nes
 //        self.fileURL = Bundle.main.url(forResource: "Contra", withExtension: "nes")!
+//        self.type = .snes
 //        self.fileURL = Bundle.main.url(forResource: "demo", withExtension: "smc")!
+//        self.type = .n64
 //        self.fileURL = Bundle.main.url(forResource: "kombat", withExtension: "z64")!
+//        self.type = .genesis
 //        self.fileURL = Bundle.main.url(forResource: "street", withExtension: "md")!
-//        self.fileURL = Bundle.main.url(forResource: "pokemon", withExtension: "gba")!
+//        self.type = .ds
 //        self.fileURL = Bundle.main.url(forResource: "callofduty", withExtension: "nds")!
+
         self.name = "Pokémon"
     }
 }
