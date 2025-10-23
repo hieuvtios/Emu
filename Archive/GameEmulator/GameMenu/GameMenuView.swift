@@ -19,42 +19,54 @@ struct GameMenuView: View {
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                // Tab Selector
-                Picker("Menu", selection: $selectedTab) {
-                    Text("Quick").tag(0)
-                    Text("States").tag(1)
-                    Text("Cheats").tag(2)
-                    Text("Settings").tag(3)
+            ZStack {
+                VStack(spacing: 0) {
+                    // Tab Selector
+                    Picker("Menu", selection: $selectedTab) {
+                        Text("Quick").tag(0)
+                        Text("States").tag(1)
+                        Text("Cheats").tag(2)
+                        Text("Settings").tag(3)
+                    }
+                    .pickerStyle(.segmented)
+                    .padding()
+
+                    // Content
+                    TabView(selection: $selectedTab) {
+                        quickActionsView
+                            .tag(0)
+
+                        saveStatesView
+                            .tag(1)
+
+                        cheatsView
+                            .tag(2)
+
+                        settingsView
+                            .tag(3)
+                    }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+
+                    // Dismiss Button
+                    dismissButton
+                        .padding(.horizontal)
+                        .padding(.bottom, 16)
                 }
-                .pickerStyle(.segmented)
-                .padding()
-
-                // Content
-                TabView(selection: $selectedTab) {
-                    quickActionsView
-                        .tag(0)
-
-                    saveStatesView
-                        .tag(1)
-
-                    cheatsView
-                        .tag(2)
-
-                    settingsView
-                        .tag(3)
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
             }
             .navigationTitle("Game Menu")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Resume") {
+                    Button(action: {
                         dismiss()
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title3)
+                            .foregroundColor(.secondary)
                     }
                 }
             }
+
             .alert("Error", isPresented: .constant(viewModel.errorMessage != nil)) {
                 Button("OK") {
                     viewModel.errorMessage = nil
@@ -65,6 +77,34 @@ struct GameMenuView: View {
                 }
             }
         }
+    }
+
+    // MARK: - Dismiss Button
+
+    private var dismissButton: some View {
+        Button(action: {
+            dismiss()
+        }) {
+            HStack {
+                Image(systemName: "gamecontroller.fill")
+                    .font(.title3)
+                Text("Resume Game")
+                    .font(.headline)
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]),
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+            )
+            .foregroundColor(.white)
+            .cornerRadius(12)
+            .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 2)
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Quick Actions View

@@ -1,144 +1,190 @@
-//
-//  GBCControllerView.swift
-//  GameEmulator
-//
-//  Main GBC controller view with direct Gambatte integration
-//
-
 import SwiftUI
 
 struct GBCControllerView: View {
     let controller: GBCDirectController
-    let layout: GBCControllerLayoutDefinition
+    let onMenuButtonTap: () -> Void
 
     @State private var buttonStates: [GBCButtonType: Bool] = [:]
     @State private var dpadButtons: Set<GBCButtonType> = []
+    @State private var currentLayout: GBCControllerLayoutDefinition?
+
+    #if DEBUG
+    @StateObject private var themeManager = GBCThemeManager()
+    @State private var showThemePicker = false
+    #endif
 
     var body: some View {
-        ZStack {
-            // Semi-transparent background
-            Color.black.opacity(0.1)
-                .edgesIgnoringSafeArea(.all)
-                .allowsHitTesting(false)
+        GeometryReader { geometry in
+            VStack(spacing: 0) {
+                // MARK: - Main Controller Area
+                ZStack(alignment:.bottom) {
+                    // Background
+                    if geometry.size.width > geometry.size.height {
+                        Image(getCurrentTheme().backgroundLandscapeImageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .ignoresSafeArea()
+                    } else {
+                        ZStack(alignment:.top){
+                          Image(getCurrentTheme().backgroundPortraitImageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                                .clipped()
+                            HStack(alignment:.top) {
+                                Image(.btnLeft)
+                                    .aspectRatio(contentMode: .fit)
+                                    .offset(CGSizeMake(0, -7))
+                                Spacer()
+                                Image(.btnRight)
+                                    .aspectRatio(contentMode: .fit)
+                                    .offset(CGSizeMake(0, -7))
 
-            // D-Pad
-            GBCDPadView(
-                layout: layout.dpad,
-                pressedButtons: $dpadButtons,
-                onDirectionChange: { buttons in
-                    // Release all d-pad buttons first
-                    controller.releaseAllDPadButtons()
-
-                    // Press new buttons
-                    if !buttons.isEmpty {
-                        controller.pressDPadButtons(buttons)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .top)
+                        }
                     }
-                },
-                onRelease: {
-                    controller.releaseAllDPadButtons()
+                    if let layout = currentLayout {
+                        // D-Pad
+                        GBCDPadView(
+                            layout: layout.dpad,
+                            pressedButtons: $dpadButtons,
+                            onDirectionChange: { buttons in
+                                controller.releaseAllDPadButtons()
+                                if !buttons.isEmpty {
+                                    controller.pressDPadButtons(buttons)
+                                }
+                            },
+                            onRelease: {
+                                controller.releaseAllDPadButtons()
+                            },
+                            theme: getCurrentTheme()
+                        )
+                        .zIndex(1)
+
+                        // Action Buttons
+                        ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
+                            GBCButtonView(
+                                button: buttonLayout.button,
+                                layout: buttonLayout,
+                                isPressed: Binding(
+                                    get: { buttonStates[buttonLayout.button] ?? false },
+                                    set: { buttonStates[buttonLayout.button] = $0 }
+                                ),
+                                onPress: { controller.pressButton(buttonLayout.button) },
+                                onRelease: { controller.releaseButton(buttonLayout.button) },
+                                theme: getCurrentTheme()
+                            )
+                        }
+
+                        // Center Buttons (Start, Select)
+                        ForEach(layout.centerButtons, id: \.button.rawValue) { buttonLayout in
+                            GBCCenterButtonView(
+                                button: buttonLayout.button,
+                                layout: buttonLayout,
+                                isPressed: Binding(
+                                    get: { buttonStates[buttonLayout.button] ?? false },
+                                    set: { buttonStates[buttonLayout.button] = $0 }
+                                ),
+                                onPress: {
+                                    controller.pressButton(buttonLayout.button)
+                                },
+                                onRelease: {
+                                    controller.releaseButton(buttonLayout.button)
+                                },
+                                theme: getCurrentTheme()
+                            )
+                        }
+
+                        // Menu Button
+                        if let firstCenterButton = layout.centerButtons.first {
+                            let isLandscape = geometry.size.width > geometry.size.height
+                            Button(action: {
+                                onMenuButtonTap()
+                            }) {
+                                Image(getCurrentTheme().menuButtonImageName)
+                            }
+                            .position(x: isLandscape ? 50 : 30, y: firstCenterButton.position.y)                            .zIndex(1)
+                        }
+
+                        #if DEBUG
+                        // Theme Picker Button (Debug Only)
+                        Button(action: {
+                            showThemePicker = true
+                        }) {
+                            Image(systemName: "paintbrush.fill")
+                                .font(.system(size: 20))
+                                .foregroundColor(.white)
+                                .padding(12)
+                                .background(Circle().fill(Color.blue.opacity(0.8)))
+                                .shadow(radius: 4)
+                        }
+                        .position(x: geometry.size.width - 40, y: 40)
+                        .zIndex(1)
+                        #endif
+                    }
                 }
-            )
-            .zIndex(1)
+                .ignoresSafeArea()
 
-            // Action buttons (A, B)
-            ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
-                GBCButtonView(
-                    button: buttonLayout.button,
-                    layout: buttonLayout,
-                    isPressed: Binding(
-                        get: { buttonStates[buttonLayout.button] ?? false },
-                        set: { buttonStates[buttonLayout.button] = $0 }
-                    ),
-                    onPress: {
-                        controller.pressButton(buttonLayout.button)
-                    },
-                    onRelease: {
-                        controller.releaseButton(buttonLayout.button)
-                    }
-                )
             }
-
-            // Center buttons (Start, Select)
-            ForEach(layout.centerButtons, id: \.button.rawValue) { buttonLayout in
-                GBCCenterButtonView(
-                    button: buttonLayout.button,
-                    layout: buttonLayout,
-                    isPressed: Binding(
-                        get: { buttonStates[buttonLayout.button] ?? false },
-                        set: { buttonStates[buttonLayout.button] = $0 }
-                    ),
-                    onPress: {
-                        controller.pressButton(buttonLayout.button)
-                    },
-                    onRelease: {
-                        controller.releaseButton(buttonLayout.button)
-                    }
-                ).padding(.bottom, 50)
+            .ignoresSafeArea()
+            .onAppear {
+                updateLayout(for: geometry.size)
             }
+            .onChange(of: geometry.size) { newSize in
+                updateLayout(for: newSize)
+            }
+            #if DEBUG
+            .sheet(isPresented: $showThemePicker) {
+                GBCThemePickerView(themeManager: themeManager)
+            }
+            #endif
         }
     }
-}
 
-// Center button component (Start/Select - smaller oval buttons)
-struct GBCCenterButtonView: View {
-    let button: GBCButtonType
-    let layout: GBCControllerLayout.ButtonLayout
-    @Binding var isPressed: Bool
-    let onPress: () -> Void
-    let onRelease: () -> Void
+    // MARK: - Layout Update
 
-    var body: some View {
-        Capsule()
-            .fill(isPressed ? Color.gray.opacity(0.8) : Color.gray.opacity(0.5))
-            .overlay(
-                Capsule()
-                    .stroke(Color.white.opacity(0.3), lineWidth: 1.5)
-            )
-            .overlay(
-                Text(button.displayName)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white)
-            )
-            .frame(width: layout.size.width, height: layout.size.height)
-            .position(layout.position)
-            .scaleEffect(isPressed ? 0.95 : 1.0)
-            .shadow(
-                color: isPressed ? .clear : Color.black.opacity(0.3),
-                radius: isPressed ? 0 : 3,
-                x: 0,
-                y: isPressed ? 0 : 1
-            )
-            .animation(.easeInOut(duration: 0.1), value: isPressed)
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged { _ in
-                        if !isPressed {
-                            isPressed = true
-                            onPress()
-                            UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                        }
-                    }
-                    .onEnded { _ in
-                        if isPressed {
-                            isPressed = false
-                            onRelease()
-                        }
-                    }
-            )
+    private func updateLayout(for size: CGSize) {
+        // Determine orientation based on aspect ratio
+        let isLandscape = size.width > size.height
+
+        // Update layout based on orientation
+        if isLandscape {
+            currentLayout = GBCControllerLayout.landscapeLayout(screenSize: size)
+        } else {
+            currentLayout = GBCControllerLayout.portraitLayout(screenSize: size)
+        }
+    }
+
+    // MARK: - Theme Helper
+
+    private func getCurrentTheme() -> GBCControllerTheme {
+        #if DEBUG
+        return themeManager.currentTheme
+        #else
+        return .defaultTheme
+        #endif
     }
 }
-
-// Preview provider
+// Preview this view
 struct GBCControllerView_Previews: PreviewProvider {
     static var previews: some View {
-        let controller = GBCDirectController(name: "GBC Direct Controller", playerIndex: 0)
+        Group {
+            // Portrait Preview
+            GBCControllerView(
+                controller: GBCDirectController(name: "Preview Controller"),
+                onMenuButtonTap: { print("Menu tapped") }
+            )
+                .previewDisplayName("Portrait")
+                .previewInterfaceOrientation(.portrait)
 
-        let layout = GBCControllerLayout.landscapeLayout(
-            screenSize: CGSize(width: 844, height: 390)
-        )
-
-        return GBCControllerView(controller: controller, layout: layout)
-            .previewDevice("iPhone 14 Pro")
-            .previewInterfaceOrientation(.landscapeLeft)
+            // Landscape Preview
+            GBCControllerView(
+                controller: GBCDirectController(name: "Preview Controller"),
+                onMenuButtonTap: { print("Menu tapped") }
+            )
+                .previewDisplayName("Landscape")
+                .previewInterfaceOrientation(.landscapeLeft)
+        }
     }
 }

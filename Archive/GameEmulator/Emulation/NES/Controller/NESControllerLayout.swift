@@ -3,6 +3,7 @@
 //  GameEmulator
 //
 //  Layout definitions for NES controller
+//  Authentic Game Boy Color layout with diagonal A/B buttons
 //
 
 import SwiftUI
@@ -30,62 +31,65 @@ struct NESControllerLayout {
     // MARK: - Landscape Layout
 
     static func landscapeLayout(screenSize: CGSize) -> NESControllerLayoutDefinition {
-        let padding: CGFloat = 40
-        let buttonSize = CGSize(width: 60, height: 60)
-        let dpadRadius: CGFloat = 80
-        let smallButtonSize = CGSize(width: 50, height: 25)
+        let baseWidth: CGFloat = 852
+        let baseHeight: CGFloat = 393
 
-        // D-Pad (left side)
+        let widthRatio = screenSize.width / baseWidth
+        let heightRatio = screenSize.height / baseHeight
+
+        let buttonSize = CGSize(width: 68 * heightRatio, height: 68 * heightRatio)
+        let dpadRadius: CGFloat = 60 * heightRatio
+        let smallButtonSize = CGSize(width: 45 * heightRatio, height: 20 * heightRatio)
+
+        // D-Pad (bottom-left corner)
         let dpadCenter = CGPoint(
-            x: padding + dpadRadius,
-            y: screenSize.height / 2
+            x: screenSize.width * 0.15,
+            y: screenSize.height * 0.5
         )
 
-        // Action buttons (right side) - NES has simple horizontal A/B layout
-        let actionButtonsCenter = CGPoint(
-            x: screenSize.width - padding - dpadRadius,
-            y: screenSize.height / 2
-        )
-
-        let actionButtonSpacing: CGFloat = 75
+        // Action buttons (right side, stacked vertically with slight offset)
+        // A button (red) - top right
+        // B button (yellow) - below and slightly left of A
+        let actionButtonsBaseX = screenSize.width * 0.95
+        let actionButtonsBaseY = screenSize.height * 0.68
+        let verticalSpacing: CGFloat = 70 * heightRatio
 
         let actionButtons: [ButtonLayout] = [
-            // B (left)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x - actionButtonSpacing / 2,
-                    y: actionButtonsCenter.y
-                ),
-                size: buttonSize,
-                button: .b
-            ),
-            // A (right)
-            ButtonLayout(
-                position: CGPoint(
-                    x: actionButtonsCenter.x + actionButtonSpacing / 2,
-                    y: actionButtonsCenter.y
+                    x: actionButtonsBaseX + 50,
+                    y: actionButtonsBaseY - 100
                 ),
                 size: buttonSize,
                 button: .a
+            ),
+            ButtonLayout(
+                position: CGPoint(
+                    x: actionButtonsBaseX - 50 * widthRatio + 20,
+                    y: actionButtonsBaseY + verticalSpacing - 90
+                ),
+                size: buttonSize,
+                button: .b
             )
         ]
 
-        // Start/Select (center-bottom)
+        // Center Buttons (Select/Start) - positioned below the screen area
+        let centerButtonsY = screenSize.height * 0.90
+        let centerSpacing = 80 * widthRatio
+
         let centerButtons: [ButtonLayout] = [
-            // Select
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 - 60,
-                    y: screenSize.height - 90
+                    x: screenSize.width - 50 ,
+                    y: centerButtonsY
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
-            // Start
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 10,
-                    y: screenSize.height - 90
+                    x: screenSize.width + 20,
+                    y: centerButtonsY
                 ),
                 size: smallButtonSize,
                 button: .start
@@ -103,68 +107,76 @@ struct NESControllerLayout {
     // MARK: - Portrait Layout
 
     static func portraitLayout(screenSize: CGSize) -> NESControllerLayoutDefinition {
-        let padding: CGFloat = 30
-        let buttonSize = CGSize(width: 55, height: 55)
-        let dpadRadius: CGFloat = 70
-        let smallButtonSize = CGSize(width: 45, height: 22)
-
-        let controlsY = screenSize.height * 0.65
-
-        // D-Pad (lower left)
+        // iPhone 17 reference
+        let baseWidth: CGFloat = 393
+        let baseHeight: CGFloat = 852
+        
+        let widthRatio = screenSize.width / baseWidth
+        let heightRatio = screenSize.height / baseHeight
+        
+        // Scaled constants
+        let buttonSize = CGSize(width: 68 * widthRatio, height: 68 * widthRatio)
+        let dpadRadius: CGFloat = 60 * widthRatio
+        let smallButtonSize = CGSize(width: 45 * widthRatio, height: 20 * heightRatio)
+        
+        // Controls area (same relative position)
+        let controlsY = screenSize.height * 0.72 * heightRatio
+        
+        // D-Pad (bottom-left)
         let dpadCenter = CGPoint(
-            x: padding + dpadRadius,
-            y: controlsY
+            x: 95 * widthRatio,
+            y: controlsY + (110 * heightRatio)
         )
-
-        // Action buttons (lower right)
+        
+        // Action buttons (bottom-right)
         let actionButtonsCenter = CGPoint(
-            x: screenSize.width - padding - dpadRadius,
-            y: controlsY
+            x: screenSize.width - (95 * widthRatio),
+            y: controlsY + (110 * heightRatio)
         )
-
-        let actionButtonSpacing: CGFloat = 65
-
+        
+        let diagonalOffset: CGFloat = 28 * widthRatio
+        
         let actionButtons: [ButtonLayout] = [
-            // B (left)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x - actionButtonSpacing / 2,
-                    y: actionButtonsCenter.y
+                    x: actionButtonsCenter.x - diagonalOffset - 10,
+                    y: actionButtonsCenter.y - diagonalOffset
                 ),
                 size: buttonSize,
                 button: .b
             ),
-            // A (right)
             ButtonLayout(
                 position: CGPoint(
-                    x: actionButtonsCenter.x + actionButtonSpacing / 2,
-                    y: actionButtonsCenter.y
+                    x: actionButtonsCenter.x + diagonalOffset,
+                    y: actionButtonsCenter.y + diagonalOffset + 10
                 ),
                 size: buttonSize,
                 button: .a
             )
         ]
-
-        // Start/Select
+        
+        // Start/Select (centered above bottom edge)
+        let centerButtonsY = screenSize.height - (70 * heightRatio)
+        
         let centerButtons: [ButtonLayout] = [
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 - 55,
-                    y: screenSize.height - 90
+                    x: screenSize.width / 2 - (40 * widthRatio),
+                    y: centerButtonsY + (100 * heightRatio)
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 10,
-                    y: screenSize.height - 90
+                    x: screenSize.width / 2 + (40 * widthRatio),
+                    y: centerButtonsY + (100 * heightRatio)
                 ),
                 size: smallButtonSize,
                 button: .start
             )
         ]
-
+        
         return NESControllerLayoutDefinition(
             mode: .portrait,
             dpad: DPadLayout(center: dpadCenter, radius: dpadRadius),

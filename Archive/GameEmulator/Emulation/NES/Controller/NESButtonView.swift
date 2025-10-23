@@ -13,35 +13,40 @@ struct NESButtonView: View {
     @Binding var isPressed: Bool
     let onPress: () -> Void
     let onRelease: () -> Void
+    let theme: NESControllerTheme
 
     @State private var touchLocation: CGPoint?
-
+    private var buttonImageName: String {
+        switch button {
+        case .a: return theme.buttonAImageName
+        case .b: return theme.buttonBImageName
+        case .start: return theme.startButtonImageName
+        case .select: return theme.selectButtonImageName
+        default: return "btn-menu-gba"
+        }
+    }
     var body: some View {
         ZStack {
             // Button background
-            Circle()
-                .fill(buttonColor)
-                .overlay(
-                    Circle()
-                        .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                )
-                .shadow(
-                    color: isPressed ? .clear : Color.black.opacity(0.3),
-                    radius: isPressed ? 0 : 4,
-                    x: 0,
-                    y: isPressed ? 0 : 2
-                )
-
-            // Button label
-            Text(button.displayName)
-                .font(.system(size: 18, weight: .bold, design: .rounded))
-                .foregroundColor(.white)
-                .shadow(color: .black.opacity(0.5), radius: 1, x: 0, y: 1)
+            Image(buttonImageName)
+                .resizable()
+                .scaledToFit()
+                .opacity(isPressed ? 0.9 : 1.0)
+//                .overlay(
+//                    Circle()
+//                        .stroke(Color.white.opacity(0.2), lineWidth: 2)
+//                )
+//                .shadow(
+//                    color: isPressed ? .clear : Color.black.opacity(0.3),
+//                    radius: isPressed ? 0 : 4,
+//                    x: 0,
+//                    y: isPressed ? 0 : 2
+//                )
         }
         .frame(width: layout.size.width, height: layout.size.height)
         .position(layout.position)
-        .scaleEffect(isPressed ? 0.95 : 1.0)
-        .animation(.easeInOut(duration: 0.1), value: isPressed)
+//        .scaleEffect(isPressed ? 0.95 : 1.0)
+//        .animation(.easeInOut(duration: 0.1), value: isPressed)
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { value in

@@ -24,7 +24,7 @@ extension UISceneSession
         NotificationCenter.default.post(name: UISceneSession.willQuitNotification, object: self)
         
         UIApplication.shared.requestSceneSessionDestruction(self, options: nil) { error in
-            Logger.main.error("Failed to quit scene session. \(error.localizedDescription, privacy: .public)")
+//            Logger.main.error("Failed to quit scene session. \(error.localizedDescription, privacy: .public)")
             
             let nsError = error as NSError
             if nsError.domain == "SBApplicationSupportService" && nsError.code == 2 && self.scene == nil
