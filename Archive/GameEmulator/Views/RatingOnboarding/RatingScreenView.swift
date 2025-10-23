@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct RatingScreenView: View {
-    @State var showRattingBanner = true
+    @Environment(\.dismiss) var dismiss
+    
+    var onCompleteRating: (() -> ())?
+    
     @State var rating: Int = 5
     var max: Int = 5
     
@@ -24,10 +28,10 @@ struct RatingScreenView: View {
         }
     }
     
+    @State var showLoadingView = false
+    
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Color.red.ignoresSafeArea()
-            
+        ZStack(alignment: .bottom) {            
             Rectangle()
                 .fill(.black.opacity(0.8))
                 .shadow(color: .black.opacity(0.25), radius: 7.5, x: 0, y: 4)
@@ -55,7 +59,18 @@ struct RatingScreenView: View {
                     .foregroundColor(Color(red: 0.94, green: 0.69, blue: 0.98))
                 
                 AppButton(title: "RATE ON PLAY") {
-                    
+                    showLoadingView = true
+                    dismiss()
+                    if rating < 4 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            onCompleteRating?()
+                        }
+                    } else {
+                        showReview()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            onCompleteRating?()
+                        }
+                    }
                 }
             }
             .frame(maxWidth: .infinity)
@@ -79,9 +94,14 @@ struct RatingScreenView: View {
                     .position(x: 195, y:-13)
             }
             
-            AppBannerNotification(title: "Thank for you feedback", subTitle: "We will improve to enhance the quality")
-                .frame(maxHeight: .infinity, alignment: .top)
-                .padding(.top, 60)
+            if showLoadingView {
+                ZStack {
+                    Color.black.opacity(0.8).ignoresSafeArea()
+                    
+                    ProgressView()
+                        .tint(.white)
+                }
+            }
         }
         .ignoresSafeArea()
     }
@@ -98,11 +118,15 @@ struct RatingScreenView: View {
                     }
                 }
                 .onTapGesture {
-                    withAnimation {
-                        rating = index
-                    }
+                    rating = index
                 }
             }
+        }
+    }
+    
+    func showReview() {
+        if let scene = UIApplication.shared.connectedScenes.first(where: {$0.activationState == .foregroundActive}) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
         }
     }
 }

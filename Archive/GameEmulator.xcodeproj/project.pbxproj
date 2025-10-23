@@ -15,6 +15,16 @@
 		65282D452EA3823A003AB2E0 /* N64DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65282D292EA38229003AB2E0 /* N64DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		652EFED92E93BD8900669176 /* GBADeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EFED62E93B74D00669176 /* GBADeltaCore.framework */; };
 		652EFEDA2E93BD8900669176 /* GBADeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 652EFED62E93B74D00669176 /* GBADeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		653D9EDB2EA9EC5D00D43958 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EDA2EA9EC5D00D43958 /* FirebaseAnalytics */; };
+		653D9EDD2EA9EC5D00D43958 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EDC2EA9EC5D00D43958 /* FirebaseAnalyticsCore */; };
+		653D9EDF2EA9EC5D00D43958 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EDE2EA9EC5D00D43958 /* FirebaseAppCheck */; };
+		653D9EE12EA9EC5D00D43958 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EE02EA9EC5D00D43958 /* FirebaseAuth */; };
+		653D9EE32EA9EC5D00D43958 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EE22EA9EC5D00D43958 /* FirebaseCore */; };
+		653D9EE52EA9EC5D00D43958 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EE42EA9EC5D00D43958 /* FirebaseCrashlytics */; };
+		653D9EE72EA9EC5D00D43958 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EE62EA9EC5D00D43958 /* FirebaseRemoteConfig */; };
+		653D9EEF2EA9EC9900D43958 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EEE2EA9EC9900D43958 /* RevenueCat */; };
+		653D9EF22EA9ECCC00D43958 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EF12EA9ECCC00D43958 /* GoogleMobileAds */; };
+		653D9EF52EA9F03500D43958 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 653D9EF42EA9F03500D43958 /* Lottie */; };
 		6562F8F42E9B4C1F0053DCB8 /* MelonDSDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6562F8F12E9B4C100053DCB8 /* MelonDSDeltaCore.framework */; };
 		6562F8F52E9B4C1F0053DCB8 /* MelonDSDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6562F8F12E9B4C100053DCB8 /* MelonDSDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65CA65A02E8E31E1008374B5 /* NESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA65842E8E25B5008374B5 /* NESDeltaCore.framework */; };
@@ -148,9 +158,22 @@
 		F4D074AE2E859E2500A8DB4C /* Roxas.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Roxas.xcodeproj; path = Cores/Roxas/Roxas.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		653D9EF72EA9F09300D43958 /* Exceptions for "GameEmulator" folder in "GameEmulator" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F45A79512E7FD08400744A9F /* GameEmulator */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F45A79542E7FD08400744A9F /* GameEmulator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				653D9EF72EA9F09300D43958 /* Exceptions for "GameEmulator" folder in "GameEmulator" target */,
+			);
 			path = GameEmulator;
 			sourceTree = "<group>";
 		};
@@ -162,13 +185,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F490BC852E83D377001F129E /* DeltaCore.framework in Frameworks */,
+				653D9EE12EA9EC5D00D43958 /* FirebaseAuth in Frameworks */,
+				653D9EEF2EA9EC9900D43958 /* RevenueCat in Frameworks */,
 				65CB1B952E91355B008A7E49 /* GBCDeltaCore.framework in Frameworks */,
+				653D9EDB2EA9EC5D00D43958 /* FirebaseAnalytics in Frameworks */,
 				F4D074BA2E859E3100A8DB4C /* Roxas.framework in Frameworks */,
+				653D9EDF2EA9EC5D00D43958 /* FirebaseAppCheck in Frameworks */,
+				653D9EE32EA9EC5D00D43958 /* FirebaseCore in Frameworks */,
+				653D9EF52EA9F03500D43958 /* Lottie in Frameworks */,
 				6562F8F42E9B4C1F0053DCB8 /* MelonDSDeltaCore.framework in Frameworks */,
 				F4D073B42E83F5DA00A8DB4C /* SNESDeltaCore.framework in Frameworks */,
+				653D9EE72EA9EC5D00D43958 /* FirebaseRemoteConfig in Frameworks */,
+				653D9EDD2EA9EC5D00D43958 /* FirebaseAnalyticsCore in Frameworks */,
 				65282D402EA3823A003AB2E0 /* N64DeltaCore_RSP.framework in Frameworks */,
 				65CB1BB22E914D37008A7E49 /* GPGXDeltaCore.framework in Frameworks */,
+				653D9EF22EA9ECCC00D43958 /* GoogleMobileAds in Frameworks */,
 				65282D422EA3823A003AB2E0 /* N64DeltaCore_Video.framework in Frameworks */,
+				653D9EE52EA9EC5D00D43958 /* FirebaseCrashlytics in Frameworks */,
 				65CA65A02E8E31E1008374B5 /* NESDeltaCore.framework in Frameworks */,
 				65282D442EA3823A003AB2E0 /* N64DeltaCore.framework in Frameworks */,
 				652EFED92E93BD8900669176 /* GBADeltaCore.framework in Frameworks */,
@@ -306,6 +339,16 @@
 			);
 			name = GameEmulator;
 			packageProductDependencies = (
+				653D9EDA2EA9EC5D00D43958 /* FirebaseAnalytics */,
+				653D9EDC2EA9EC5D00D43958 /* FirebaseAnalyticsCore */,
+				653D9EDE2EA9EC5D00D43958 /* FirebaseAppCheck */,
+				653D9EE02EA9EC5D00D43958 /* FirebaseAuth */,
+				653D9EE22EA9EC5D00D43958 /* FirebaseCore */,
+				653D9EE42EA9EC5D00D43958 /* FirebaseCrashlytics */,
+				653D9EE62EA9EC5D00D43958 /* FirebaseRemoteConfig */,
+				653D9EEE2EA9EC9900D43958 /* RevenueCat */,
+				653D9EF12EA9ECCC00D43958 /* GoogleMobileAds */,
+				653D9EF42EA9F03500D43958 /* Lottie */,
 			);
 			productName = GameEmulator;
 			productReference = F45A79522E7FD08400744A9F /* GameEmulator.app */;
@@ -336,6 +379,10 @@
 			mainGroup = F45A79492E7FD08400744A9F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				653D9EED2EA9EC9900D43958 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+				653D9EF02EA9ECCC00D43958 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				653D9EF32EA9F03500D43958 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F45A79532E7FD08400744A9F /* Products */;
@@ -625,6 +672,7 @@
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu",
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu/bapu",
 				);
+				INFOPLIST_FILE = GameEmulator/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = OK;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app need photo permissions to save screenshots";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -666,6 +714,7 @@
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu",
 					"$(SRCROOT)/Cores/SNESDeltaCore/snes9x/apu/bapu",
 				);
+				INFOPLIST_FILE = GameEmulator/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = OK;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app need photo permissions to save screenshots";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -713,6 +762,94 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.4.0;
+			};
+		};
+		653D9EED2EA9EC9900D43958 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.44.1;
+			};
+		};
+		653D9EF02EA9ECCC00D43958 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.0;
+			};
+		};
+		653D9EF32EA9F03500D43958 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		653D9EDA2EA9EC5D00D43958 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		653D9EDC2EA9EC5D00D43958 /* FirebaseAnalyticsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsCore;
+		};
+		653D9EDE2EA9EC5D00D43958 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		653D9EE02EA9EC5D00D43958 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		653D9EE22EA9EC5D00D43958 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		653D9EE42EA9EC5D00D43958 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		653D9EE62EA9EC5D00D43958 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9ED92EA9EC5D00D43958 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		653D9EEE2EA9EC9900D43958 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9EED2EA9EC9900D43958 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		653D9EF12EA9ECCC00D43958 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9EF02EA9ECCC00D43958 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		653D9EF42EA9F03500D43958 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 653D9EF32EA9F03500D43958 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F45A794A2E7FD08400744A9F /* Project object */;
 }

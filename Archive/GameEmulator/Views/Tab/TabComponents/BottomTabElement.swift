@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct BottomTabElement: View {
-    @Binding var tabSelection: AppScreen
+    @StateObject private var interstitial = InterstitialAdManager(adUnitID: GoogleAdMobUnitId.interstitial, remote: .is_show_inter_ads)
+    
+    @ObservedObject var tabViewModel: TabViewModel
     let tab: AppScreen
     
     var body: some View {
         Button {
-            tabSelection = tab
+            if tab == .guide {
+                tabViewModel.showGuideView = true
+            } else {
+                interstitial.loadAndShow(placement: "") { adResult in
+                    tabViewModel.tabSelection = tab
+                }
+            }
         } label: {
             VStack {
-                Image(tab.icon_select)
+                Image(tabViewModel.tabSelection == tab ? tab.icon_select : tab.icon_unselect)
                 
                 // Caption/12px/Bold
                 Text(tab.label)
@@ -25,9 +33,10 @@ struct BottomTabElement: View {
                             .weight(.bold)
                     )
                     .multilineTextAlignment(.center)
-                    .foregroundColor(tabSelection == tab ? Color(.blue3) : Color(.grey500))
+                    .foregroundColor(tabViewModel.tabSelection == tab ? Color(.blue3) : Color(.grey500))
             }
             .padding(.vertical, 16)
+            .frame(maxWidth: .infinity)
         }
     }
 }

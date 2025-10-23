@@ -16,6 +16,8 @@ class TabViewModel: ObservableObject {
     @Published var showDocumentPicker = false
     @Published var showGameView = false
     @Published var selectedGame: Game?
+    @Published var currentSpot: Int? = -1
+    @Published var showGuideView = false
 
     @Published var importSuccessMessage: String?
     @Published var importErrorMessage: String?

@@ -107,7 +107,6 @@ struct DSControllerView: View {
                                     controller.releaseButton(buttonLayout.button)
                                 }, theme: themeManager.currentTheme
                             )
-                            .padding(.bottom, 50)
                         }
                         // Menu Button
                         if let firstCenterButton = layout.centerButtons.first {
@@ -360,7 +359,7 @@ struct DSControllerLayout {
             y: controlsY
         )
 
-        let actionButtonOffset: CGFloat = 34
+        let actionButtonOffset: CGFloat = 45
 
         let actionButtons: [ButtonLayout] = [
             // Y (left)
@@ -405,16 +404,16 @@ struct DSControllerLayout {
         let shoulderButtons: [ButtonLayout] = [
             ButtonLayout(
                 position: CGPoint(
-                    x: padding + 35,
-                    y: screenSize.height * 0.50
+                    x: padding + 70,
+                    y: screenSize.height * 0.75
                 ),
                 size: shoulderButtonSize,
                 button: .l
             ),
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width - padding - 35,
-                    y: screenSize.height * 0.50
+                    x: screenSize.width - padding - 80,
+                    y: screenSize.height * 0.75
                 ),
                 size: shoulderButtonSize,
                 button: .r
@@ -425,16 +424,16 @@ struct DSControllerLayout {
         let centerButtons: [ButtonLayout] = [
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 - 52,
-                    y: screenSize.height - 80
+                    x: screenSize.width / 2,
+                    y: screenSize.height + 65
                 ),
                 size: smallButtonSize,
                 button: .select
             ),
             ButtonLayout(
                 position: CGPoint(
-                    x: screenSize.width / 2 + 8,
-                    y: screenSize.height - 80
+                    x: screenSize.width / 2 + 100,
+                    y: screenSize.height + 65
                 ),
                 size: smallButtonSize,
                 button: .start

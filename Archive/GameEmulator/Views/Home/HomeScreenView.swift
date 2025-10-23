@@ -17,7 +17,7 @@ struct HomeScreenView: View {
             AppBackGround()
 
             VStack {
-                HomeTopBar()
+                HomeTopBar(title: "Home")
 
                 HomeSearchBar(searchText: $homeViewModel.searchText)
 

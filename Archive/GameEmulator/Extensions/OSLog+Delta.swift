@@ -20,10 +20,10 @@ extension Logger
 {
     static let deltaSubsystem = "com.rileytestut.Delta"
     
-    static let main = Logger(subsystem: deltaSubsystem, category: OSLog.Category.main)
-    static let database = Logger(subsystem: deltaSubsystem, category: OSLog.Category.database)
-    static let purchases = Logger(subsystem: deltaSubsystem, category: OSLog.Category.purchases)
-    static let achievements = Logger(subsystem: deltaSubsystem, category: OSLog.Category.achievements)
+//    static let main = Logger(subsystem: deltaSubsystem, category: OSLog.Category.main)
+//    static let database = Logger(subsystem: deltaSubsystem, category: OSLog.Category.database)
+//    static let purchases = Logger(subsystem: deltaSubsystem, category: OSLog.Category.purchases)
+//    static let achievements = Logger(subsystem: deltaSubsystem, category: OSLog.Category.achievements)
 }
 
 @available(iOS 15, *)

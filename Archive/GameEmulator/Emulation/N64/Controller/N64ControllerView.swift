@@ -159,34 +159,7 @@ struct N64ControllerView: View {
     }
 }
 
-// Preview provider
-struct N64ControllerView_Previews: PreviewProvider {
-    static var previews: some View {
-        // Landscape preview
-        let landscapeController = N64GameController(name: "N64 Controller", systemPrefix: "n64", playerIndex: 0)
-        let landscapeLayout = N64ControllerLayout.landscapeLayout(
-            screenSize: CGSize(width: 844, height: 390)
-        )
 
-        Group {
-            N64ControllerView(controller: landscapeController, layout: landscapeLayout)
-                .previewDevice("iPhone 14 Pro")
-                .previewInterfaceOrientation(.landscapeLeft)
-                .previewDisplayName("Landscape")
-
-            // Portrait preview
-            let portraitController = N64GameController(name: "N64 Controller", systemPrefix: "n64", playerIndex: 0)
-            let portraitLayout = N64ControllerLayout.portraitLayout(
-                screenSize: CGSize(width: 393, height: 852)
-            )
-
-            N64ControllerView(controller: portraitController, layout: portraitLayout)
-                .previewDevice("iPhone 14 Pro")
-                .previewInterfaceOrientation(.portrait)
-                .previewDisplayName("Portrait")
-        }
-    }
-}
 struct N64ControllerLayout {
 
     // MARK: - Layout Constants

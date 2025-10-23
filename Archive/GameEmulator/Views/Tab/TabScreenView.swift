@@ -40,11 +40,11 @@ extension AppScreen {
         case .home:
             "tab_ic_home_select"
         case .guide:
-            "tab_ic_home_select"
+            ""
         case .console:
-            "tab_ic_home_select"
+            "tab_ic_console_select"
         case .setting:
-            "tab_ic_home_select"
+            "tab_ic_setting_select"
         case .addGame:
             ""
         }
@@ -53,13 +53,13 @@ extension AppScreen {
     var icon_unselect: String {
         switch self {
         case .home:
-            "tab_ic_home_select"
+            "tab_ic_home_unselect"
         case .guide:
-            "tab_ic_home_select"
+            "tab_ic_guide_unselect"
         case .console:
-            "tab_ic_home_select"
+            "tab_ic_console_unselect"
         case .setting:
-            "tab_ic_home_select"
+            "tab_ic_setting_unselect"
         case .addGame:
             ""
         }
@@ -73,66 +73,141 @@ extension AppScreen {
         case .guide:
             EmptyView()
         case .console:
-            EmptyView()
+            ConsoleScreenView()
         case .setting:
-            EmptyView()
+            SettingScreenView()
         case .addGame:
             EmptyView()
         }
     }
 }
-
+//struct TabScreenView: View {
+//
+//    @StateObject var tabViewModel = TabViewModel()
+//
+//    var body: some View {
+//        VStack(spacing: 0) {
+//            TabView(selection: $tabViewModel.tabSelection) {
+//                ForEach(AppScreen.allCases) { screen in
+//                    screen.destination
+//                        .tag(screen as AppScreen?)
+//                        .environmentObject(tabViewModel)
+//                }
+//            }
+//            .tabViewStyle(.page(indexDisplayMode: .never))
+//            .overlay(content: {
+//                if tabViewModel.isExpanded {
+//                    Color(.color000000).opacity(0.8)
+//                }
+//            })
+//            .overlay(alignment: .bottom) {
+//                BottomTabView(tabViewModel: tabViewModel, addGameAction: { action in
+//                    tabViewModel.showDocumentPicker = true
+//                })
+//                .padding(.bottom, 30)
+//            }
+//        }
+//        .edgesIgnoringSafeArea(.all)
+//        .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
+//            DocumentPicker(documentTypes: []) { importedURLs in
+//                // Handle imported game files
+//                tabViewModel.handleImportedGames(importedURLs)
+//            }
+//        })
+//        .fullScreenCover(isPresented: $tabViewModel.showGameView) {
+//            if let game = tabViewModel.selectedGame {
+//                ContentView(game: game)
+//            }
+//        }
+//        .alert("Success", isPresented: .constant(tabViewModel.importSuccessMessage != nil), presenting: tabViewModel.importSuccessMessage) { _ in
+//            Button("OK") {
+//                tabViewModel.importSuccessMessage = nil
+//            }
+//        } message: { message in
+//            Text(message)
+//        }
+//        .alert("Error", isPresented: .constant(tabViewModel.importErrorMessage != nil), presenting: tabViewModel.importErrorMessage) { _ in
+//            Button("OK") {
+//                tabViewModel.importErrorMessage = nil
+//            }
+//        } message: { message in
+//            Text(message)
+//        }
+//    }
+//}
 struct TabScreenView: View {
-
+    
     @StateObject var tabViewModel = TabViewModel()
-
+    
     var body: some View {
-        VStack(spacing: 0) {
-            TabView(selection: $tabViewModel.tabSelection) {
-                ForEach(AppScreen.allCases) { screen in
-                    screen.destination
-                        .tag(screen as AppScreen?)
-                        .environmentObject(tabViewModel)
-                }
+        TabView(selection: $tabViewModel.tabSelection) {
+            ForEach(AppScreen.allCases) { screen in
+                screen.destination
+                    .tag(screen as AppScreen?)
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .overlay(content: {
-                if tabViewModel.isExpanded {
-                    Color(.color000000).opacity(0.8)
-                }
-            })
-            .overlay(alignment: .bottom) {
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .background(
+            AppBackGround()
+        )
+        .background(
+            navigationView()
+        )
+        .overlay(content: {
+            if tabViewModel.isExpanded {
+                Color(.color000000).opacity(0.8)
+                    .onTapGesture {
+                        tabViewModel.isExpanded = false
+                    }
+            }
+        })
+      
+        .overlay(alignment: .bottom) {
+            VStack {
                 BottomTabView(tabViewModel: tabViewModel, addGameAction: { action in
                     tabViewModel.showDocumentPicker = true
                 })
-                .padding(.bottom, 30)
+                
+//                BannerAdSwiftUIView(adUnitID: GoogleAdMobUnitId.banner, remote: .is_show_ads_banner)
             }
         }
-        .edgesIgnoringSafeArea(.all)
         .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
             DocumentPicker(documentTypes: []) { importedURLs in
                 // Handle imported game files
                 tabViewModel.handleImportedGames(importedURLs)
             }
         })
-        .fullScreenCover(isPresented: $tabViewModel.showGameView) {
-            if let game = tabViewModel.selectedGame {
-                ContentView(game: game)
+      
+        .applySpotlightOverlay(currentSpot: $tabViewModel.currentSpot)
+        .onChange(of: tabViewModel.currentSpot) { newValue in
+            if newValue == 3 {
+                tabViewModel.tabSelection = .setting
             }
         }
-        .alert("Success", isPresented: .constant(tabViewModel.importSuccessMessage != nil), presenting: tabViewModel.importSuccessMessage) { _ in
-            Button("OK") {
-                tabViewModel.importSuccessMessage = nil
-            }
-        } message: { message in
-            Text(message)
+
+   
+        .onAppear {
+            
         }
-        .alert("Error", isPresented: .constant(tabViewModel.importErrorMessage != nil), presenting: tabViewModel.importErrorMessage) { _ in
-            Button("OK") {
-                tabViewModel.importErrorMessage = nil
-            }
-        } message: { message in
-            Text(message)
+    }
+}
+
+extension TabScreenView {
+    @ViewBuilder
+    func navigationView() -> some  View {
+        VStack {
+            navGuideView()
+        }
+    }
+    
+    @ViewBuilder
+    func navGuideView() -> some View {
+        NavigationLink(isActive: $tabViewModel.showGuideView) {
+            GuideScreenView()
+                .navigationTitle("")
+                .navigationBarHidden(true)
+        } label: {
+            EmptyView()
         }
     }
 }

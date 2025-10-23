@@ -15,16 +15,23 @@ struct BottomTabView: View {
         let columns = Array(repeating: GridItem(.flexible()), count: 5)
         LazyVGrid(columns: columns) {
             ForEach(AppScreen.allCases) { tab in
-                BottomTabElement(tabSelection: $tabViewModel.tabSelection, tab: tab)
+                if tab == .guide {
+                    BottomTabElement(tabViewModel: tabViewModel, tab: tab)
+                        .addSpotlight(1, text: "")
+                } else {
+                    BottomTabElement(tabViewModel: tabViewModel, tab: tab)
+                }
+               
             }
         }
         .padding(.horizontal, 6)
         .background(
-            VisualEffect(style: .systemUltraThinMaterialDark)
+            VisualEffectRepresentable(style: .systemUltraThinMaterialDark)
         )
         .cornerRadius(16)
         .overlay {
             SemiCircleTabBar(isExpanded: $tabViewModel.isExpanded, addGameAction: addGameAction)
+                .addSpotlight(2, text: "")
         }
         .padding(.horizontal, 20)
     }

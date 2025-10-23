@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GuideScreenView: View {
-    
     @State private var currentCategory: GuidePageEnum = .step
     
     var body: some View {
