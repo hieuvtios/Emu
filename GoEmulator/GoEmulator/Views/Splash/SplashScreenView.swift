@@ -35,6 +35,7 @@ struct SplashScreenView: View {
                 })
             }
         }
+        .blockOpenAds(screenName: "Splash")
     }
     
     func showAdMobConsent() {

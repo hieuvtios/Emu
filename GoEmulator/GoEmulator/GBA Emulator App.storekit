@@ -12,7 +12,7 @@
   "identifier" : "A0ACF09E",
   "nonRenewingSubscriptions" : [
     {
-      "displayPrice" : "7.99",
+      "displayPrice" : "14.99",
       "familyShareable" : false,
       "internalID" : "6754242710",
       "localizations" : [
@@ -34,7 +34,7 @@
     "_applicationInternalID" : "6754169175",
     "_developerTeamID" : "M4U9PT39CW",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 782748670.10306597,
+    "_lastSynchronizedDate" : 782926664.94399703,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -100,7 +100,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "1.99",
+          "displayPrice" : "2.99",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "6754241167",
@@ -128,12 +128,12 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "6.99",
+          "displayPrice" : "9.99",
           "familyShareable" : false,
           "groupNumber" : 2,
           "internalID" : "6754241602",
           "introductoryOffer" : {
-            "internalID" : "F1A51B69",
+            "internalID" : "3705D66E",
             "numberOfPeriods" : 1,
             "paymentMode" : "free",
             "subscriptionPeriod" : "P3D"
