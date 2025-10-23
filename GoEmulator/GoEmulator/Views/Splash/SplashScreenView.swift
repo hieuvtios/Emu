@@ -29,7 +29,7 @@ struct SplashScreenView: View {
         )
         .onFirstAppear {
             progress = 1.0
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 ATTAuthorization.requestIfNeeded(onCompleteATTTracking: {
                     showAdMobConsent()
                 })
