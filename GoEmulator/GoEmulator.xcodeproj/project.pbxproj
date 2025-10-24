@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F43A7A362EA7E94C0073DD8E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F43A7A352EA7E94C0073DD8E /* Lottie */; };
-		F4E175612E92DBD1005D0B3A /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */; };
-		F4E175622E92DBD1005D0B3A /* DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F48B427D2EABD583008E0C20 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F48B427C2EABD583008E0C20 /* ZIPFoundation */; };
 		F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B532E9E5898005D0B3A /* GoogleMobileAds */; };
 		F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B562E9E58E6005D0B3A /* RevenueCat */; };
 		F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B592E9E5EE8005D0B3A /* FirebaseAnalytics */; };
@@ -18,16 +17,6 @@
 		F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F4E1755C2E92D4BC005D0B3A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BF46895D1AACF36800A2586D;
-			remoteInfo = DeltaCore;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		F4E175632E92DBD1005D0B3A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -35,7 +24,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F4E175622E92DBD1005D0B3A /* DeltaCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		F48B71E92E901A6200EF95A7 /* GoEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = Cores/DeltaCore/DeltaCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -75,12 +62,12 @@
 			files = (
 				F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */,
 				F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */,
-				F4E175612E92DBD1005D0B3A /* DeltaCore.framework in Frameworks */,
 				F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */,
 				F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */,
 				F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */,
 				F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */,
 				F43A7A362EA7E94C0073DD8E /* Lottie in Frameworks */,
+				F48B427D2EABD583008E0C20 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,17 +94,8 @@
 		F4E175562E92D4BC005D0B3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F4E175582E92D4BC005D0B3A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +127,7 @@
 				F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */,
 				F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */,
 				F43A7A352EA7E94C0073DD8E /* Lottie */,
+				F48B427C2EABD583008E0C20 /* ZIPFoundation */,
 			);
 			productName = GoEmulator;
 			productReference = F48B71E92E901A6200EF95A7 /* GoEmulator.app */;
@@ -183,32 +162,17 @@
 				F4E17B552E9E58E6005D0B3A /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 				F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F43A7A342EA7E94C0073DD8E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F48B427B2EABD583008E0C20 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F48B71EA2E901A6200EF95A7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F4E175582E92D4BC005D0B3A /* Products */;
-					ProjectRef = F4E175572E92D4BC005D0B3A /* DeltaCore.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F48B71E82E901A6200EF95A7 /* GoEmulator */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		F4E1755D2E92D4BC005D0B3A /* DeltaCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DeltaCore.framework;
-			remoteRef = F4E1755C2E92D4BC005D0B3A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F48B71E72E901A6200EF95A7 /* Resources */ = {
@@ -381,10 +345,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"GoEmulator/Preview Content\"";
-				DEVELOPMENT_TEAM = Z942E5VTWH;
+				DEVELOPMENT_TEAM = M4U9PT39CW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoEmulator/Info.plist;
@@ -420,9 +384,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GoEmulator/Preview Content\"";
-				DEVELOPMENT_TEAM = Z942E5VTWH;
+				DEVELOPMENT_TEAM = M4U9PT39CW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoEmulator/Info.plist;
@@ -484,6 +448,14 @@
 				minimumVersion = 4.5.2;
 			};
 		};
+		F48B427B2EABD583008E0C20 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.20;
+			};
+		};
 		F4E17B522E9E5898005D0B3A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -515,6 +487,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F43A7A342EA7E94C0073DD8E /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		F48B427C2EABD583008E0C20 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F48B427B2EABD583008E0C20 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
 		};
 		F4E17B532E9E5898005D0B3A /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;

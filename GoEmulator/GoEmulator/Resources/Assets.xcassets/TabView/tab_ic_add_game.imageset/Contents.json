@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Джойстик_Joystick.png",
+      "filename" : "Джойстик_Joystick.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Джойстик_Joystick@2x.png",
+      "filename" : "Джойстик_Joystick@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Джойстик_Joystick@3x.png",
+      "filename" : "Джойстик_Joystick@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

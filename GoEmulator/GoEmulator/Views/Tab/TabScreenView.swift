@@ -126,8 +126,8 @@ struct TabScreenView: View {
                 tabViewModel.tabSelection = .setting
             }
         }
-        .onAppear {
-            
+        onTapGesture {
+            hideKeyboard()
         }
     }
 }
