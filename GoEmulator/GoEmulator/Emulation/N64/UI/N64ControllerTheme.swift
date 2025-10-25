@@ -23,6 +23,8 @@ struct N64ControllerTheme: Codable, Identifiable, Equatable {
     let cRightImageName: String
     let startButtonImageName: String
     let menuButtonImageName: String
+    let analogStickBaseImageName: String
+    let analogStickThumbImageName: String
     let backgroundPortraitImageName: String
     let backgroundLandscapeImageName: String
 
@@ -44,6 +46,8 @@ struct N64ControllerTheme: Codable, Identifiable, Equatable {
         cRightImageName: "btn_n64_c_right",
         startButtonImageName: "btn_n64_start",
         menuButtonImageName: "btn_n64_menu",
+        analogStickBaseImageName: "btn_n64_analog_base",
+        analogStickThumbImageName: "btn_n64_analog_thumb",
         backgroundPortraitImageName: "bg1",
         backgroundLandscapeImageName: "bg1"
     )
@@ -64,6 +68,8 @@ struct N64ControllerTheme: Codable, Identifiable, Equatable {
         cRightImageName: "btn_n64_c_right",
         startButtonImageName: "btn_n64_start",
         menuButtonImageName: "btn_n64_menu",
+        analogStickBaseImageName: "btn_n64_analog_base",
+        analogStickThumbImageName: "btn_n64_analog_thumb",
         backgroundPortraitImageName: "bg2",
         backgroundLandscapeImageName: "bg2"
     )
@@ -84,6 +90,8 @@ struct N64ControllerTheme: Codable, Identifiable, Equatable {
         cRightImageName: "btn_n64_c_right",
         startButtonImageName: "btn_n64_start",
         menuButtonImageName: "btn_n64_menu",
+        analogStickBaseImageName: "btn_n64_analog_base",
+        analogStickThumbImageName: "btn_n64_analog_thumb",
         backgroundPortraitImageName: "bg3",
         backgroundLandscapeImageName: "bg3"
     )
@@ -104,6 +112,8 @@ struct N64ControllerTheme: Codable, Identifiable, Equatable {
         cRightImageName: "btn_n64_c_right",
         startButtonImageName: "btn_n64_start",
         menuButtonImageName: "btn_n64_menu",
+        analogStickBaseImageName: "btn_n64_analog_base",
+        analogStickThumbImageName: "btn_n64_analog_thumb",
         backgroundPortraitImageName: "bg4",
         backgroundLandscapeImageName: "bg4"
     )
@@ -124,6 +134,8 @@ struct N64ControllerTheme: Codable, Identifiable, Equatable {
         cRightImageName: "btn_n64_c_right",
         startButtonImageName: "btn_n64_start",
         menuButtonImageName: "btn_n64_menu",
+        analogStickBaseImageName: "btn_n64_analog_base",
+        analogStickThumbImageName: "btn_n64_analog_thumb",
         backgroundPortraitImageName: "bg5",
         backgroundLandscapeImageName: "bg5"
     )

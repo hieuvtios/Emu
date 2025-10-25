@@ -68,9 +68,23 @@ struct N64ControllerView: View {
                     .opacity(isLandscape ? 0.8 : 1.0)
                     .zIndex(1)
 
+                    // Analog Stick (center-left, authentic N64 position)
+                    N64AnalogStickView(
+                        layout: layout.analogStick,
+                        onPositionChange: { x, y in
+                            controller.updateAnalogStick(x: x, y: y)
+                        },
+                        onRelease: {
+                            controller.releaseAllAnalogStickButtons()
+                        },
+                        theme: getCurrentTheme()
+                    )
+                    .opacity(isLandscape ? 0.8 : 1.0)
+                    .zIndex(1)
+
                     ZStack {
                         // Base purple circle
-                        Image(.btnN64Bg1)
+                        Image(.btnN64AnalogBase)
                             .resizable()
                     }
                     .frame(width: 75 * 2 , height: 75 * 2 )
@@ -299,6 +313,20 @@ struct N64ControllerLayout {
             button: .start
         )
 
+        // Analog stick (center-left, authentic N64 position)
+        let analogStickCenter = CGPoint(
+            x: screenSize.width * 0.35,  // 35% from left, between D-Pad and action buttons
+            y: screenSize.height / 2
+        )
+        let analogStickRadius: CGFloat = 60
+        let analogThumbRadius: CGFloat = 25
+
+        let analogStick = AnalogStickLayout(
+            center: analogStickCenter,
+            radius: analogStickRadius,
+            thumbRadius: analogThumbRadius
+        )
+
         return N64ControllerLayoutDefinition(
             mode: .landscape,
             dpad: DPadLayout(center: dpadCenter, radius: dpadRadius),
@@ -306,7 +334,9 @@ struct N64ControllerLayout {
             cButtonCluster: cButtonCluster,
             shoulderButtons: shoulderButtons,
 //            zButton: zButton,
-            startButton: startButton, actionButtonsCenter: actionButtonsCenter
+            startButton: startButton,
+            actionButtonsCenter: actionButtonsCenter,
+            analogStick: analogStick
         )
     }
 
@@ -403,6 +433,20 @@ struct N64ControllerLayout {
             button: .start
         )
 
+        // Analog stick (center-left in portrait mode)
+        let analogStickCenter = CGPoint(
+            x: screenSize.width * 0.35,  // 35% from left
+            y: controlsY + 10  // Slightly below center of controls area
+        )
+        let analogStickRadius: CGFloat = 55
+        let analogThumbRadius: CGFloat = 22
+
+        let analogStick = AnalogStickLayout(
+            center: analogStickCenter,
+            radius: analogStickRadius,
+            thumbRadius: analogThumbRadius
+        )
+
         return N64ControllerLayoutDefinition(
             mode: .portrait,
             dpad: DPadLayout(center: dpadCenter, radius: dpadRadius),
@@ -410,7 +454,9 @@ struct N64ControllerLayout {
             cButtonCluster: cButtonCluster,
             shoulderButtons: shoulderButtons,
 //            zButton: zButton,
-            startButton: startButton, actionButtonsCenter: actionButtonsCenter
+            startButton: startButton,
+            actionButtonsCenter: actionButtonsCenter,
+            analogStick: analogStick
         )
     }
 }
@@ -424,5 +470,6 @@ struct N64ControllerLayoutDefinition {
 //    let zButton: N64ControllerLayout.ButtonLayout
     let startButton: N64ControllerLayout.ButtonLayout
     let actionButtonsCenter: CGPoint
+    let analogStick: N64ControllerLayout.AnalogStickLayout
 
 }

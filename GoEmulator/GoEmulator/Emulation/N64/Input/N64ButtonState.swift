@@ -24,6 +24,10 @@ enum N64ButtonType: Int, CaseIterable, GameButtonType {
     case r = 11
     case z = 12
     case start = 13
+    case analogStickUp = 14
+    case analogStickDown = 15
+    case analogStickLeft = 16
+    case analogStickRight = 17
 
     var displayName: String {
         switch self {
@@ -41,6 +45,10 @@ enum N64ButtonType: Int, CaseIterable, GameButtonType {
         case .r: return "R"
         case .z: return "Z"
         case .start: return "Start"
+        case .analogStickUp: return "Analog Up"
+        case .analogStickDown: return "Analog Down"
+        case .analogStickLeft: return "Analog Left"
+        case .analogStickRight: return "Analog Right"
         }
     }
 
@@ -61,6 +69,10 @@ enum N64ButtonType: Int, CaseIterable, GameButtonType {
         case .r: return N64GameInput.r
         case .z: return N64GameInput.z
         case .start: return N64GameInput.start
+        case .analogStickUp: return N64GameInput.analogStickUp
+        case .analogStickDown: return N64GameInput.analogStickDown
+        case .analogStickLeft: return N64GameInput.analogStickLeft
+        case .analogStickRight: return N64GameInput.analogStickRight
         }
     }
 
@@ -82,6 +94,11 @@ enum N64ButtonType: Int, CaseIterable, GameButtonType {
     // C-button cluster (specific to N64)
     static var cButtons: [N64ButtonType] {
         return [.cUp, .cDown, .cLeft, .cRight]
+    }
+
+    // Analog stick directional inputs (specific to N64)
+    static var analogStickButtons: [N64ButtonType] {
+        return [.analogStickUp, .analogStickDown, .analogStickLeft, .analogStickRight]
     }
 }
 
