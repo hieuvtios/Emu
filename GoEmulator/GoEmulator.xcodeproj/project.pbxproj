@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655ADEED2EACC8E30038CC4D /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEEC2EACC8E30038CC4D /* DeltaCore.framework */; };
+		655ADEEE2EACC8E30038CC4D /* DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEEC2EACC8E30038CC4D /* DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEEF2EACC8E30038CC4D /* GBADeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEA02EACC7710038CC4D /* GBADeltaCore.framework */; };
+		655ADEF02EACC8E30038CC4D /* GBADeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEA02EACC7710038CC4D /* GBADeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEF12EACC8E30038CC4D /* MelonDSDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEBE2EACC78A0038CC4D /* MelonDSDeltaCore.framework */; };
+		655ADEF22EACC8E30038CC4D /* MelonDSDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEBE2EACC78A0038CC4D /* MelonDSDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEF32EACC8E30038CC4D /* N64DeltaCore_RSP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEB22EACC77F0038CC4D /* N64DeltaCore_RSP.framework */; };
+		655ADEF42EACC8E30038CC4D /* N64DeltaCore_RSP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEB22EACC77F0038CC4D /* N64DeltaCore_RSP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEF52EACC8E30038CC4D /* N64DeltaCore_Video.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEB42EACC77F0038CC4D /* N64DeltaCore_Video.framework */; };
+		655ADEF62EACC8E30038CC4D /* N64DeltaCore_Video.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEB42EACC77F0038CC4D /* N64DeltaCore_Video.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEF72EACC8E30038CC4D /* N64DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEAE2EACC77F0038CC4D /* N64DeltaCore.framework */; };
+		655ADEF82EACC8E30038CC4D /* N64DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEAE2EACC77F0038CC4D /* N64DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEF92EACC8E30038CC4D /* NESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADED72EACC7A80038CC4D /* NESDeltaCore.framework */; };
+		655ADEFA2EACC8E30038CC4D /* NESDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADED72EACC7A80038CC4D /* NESDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEFB2EACC8E30038CC4D /* Roxas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEE42EACC7BB0038CC4D /* Roxas.framework */; };
+		655ADEFC2EACC8E30038CC4D /* Roxas.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADEE42EACC7BB0038CC4D /* Roxas.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655ADEFD2EACC8E30038CC4D /* SNESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADECA2EACC79A0038CC4D /* SNESDeltaCore.framework */; };
+		655ADEFE2EACC8E30038CC4D /* SNESDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655ADECA2EACC79A0038CC4D /* SNESDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F43A7A362EA7E94C0073DD8E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F43A7A352EA7E94C0073DD8E /* Lottie */; };
 		F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B532E9E5898005D0B3A /* GoogleMobileAds */; };
 		F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B562E9E58E6005D0B3A /* RevenueCat */; };
@@ -14,71 +32,64 @@
 		F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5B2E9E5EE8005D0B3A /* FirebaseCore */; };
 		F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */; };
 		F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */; };
-		F4EDC9FC2EAC80AE00FBC048 /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */; };
-		F4EDC9FD2EAC80AE00FBC048 /* DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4EDCA0C2EAC80EA00FBC048 /* Roxas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA072EAC80DE00FBC048 /* Roxas.framework */; };
-		F4EDCA0D2EAC80EA00FBC048 /* Roxas.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA072EAC80DE00FBC048 /* Roxas.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4EDCA252EAC83AA00FBC048 /* GBADeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */; };
-		F4EDCA262EAC83AA00FBC048 /* GBADeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4EDCA322EAC849000FBC048 /* NESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */; };
-		F4EDCA332EAC849000FBC048 /* NESDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4EDCA3D2EAC856E00FBC048 /* SNESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */; };
-		F4EDCA3E2EAC856E00FBC048 /* SNESDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4EDCA492EAC867000FBC048 /* MelonDSDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */; };
-		F4EDCA4A2EAC867000FBC048 /* MelonDSDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4EDCA662EAC88F400FBC048 /* N64DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */; };
-		F4EDCA672EAC88F400FBC048 /* N64DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F4EDC9FA2EAC80A300FBC048 /* PBXContainerItemProxy */ = {
+		655ADE9F2EACC7710038CC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BF46895D1AACF36800A2586D;
-			remoteInfo = DeltaCore;
-		};
-		F4EDCA062EAC80DE00FBC048 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BFADAFF819AE7BB70050CF31;
-			remoteInfo = Roxas;
-		};
-		F4EDCA212EAC83A500FBC048 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */;
+			containerPortal = 655ADE962EACC7700038CC4D /* GBADeltaCore.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BFE8E9CA1D010AF7009D623D;
 			remoteInfo = GBADeltaCore;
 		};
-		F4EDCA2E2EAC848C00FBC048 /* PBXContainerItemProxy */ = {
+		655ADEAD2EACC77F0038CC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */;
+			containerPortal = 655ADEA32EACC77E0038CC4D /* N64DeltaCore.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BF3C12F320438F3F0079A4B5;
-			remoteInfo = NESDeltaCore;
+			remoteGlobalIDString = BF799014224BF59E009B094F;
+			remoteInfo = N64DeltaCore;
 		};
-		F4EDCA392EAC856800FBC048 /* PBXContainerItemProxy */ = {
+		655ADEB12EACC77F0038CC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */;
+			containerPortal = 655ADEA32EACC77E0038CC4D /* N64DeltaCore.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BF9F4FDC1AAD8070004C9500;
-			remoteInfo = SNESDeltaCore;
+			remoteGlobalIDString = BF799674224C09A1009B094F;
+			remoteInfo = "N64DeltaCore-RSP";
 		};
-		F4EDCA452EAC866A00FBC048 /* PBXContainerItemProxy */ = {
+		655ADEB32EACC77F0038CC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */;
+			containerPortal = 655ADEA32EACC77E0038CC4D /* N64DeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF2EF80D224C1BF60032AD78;
+			remoteInfo = "N64DeltaCore-Video";
+		};
+		655ADEBD2EACC78A0038CC4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655ADEB52EACC7890038CC4D /* MelonDSDeltaCore.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BF7317852356624000774F10;
 			remoteInfo = MelonDSDeltaCore;
 		};
-		F4EDCA5E2EAC88F000FBC048 /* PBXContainerItemProxy */ = {
+		655ADEC92EACC79A0038CC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */;
+			containerPortal = 655ADEC12EACC7990038CC4D /* SNESDeltaCore.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BF799014224BF59E009B094F;
-			remoteInfo = N64DeltaCore;
+			remoteGlobalIDString = BF9F4FDC1AAD8070004C9500;
+			remoteInfo = SNESDeltaCore;
+		};
+		655ADED62EACC7A80038CC4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655ADECD2EACC7A50038CC4D /* NESDeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF3C12F320438F3F0079A4B5;
+			remoteInfo = NESDeltaCore;
+		};
+		655ADEE32EACC7BB0038CC4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655ADEDA2EACC7B90038CC4D /* Roxas.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFADAFF819AE7BB70050CF31;
+			remoteInfo = Roxas;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,13 +100,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F4EDCA0D2EAC80EA00FBC048 /* Roxas.framework in Embed Frameworks */,
-				F4EDCA4A2EAC867000FBC048 /* MelonDSDeltaCore.framework in Embed Frameworks */,
-				F4EDC9FD2EAC80AE00FBC048 /* DeltaCore.framework in Embed Frameworks */,
-				F4EDCA672EAC88F400FBC048 /* N64DeltaCore.framework in Embed Frameworks */,
-				F4EDCA262EAC83AA00FBC048 /* GBADeltaCore.framework in Embed Frameworks */,
-				F4EDCA332EAC849000FBC048 /* NESDeltaCore.framework in Embed Frameworks */,
-				F4EDCA3E2EAC856E00FBC048 /* SNESDeltaCore.framework in Embed Frameworks */,
+				655ADEFC2EACC8E30038CC4D /* Roxas.framework in Embed Frameworks */,
+				655ADEEE2EACC8E30038CC4D /* DeltaCore.framework in Embed Frameworks */,
+				655ADEF82EACC8E30038CC4D /* N64DeltaCore.framework in Embed Frameworks */,
+				655ADEFE2EACC8E30038CC4D /* SNESDeltaCore.framework in Embed Frameworks */,
+				655ADEF42EACC8E30038CC4D /* N64DeltaCore_RSP.framework in Embed Frameworks */,
+				655ADEF62EACC8E30038CC4D /* N64DeltaCore_Video.framework in Embed Frameworks */,
+				655ADEFA2EACC8E30038CC4D /* NESDeltaCore.framework in Embed Frameworks */,
+				655ADEF22EACC8E30038CC4D /* MelonDSDeltaCore.framework in Embed Frameworks */,
+				655ADEF02EACC8E30038CC4D /* GBADeltaCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,14 +116,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		655ADE962EACC7700038CC4D /* GBADeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBADeltaCore.xcodeproj; path = /Users/hieuvu/Documents/Cores/GBADeltaCore/GBADeltaCore.xcodeproj; sourceTree = "<absolute>"; };
+		655ADEA32EACC77E0038CC4D /* N64DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = N64DeltaCore.xcodeproj; path = /Users/hieuvu/Documents/Cores/N64DeltaCore/N64DeltaCore.xcodeproj; sourceTree = "<absolute>"; };
+		655ADEB52EACC7890038CC4D /* MelonDSDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MelonDSDeltaCore.xcodeproj; path = /Users/hieuvu/Documents/Cores/MelonDSDeltaCore/MelonDSDeltaCore.xcodeproj; sourceTree = "<absolute>"; };
+		655ADEC12EACC7990038CC4D /* SNESDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SNESDeltaCore.xcodeproj; path = /Users/hieuvu/Documents/Cores/SNESDeltaCore/SNESDeltaCore.xcodeproj; sourceTree = "<absolute>"; };
+		655ADECD2EACC7A50038CC4D /* NESDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NESDeltaCore.xcodeproj; path = /Users/hieuvu/Documents/Cores/NESDeltaCore/NESDeltaCore.xcodeproj; sourceTree = "<absolute>"; };
+		655ADEDA2EACC7B90038CC4D /* Roxas.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Roxas.xcodeproj; path = /Users/hieuvu/Documents/Cores/Roxas/Roxas.xcodeproj; sourceTree = "<absolute>"; };
+		655ADEE92EACC7C50038CC4D /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = /Users/hieuvu/Documents/Cores/DeltaCore/DeltaCore.xcodeproj; sourceTree = "<absolute>"; };
+		655ADEEC2EACC8E30038CC4D /* DeltaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DeltaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48B71E92E901A6200EF95A7 /* GoEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = Cores/DeltaCore/DeltaCore.xcodeproj; sourceTree = "<group>"; };
-		F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Roxas.xcodeproj; path = Cores/Roxas/Roxas.xcodeproj; sourceTree = "<group>"; };
-		F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBADeltaCore.xcodeproj; path = Cores/GBADeltaCore/GBADeltaCore.xcodeproj; sourceTree = "<group>"; };
-		F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NESDeltaCore.xcodeproj; path = Cores/NESDeltaCore/NESDeltaCore.xcodeproj; sourceTree = "<group>"; };
-		F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SNESDeltaCore.xcodeproj; path = Cores/SNESDeltaCore/SNESDeltaCore.xcodeproj; sourceTree = "<group>"; };
-		F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MelonDSDeltaCore.xcodeproj; path = Cores/MelonDSDeltaCore/MelonDSDeltaCore.xcodeproj; sourceTree = "<group>"; };
-		F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = N64DeltaCore.xcodeproj; path = Cores/N64DeltaCore/N64DeltaCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -140,25 +154,77 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */,
-				F4EDCA0C2EAC80EA00FBC048 /* Roxas.framework in Frameworks */,
+				655ADEF52EACC8E30038CC4D /* N64DeltaCore_Video.framework in Frameworks */,
 				F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */,
-				F4EDCA662EAC88F400FBC048 /* N64DeltaCore.framework in Frameworks */,
-				F4EDCA3D2EAC856E00FBC048 /* SNESDeltaCore.framework in Frameworks */,
-				F4EDCA252EAC83AA00FBC048 /* GBADeltaCore.framework in Frameworks */,
-				F4EDC9FC2EAC80AE00FBC048 /* DeltaCore.framework in Frameworks */,
+				655ADEF72EACC8E30038CC4D /* N64DeltaCore.framework in Frameworks */,
+				655ADEF32EACC8E30038CC4D /* N64DeltaCore_RSP.framework in Frameworks */,
+				655ADEED2EACC8E30038CC4D /* DeltaCore.framework in Frameworks */,
 				F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */,
-				F4EDCA492EAC867000FBC048 /* MelonDSDeltaCore.framework in Frameworks */,
 				F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */,
+				655ADEF12EACC8E30038CC4D /* MelonDSDeltaCore.framework in Frameworks */,
+				655ADEEF2EACC8E30038CC4D /* GBADeltaCore.framework in Frameworks */,
+				655ADEFB2EACC8E30038CC4D /* Roxas.framework in Frameworks */,
 				F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */,
+				655ADEF92EACC8E30038CC4D /* NESDeltaCore.framework in Frameworks */,
 				F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */,
-				F4EDCA322EAC849000FBC048 /* NESDeltaCore.framework in Frameworks */,
 				F43A7A362EA7E94C0073DD8E /* Lottie in Frameworks */,
+				655ADEFD2EACC8E30038CC4D /* SNESDeltaCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		655ADE9B2EACC7710038CC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655ADEA02EACC7710038CC4D /* GBADeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655ADEA72EACC77F0038CC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655ADEAE2EACC77F0038CC4D /* N64DeltaCore.framework */,
+				655ADEB22EACC77F0038CC4D /* N64DeltaCore_RSP.framework */,
+				655ADEB42EACC77F0038CC4D /* N64DeltaCore_Video.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655ADEB92EACC7890038CC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655ADEBE2EACC78A0038CC4D /* MelonDSDeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655ADEC52EACC79A0038CC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655ADECA2EACC79A0038CC4D /* SNESDeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655ADED12EACC7A80038CC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655ADED72EACC7A80038CC4D /* NESDeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655ADEDE2EACC7BA0038CC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655ADEE42EACC7BB0038CC4D /* Roxas.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F48B71E02E901A6200EF95A7 = {
 			isa = PBXGroup;
 			children = (
@@ -179,71 +245,16 @@
 		F4E175562E92D4BC005D0B3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */,
-				F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */,
-				F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */,
-				F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */,
-				F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */,
-				F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */,
-				F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */,
+				655ADEEC2EACC8E30038CC4D /* DeltaCore.framework */,
+				655ADEE92EACC7C50038CC4D /* DeltaCore.xcodeproj */,
+				655ADEDA2EACC7B90038CC4D /* Roxas.xcodeproj */,
+				655ADECD2EACC7A50038CC4D /* NESDeltaCore.xcodeproj */,
+				655ADEC12EACC7990038CC4D /* SNESDeltaCore.xcodeproj */,
+				655ADEB52EACC7890038CC4D /* MelonDSDeltaCore.xcodeproj */,
+				655ADEA32EACC77E0038CC4D /* N64DeltaCore.xcodeproj */,
+				655ADE962EACC7700038CC4D /* GBADeltaCore.xcodeproj */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F4EDC9F62EAC80A300FBC048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F4EDC9FF2EAC80DD00FBC048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EDCA072EAC80DE00FBC048 /* Roxas.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F4EDCA1C2EAC83A500FBC048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F4EDCA282EAC848B00FBC048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F4EDCA352EAC856800FBC048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F4EDCA402EAC866A00FBC048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F4EDCA572EAC88F000FBC048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,32 +326,28 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F4EDC9F62EAC80A300FBC048 /* Products */;
-					ProjectRef = F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */;
+					ProductGroup = 655ADE9B2EACC7710038CC4D /* Products */;
+					ProjectRef = 655ADE962EACC7700038CC4D /* GBADeltaCore.xcodeproj */;
 				},
 				{
-					ProductGroup = F4EDCA1C2EAC83A500FBC048 /* Products */;
-					ProjectRef = F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */;
+					ProductGroup = 655ADEB92EACC7890038CC4D /* Products */;
+					ProjectRef = 655ADEB52EACC7890038CC4D /* MelonDSDeltaCore.xcodeproj */;
 				},
 				{
-					ProductGroup = F4EDCA402EAC866A00FBC048 /* Products */;
-					ProjectRef = F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */;
+					ProductGroup = 655ADEA72EACC77F0038CC4D /* Products */;
+					ProjectRef = 655ADEA32EACC77E0038CC4D /* N64DeltaCore.xcodeproj */;
 				},
 				{
-					ProductGroup = F4EDCA572EAC88F000FBC048 /* Products */;
-					ProjectRef = F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */;
+					ProductGroup = 655ADED12EACC7A80038CC4D /* Products */;
+					ProjectRef = 655ADECD2EACC7A50038CC4D /* NESDeltaCore.xcodeproj */;
 				},
 				{
-					ProductGroup = F4EDCA282EAC848B00FBC048 /* Products */;
-					ProjectRef = F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */;
+					ProductGroup = 655ADEDE2EACC7BA0038CC4D /* Products */;
+					ProjectRef = 655ADEDA2EACC7B90038CC4D /* Roxas.xcodeproj */;
 				},
 				{
-					ProductGroup = F4EDC9FF2EAC80DD00FBC048 /* Products */;
-					ProjectRef = F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */;
-				},
-				{
-					ProductGroup = F4EDCA352EAC856800FBC048 /* Products */;
-					ProjectRef = F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */;
+					ProductGroup = 655ADEC52EACC79A0038CC4D /* Products */;
+					ProjectRef = 655ADEC12EACC7990038CC4D /* SNESDeltaCore.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -351,53 +358,60 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DeltaCore.framework;
-			remoteRef = F4EDC9FA2EAC80A300FBC048 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F4EDCA072EAC80DE00FBC048 /* Roxas.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Roxas.framework;
-			remoteRef = F4EDCA062EAC80DE00FBC048 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */ = {
+		655ADEA02EACC7710038CC4D /* GBADeltaCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = GBADeltaCore.framework;
-			remoteRef = F4EDCA212EAC83A500FBC048 /* PBXContainerItemProxy */;
+			remoteRef = 655ADE9F2EACC7710038CC4D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NESDeltaCore.framework;
-			remoteRef = F4EDCA2E2EAC848C00FBC048 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SNESDeltaCore.framework;
-			remoteRef = F4EDCA392EAC856800FBC048 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MelonDSDeltaCore.framework;
-			remoteRef = F4EDCA452EAC866A00FBC048 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */ = {
+		655ADEAE2EACC77F0038CC4D /* N64DeltaCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = N64DeltaCore.framework;
-			remoteRef = F4EDCA5E2EAC88F000FBC048 /* PBXContainerItemProxy */;
+			remoteRef = 655ADEAD2EACC77F0038CC4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		655ADEB22EACC77F0038CC4D /* N64DeltaCore_RSP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = N64DeltaCore_RSP.framework;
+			remoteRef = 655ADEB12EACC77F0038CC4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		655ADEB42EACC77F0038CC4D /* N64DeltaCore_Video.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = N64DeltaCore_Video.framework;
+			remoteRef = 655ADEB32EACC77F0038CC4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		655ADEBE2EACC78A0038CC4D /* MelonDSDeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MelonDSDeltaCore.framework;
+			remoteRef = 655ADEBD2EACC78A0038CC4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		655ADECA2EACC79A0038CC4D /* SNESDeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SNESDeltaCore.framework;
+			remoteRef = 655ADEC92EACC79A0038CC4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		655ADED72EACC7A80038CC4D /* NESDeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NESDeltaCore.framework;
+			remoteRef = 655ADED62EACC7A80038CC4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		655ADEE42EACC7BB0038CC4D /* Roxas.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Roxas.framework;
+			remoteRef = 655ADEE32EACC7BB0038CC4D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

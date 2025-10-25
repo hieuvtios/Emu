@@ -21,11 +21,10 @@ struct SNESControllerView: View {
             VStack{
                 ZStack(alignment:.bottom) {
                     
-                    // Semi-transparent background
+                    // Background - only in portrait mode
+                    // In landscape, background is handled by UIKit layer below game view
                     if geometry.size.width > geometry.size.height {
-                        Image(themeManager.currentTheme.backgroundPortraitImageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
+                        Color.clear
                             .ignoresSafeArea()
                     } else {
                         ZStack(alignment:.top){
@@ -41,6 +40,8 @@ struct SNESControllerView: View {
                     
                     // Chỉ render UI khi layout không nil
                     if let layout = layout {
+                        let isLandscape = geometry.size.width > geometry.size.height
+
                         SNESDPadView(
                             layout: layout.dpad,
                             pressedButtons: $dpadButtons,
@@ -54,6 +55,7 @@ struct SNESControllerView: View {
                                 controller.releaseAllDPadButtons()
                             }, theme: themeManager.currentTheme
                         )
+                        .opacity(isLandscape ? 0.8 : 1.0)
                         .zIndex(1)
                         
                         // Action buttons background
@@ -62,7 +64,7 @@ struct SNESControllerView: View {
                             radius: 100
                         )
                         .zIndex(0)
-                        
+
                         // Action buttons (A, B, X, Y)
                         ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
                             SNESButtonView(
@@ -81,6 +83,7 @@ struct SNESControllerView: View {
                                 theme: themeManager.currentTheme
                             )
                         }
+                        .opacity(isLandscape ? 0.8 : 1.0)
                         .zIndex(0)
                         
                         // Shoulder buttons (L, R)
@@ -94,6 +97,7 @@ struct SNESControllerView: View {
                                 controller.releaseButton(buttonLayout.button)
                             }
                         }
+                        .opacity(isLandscape ? 0.8 : 1.0)
                         .zIndex(2)
                         
                         
@@ -115,6 +119,7 @@ struct SNESControllerView: View {
                             )
                             .padding(.bottom, 50)
                         }
+                        .opacity(isLandscape ? 0.8 : 1.0)
                         // Menu Button
                         if let firstCenterButton = layout.centerButtons.first {
                             Button(action: {
@@ -123,6 +128,7 @@ struct SNESControllerView: View {
                                 Image(themeManager.currentTheme.menuButtonImageName)
                             }
                             .position(x: layout.dpad.center.x, y: firstCenterButton.position.y)
+                            .opacity(isLandscape ? 0.8 : 1.0)
                             .zIndex(1)
                         }
                     }

@@ -74,6 +74,8 @@ class ControllerManager {
     // Background Image Views
     private var gbaBackgroundView: UIImageView?
     private var nesBackgroundView: UIImageView?
+    private var snesBackgroundView: UIImageView?
+    private var n64BackgroundView: UIImageView?
 
     init(viewController: GameViewController) {
         self.viewController = viewController
@@ -132,11 +134,15 @@ class ControllerManager {
     // MARK: - SNES
     private func setupSNESController() {
         guard let vc = viewController else { return }
-        
+
         vc.controllerView.isHidden = true
+
+        // Setup background image view (Layer 0 - bottom)
+        setupSNESBackground(in: vc)
+
         let controller = SNESDirectController(name: "SNES Direct Controller", playerIndex: 0)
         snesController = controller
-        
+
         let view = SNESControllerView(
             controller: controller,
             onMenuButtonTap: { [weak vc] in
@@ -146,11 +152,94 @@ class ControllerManager {
         snesHosting = setupHostingController(for: view, in: vc)
         currentType = .snes
     }
-    
+    private func setupN64Background(in parent: UIViewController) {
+        let isLandscape = parent.view.bounds.width > parent.view.bounds.height
+
+        // Only show background in landscape mode
+        guard isLandscape else { return }
+
+        // Get background image name from theme
+        #if DEBUG
+        let imageName = N64ThemeManager().currentTheme.backgroundLandscapeImageName
+        #else
+        let imageName = SNESControllerTheme.defaultTheme.backgroundLandscapeImageName
+        #endif
+
+        guard let image = UIImage(named: imageName) else { return }
+
+        let backgroundView = UIImageView(image: image)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.clipsToBounds = true
+
+        parent.view.addSubview(backgroundView)
+        parent.view.sendSubviewToBack(backgroundView)
+
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: parent.view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: parent.view.trailingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: parent.view.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor)
+        ])
+
+        n64BackgroundView = backgroundView
+    }
+    private func setupSNESBackground(in parent: UIViewController) {
+        let isLandscape = parent.view.bounds.width > parent.view.bounds.height
+
+        // Only show background in landscape mode
+        guard isLandscape else { return }
+
+        // Get background image name from theme
+        #if DEBUG
+        let imageName = SNESThemeManager().currentTheme.backgroundLandscapeImageName
+        #else
+        let imageName = SNESControllerTheme.defaultTheme.backgroundLandscapeImageName
+        #endif
+
+        guard let image = UIImage(named: imageName) else { return }
+
+        let backgroundView = UIImageView(image: image)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.clipsToBounds = true
+
+        parent.view.addSubview(backgroundView)
+        parent.view.sendSubviewToBack(backgroundView)
+
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: parent.view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: parent.view.trailingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: parent.view.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor)
+        ])
+
+        snesBackgroundView = backgroundView
+    }
+
+    func updateSNESBackgroundForOrientation() {
+        guard currentType == .snes, let vc = viewController else { return }
+
+        let isLandscape = vc.view.bounds.width > vc.view.bounds.height
+
+        // Remove existing background
+        snesBackgroundView?.removeFromSuperview()
+        snesBackgroundView = nil
+
+        // Only recreate in landscape mode
+        if isLandscape {
+            setupSNESBackground(in: vc)
+        }
+    }
+
     private func teardownSNESController() {
         teardownHosting(&snesHosting)
         snesController?.reset()
         snesController = nil
+
+        // Remove background view
+        snesBackgroundView?.removeFromSuperview()
+        snesBackgroundView = nil
     }
     
     // MARK: - NES
