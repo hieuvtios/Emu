@@ -11,6 +11,7 @@ import SwiftUI
 struct N64ControllerView: View {
     let controller: N64GameController
     let layout: N64ControllerLayoutDefinition
+    let onMenuButtonTap: () -> Void
 
     @State private var buttonStates: [N64ButtonType: Bool] = [:]
     @State private var dpadButtons: Set<N64ButtonType> = []
@@ -30,11 +31,10 @@ struct N64ControllerView: View {
             VStack(spacing: 0) {
                 
                 ZStack(alignment:.bottom) {
-                    // Semi-transparent background
+                    // Background - only in portrait mode
+                    // In landscape, background is handled by UIKit layer below game view
                     if geometry.size.width > geometry.size.height {
-                        Image(getCurrentTheme().backgroundLandscapeImageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
+                        Color.clear
                             .ignoresSafeArea()
                     } else {
                         ZStack(alignment:.top){
@@ -45,6 +45,9 @@ struct N64ControllerView: View {
                                 .clipped()
                         }
                     }
+
+                    let isLandscape = geometry.size.width > geometry.size.height
+
                     // D-Pad
                     N64DPadView(
                         layout: layout.dpad,
@@ -52,7 +55,7 @@ struct N64ControllerView: View {
                         onDirectionChange: { buttons in
                             // Release all d-pad buttons first
                             controller.releaseAllDPadButtons()
-                            
+
                             // Press new buttons
                             if !buttons.isEmpty {
                                 controller.pressDPadButtons(buttons)
@@ -62,7 +65,9 @@ struct N64ControllerView: View {
                             controller.releaseAllDPadButtons()
                         }, theme: themeManager.currentTheme
                     )
+                    .opacity(isLandscape ? 0.8 : 1.0)
                     .zIndex(1)
+
                     ZStack {
                         // Base purple circle
                         Image(.btnN64Bg1)
@@ -70,24 +75,26 @@ struct N64ControllerView: View {
                     }
                     .frame(width: 75 * 2 , height: 75 * 2 )
                     .position(layout.actionButtonsCenter)
-                        .zIndex(0)
-                        ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
-                            N64ButtonView(
-                                button: buttonLayout.button,
-                                layout: buttonLayout,
-                                isPressed: Binding(
-                                    get: { buttonStates[buttonLayout.button] ?? false },
-                                    set: { buttonStates[buttonLayout.button] = $0 }
-                                ),
-                                onPress: {
-                                    controller.pressButton(buttonLayout.button)
-                                },
-                                onRelease: {
-                                    controller.releaseButton(buttonLayout.button)
-                                }, theme: themeManager.currentTheme
-                            )
-                        }
-                        .zIndex(2)
+                    .opacity(isLandscape ? 0.8 : 1.0)
+                    .zIndex(0)
+                    ForEach(layout.actionButtons, id: \.button.rawValue) { buttonLayout in
+                        N64ButtonView(
+                            button: buttonLayout.button,
+                            layout: buttonLayout,
+                            isPressed: Binding(
+                                get: { buttonStates[buttonLayout.button] ?? false },
+                                set: { buttonStates[buttonLayout.button] = $0 }
+                            ),
+                            onPress: {
+                                controller.pressButton(buttonLayout.button)
+                            },
+                            onRelease: {
+                                controller.releaseButton(buttonLayout.button)
+                            }, theme: themeManager.currentTheme
+                        )
+                    }
+                    .opacity(isLandscape ? 0.8 : 1.0)
+                    .zIndex(2)
                     
                     // C-Button cluster (unique to N64)
                     N64CButtonView(
@@ -100,8 +107,9 @@ struct N64ControllerView: View {
                             controller.releaseButton(button)
                         }
                     )
+                    .opacity(isLandscape ? 0.8 : 1.0)
                     .zIndex(2)
-                    
+
                     // Shoulder buttons (L, R)
                     ForEach(layout.shoulderButtons, id: \.button.rawValue) { buttonLayout in
                         N64ShoulderButtonView(
@@ -119,6 +127,7 @@ struct N64ControllerView: View {
                             }
                         )
                     }
+                    .opacity(isLandscape ? 0.8 : 1.0)
                     .zIndex(3)
                     
                     // Z button
@@ -151,7 +160,18 @@ struct N64ControllerView: View {
                             controller.releaseButton(.start)
                         }
                     )
+                    .opacity(isLandscape ? 0.8 : 1.0)
                     .zIndex(4)
+
+                    // Menu Button
+                    Button(action: {
+                        onMenuButtonTap()
+                    }) {
+                        Image(getCurrentTheme().menuButtonImageName)
+                    }
+                    .position(x: layout.dpad.center.x, y: layout.startButton.position.y)
+                    .opacity(isLandscape ? 0.8 : 1.0)
+                    .zIndex(5)
                 }
                 .ignoresSafeArea()
             }
@@ -254,15 +274,20 @@ struct N64ControllerLayout {
                 position: CGPoint(x: screenSize.width - padding - 165, y: 30),
                 size: triggerSize,
                 button: .r
+            ),
+            ButtonLayout(
+                position: CGPoint(x: screenSize.width - padding - 165, y: 30),
+                size: triggerSize,
+                button: .z
             )
         ]
 
-        // Z button (below L trigger)
-        let zButton = ButtonLayout(
-            position: CGPoint(x: padding + 80, y: 75),
-            size: CGSize(width: 70, height: 30),
-            button: .z
-        )
+//        // Z button (below L trigger)
+//        let zButton = ButtonLayout(
+//            position: CGPoint(x: padding + 80, y: 75),
+//            size: CGSize(width: 70, height: 30),
+//            button: .z
+//        )
 
         // Start button (center top)
         let startButton = ButtonLayout(

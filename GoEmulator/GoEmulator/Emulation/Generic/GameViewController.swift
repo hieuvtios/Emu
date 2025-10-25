@@ -111,6 +111,10 @@ class ControllerManager {
         guard let vc = viewController else { return }
 
         vc.controllerView.isHidden = true
+
+        // Setup background image view (Layer 0 - bottom)
+        setupN64Background(in: vc)
+
         let controller = N64GameController(name: "N64 Custom Controller", systemPrefix: "n64", playerIndex: 0)
         n64Controller = controller
 
@@ -119,15 +123,73 @@ class ControllerManager {
         }
 
         let layout = createLayout(for: .n64)
-        let view = N64ControllerView(controller: controller, layout: layout as! N64ControllerLayoutDefinition)
+        let view = N64ControllerView(
+            controller: controller,
+            layout: layout as! N64ControllerLayoutDefinition,
+            onMenuButtonTap: { [weak vc] in
+                vc?.presentGameMenu()
+            }
+        )
         n64Hosting = setupHostingController(for: view, in: vc)
         currentType = .n64
+    }
+
+    private func setupN64Background(in parent: UIViewController) {
+        let isLandscape = parent.view.bounds.width > parent.view.bounds.height
+
+        // Only show background in landscape mode
+        guard isLandscape else { return }
+
+        // Get background image name from theme
+        #if DEBUG
+        let imageName = N64ThemeManager().currentTheme.backgroundLandscapeImageName
+        #else
+        let imageName = N64ControllerTheme.defaultTheme.backgroundLandscapeImageName
+        #endif
+
+        guard let image = UIImage(named: imageName) else { return }
+
+        let backgroundView = UIImageView(image: image)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.clipsToBounds = true
+
+        parent.view.addSubview(backgroundView)
+        parent.view.sendSubviewToBack(backgroundView)
+
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: parent.view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: parent.view.trailingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: parent.view.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor)
+        ])
+
+        n64BackgroundView = backgroundView
+    }
+
+    func updateN64BackgroundForOrientation() {
+        guard currentType == .n64, let vc = viewController else { return }
+
+        let isLandscape = vc.view.bounds.width > vc.view.bounds.height
+
+        // Remove existing background
+        n64BackgroundView?.removeFromSuperview()
+        n64BackgroundView = nil
+
+        // Only recreate in landscape mode
+        if isLandscape {
+            setupN64Background(in: vc)
+        }
     }
 
     private func teardownN64Controller() {
         teardownHosting(&n64Hosting)
         n64Controller?.reset()
         n64Controller = nil
+
+        // Remove background view
+        n64BackgroundView?.removeFromSuperview()
+        n64BackgroundView = nil
     }
     
     
@@ -152,38 +214,7 @@ class ControllerManager {
         snesHosting = setupHostingController(for: view, in: vc)
         currentType = .snes
     }
-    private func setupN64Background(in parent: UIViewController) {
-        let isLandscape = parent.view.bounds.width > parent.view.bounds.height
 
-        // Only show background in landscape mode
-        guard isLandscape else { return }
-
-        // Get background image name from theme
-        #if DEBUG
-        let imageName = N64ThemeManager().currentTheme.backgroundLandscapeImageName
-        #else
-        let imageName = SNESControllerTheme.defaultTheme.backgroundLandscapeImageName
-        #endif
-
-        guard let image = UIImage(named: imageName) else { return }
-
-        let backgroundView = UIImageView(image: image)
-        backgroundView.contentMode = .scaleAspectFill
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundView.clipsToBounds = true
-
-        parent.view.addSubview(backgroundView)
-        parent.view.sendSubviewToBack(backgroundView)
-
-        NSLayoutConstraint.activate([
-            backgroundView.leadingAnchor.constraint(equalTo: parent.view.leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: parent.view.trailingAnchor),
-            backgroundView.topAnchor.constraint(equalTo: parent.view.topAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor)
-        ])
-
-        n64BackgroundView = backgroundView
-    }
     private func setupSNESBackground(in parent: UIViewController) {
         let isLandscape = parent.view.bounds.width > parent.view.bounds.height
 
