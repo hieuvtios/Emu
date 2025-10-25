@@ -8,6 +8,7 @@
 import SwiftUI
 import GoogleMobileAds
 import FirebaseCore
+import DeltaCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
@@ -18,11 +19,32 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         print("App did finish launching")
         FirebaseApp.configure()
         RemoteConfigManager.shared.fetchCloudValues()
+        configureAudioSession()
+        registerCores()
+        ExternalGameControllerManager.shared.startMonitoring()
         return true
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         UserDefaultsManager.shared.isFirstTimeOpen = false
         print("App did Exit")
+    }
+}
+
+private extension AppDelegate {
+    func configureAudioSession()
+    {
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to configure audio session: \(error)")
+        }
+    }
+
+    func registerCores()
+    {
+        System.allCases.forEach { Delta.register($0.deltaCore) }
     }
 }

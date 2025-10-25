@@ -8,14 +8,79 @@
 
 /* Begin PBXBuildFile section */
 		F43A7A362EA7E94C0073DD8E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F43A7A352EA7E94C0073DD8E /* Lottie */; };
-		F48B427D2EABD583008E0C20 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F48B427C2EABD583008E0C20 /* ZIPFoundation */; };
 		F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B532E9E5898005D0B3A /* GoogleMobileAds */; };
 		F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B562E9E58E6005D0B3A /* RevenueCat */; };
 		F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B592E9E5EE8005D0B3A /* FirebaseAnalytics */; };
 		F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5B2E9E5EE8005D0B3A /* FirebaseCore */; };
 		F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */; };
 		F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */; };
+		F4EDC9FC2EAC80AE00FBC048 /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */; };
+		F4EDC9FD2EAC80AE00FBC048 /* DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4EDCA0C2EAC80EA00FBC048 /* Roxas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA072EAC80DE00FBC048 /* Roxas.framework */; };
+		F4EDCA0D2EAC80EA00FBC048 /* Roxas.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA072EAC80DE00FBC048 /* Roxas.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4EDCA252EAC83AA00FBC048 /* GBADeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */; };
+		F4EDCA262EAC83AA00FBC048 /* GBADeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4EDCA322EAC849000FBC048 /* NESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */; };
+		F4EDCA332EAC849000FBC048 /* NESDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4EDCA3D2EAC856E00FBC048 /* SNESDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */; };
+		F4EDCA3E2EAC856E00FBC048 /* SNESDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4EDCA492EAC867000FBC048 /* MelonDSDeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */; };
+		F4EDCA4A2EAC867000FBC048 /* MelonDSDeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4EDCA662EAC88F400FBC048 /* N64DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */; };
+		F4EDCA672EAC88F400FBC048 /* N64DeltaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4EDC9FA2EAC80A300FBC048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF46895D1AACF36800A2586D;
+			remoteInfo = DeltaCore;
+		};
+		F4EDCA062EAC80DE00FBC048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFADAFF819AE7BB70050CF31;
+			remoteInfo = Roxas;
+		};
+		F4EDCA212EAC83A500FBC048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFE8E9CA1D010AF7009D623D;
+			remoteInfo = GBADeltaCore;
+		};
+		F4EDCA2E2EAC848C00FBC048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF3C12F320438F3F0079A4B5;
+			remoteInfo = NESDeltaCore;
+		};
+		F4EDCA392EAC856800FBC048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF9F4FDC1AAD8070004C9500;
+			remoteInfo = SNESDeltaCore;
+		};
+		F4EDCA452EAC866A00FBC048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF7317852356624000774F10;
+			remoteInfo = MelonDSDeltaCore;
+		};
+		F4EDCA5E2EAC88F000FBC048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF799014224BF59E009B094F;
+			remoteInfo = N64DeltaCore;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F4E175632E92DBD1005D0B3A /* Embed Frameworks */ = {
@@ -24,6 +89,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F4EDCA0D2EAC80EA00FBC048 /* Roxas.framework in Embed Frameworks */,
+				F4EDCA4A2EAC867000FBC048 /* MelonDSDeltaCore.framework in Embed Frameworks */,
+				F4EDC9FD2EAC80AE00FBC048 /* DeltaCore.framework in Embed Frameworks */,
+				F4EDCA672EAC88F400FBC048 /* N64DeltaCore.framework in Embed Frameworks */,
+				F4EDCA262EAC83AA00FBC048 /* GBADeltaCore.framework in Embed Frameworks */,
+				F4EDCA332EAC849000FBC048 /* NESDeltaCore.framework in Embed Frameworks */,
+				F4EDCA3E2EAC856E00FBC048 /* SNESDeltaCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,6 +104,13 @@
 
 /* Begin PBXFileReference section */
 		F48B71E92E901A6200EF95A7 /* GoEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = Cores/DeltaCore/DeltaCore.xcodeproj; sourceTree = "<group>"; };
+		F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Roxas.xcodeproj; path = Cores/Roxas/Roxas.xcodeproj; sourceTree = "<group>"; };
+		F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBADeltaCore.xcodeproj; path = Cores/GBADeltaCore/GBADeltaCore.xcodeproj; sourceTree = "<group>"; };
+		F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NESDeltaCore.xcodeproj; path = Cores/NESDeltaCore/NESDeltaCore.xcodeproj; sourceTree = "<group>"; };
+		F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SNESDeltaCore.xcodeproj; path = Cores/SNESDeltaCore/SNESDeltaCore.xcodeproj; sourceTree = "<group>"; };
+		F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MelonDSDeltaCore.xcodeproj; path = Cores/MelonDSDeltaCore/MelonDSDeltaCore.xcodeproj; sourceTree = "<group>"; };
+		F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = N64DeltaCore.xcodeproj; path = Cores/N64DeltaCore/N64DeltaCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -61,13 +140,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E17B542E9E5898005D0B3A /* GoogleMobileAds in Frameworks */,
+				F4EDCA0C2EAC80EA00FBC048 /* Roxas.framework in Frameworks */,
 				F4E17B5C2E9E5EE8005D0B3A /* FirebaseCore in Frameworks */,
+				F4EDCA662EAC88F400FBC048 /* N64DeltaCore.framework in Frameworks */,
+				F4EDCA3D2EAC856E00FBC048 /* SNESDeltaCore.framework in Frameworks */,
+				F4EDCA252EAC83AA00FBC048 /* GBADeltaCore.framework in Frameworks */,
+				F4EDC9FC2EAC80AE00FBC048 /* DeltaCore.framework in Frameworks */,
 				F4E17B602E9E5EE8005D0B3A /* FirebaseRemoteConfig in Frameworks */,
+				F4EDCA492EAC867000FBC048 /* MelonDSDeltaCore.framework in Frameworks */,
 				F4E17B5E2E9E5EE8005D0B3A /* FirebaseCrashlytics in Frameworks */,
 				F4E17B5A2E9E5EE8005D0B3A /* FirebaseAnalytics in Frameworks */,
 				F4E17B572E9E58E6005D0B3A /* RevenueCat in Frameworks */,
+				F4EDCA322EAC849000FBC048 /* NESDeltaCore.framework in Frameworks */,
 				F43A7A362EA7E94C0073DD8E /* Lottie in Frameworks */,
-				F48B427D2EABD583008E0C20 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +179,71 @@
 		F4E175562E92D4BC005D0B3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */,
+				F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */,
+				F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */,
+				F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */,
+				F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */,
+				F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */,
+				F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4EDC9F62EAC80A300FBC048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EDC9FF2EAC80DD00FBC048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EDCA072EAC80DE00FBC048 /* Roxas.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EDCA1C2EAC83A500FBC048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EDCA282EAC848B00FBC048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EDCA352EAC856800FBC048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EDCA402EAC866A00FBC048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EDCA572EAC88F000FBC048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +275,6 @@
 				F4E17B5D2E9E5EE8005D0B3A /* FirebaseCrashlytics */,
 				F4E17B5F2E9E5EE8005D0B3A /* FirebaseRemoteConfig */,
 				F43A7A352EA7E94C0073DD8E /* Lottie */,
-				F48B427C2EABD583008E0C20 /* ZIPFoundation */,
 			);
 			productName = GoEmulator;
 			productReference = F48B71E92E901A6200EF95A7 /* GoEmulator.app */;
@@ -162,17 +309,98 @@
 				F4E17B552E9E58E6005D0B3A /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 				F4E17B582E9E5EE8005D0B3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F43A7A342EA7E94C0073DD8E /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				F48B427B2EABD583008E0C20 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F48B71EA2E901A6200EF95A7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F4EDC9F62EAC80A300FBC048 /* Products */;
+					ProjectRef = F4EDC9F52EAC80A300FBC048 /* DeltaCore.xcodeproj */;
+				},
+				{
+					ProductGroup = F4EDCA1C2EAC83A500FBC048 /* Products */;
+					ProjectRef = F4EDCA1B2EAC83A500FBC048 /* GBADeltaCore.xcodeproj */;
+				},
+				{
+					ProductGroup = F4EDCA402EAC866A00FBC048 /* Products */;
+					ProjectRef = F4EDCA3F2EAC866A00FBC048 /* MelonDSDeltaCore.xcodeproj */;
+				},
+				{
+					ProductGroup = F4EDCA572EAC88F000FBC048 /* Products */;
+					ProjectRef = F4EDCA562EAC88F000FBC048 /* N64DeltaCore.xcodeproj */;
+				},
+				{
+					ProductGroup = F4EDCA282EAC848B00FBC048 /* Products */;
+					ProjectRef = F4EDCA272EAC848B00FBC048 /* NESDeltaCore.xcodeproj */;
+				},
+				{
+					ProductGroup = F4EDC9FF2EAC80DD00FBC048 /* Products */;
+					ProjectRef = F4EDC9FE2EAC80DD00FBC048 /* Roxas.xcodeproj */;
+				},
+				{
+					ProductGroup = F4EDCA352EAC856800FBC048 /* Products */;
+					ProjectRef = F4EDCA342EAC856800FBC048 /* SNESDeltaCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F48B71E82E901A6200EF95A7 /* GoEmulator */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F4EDC9FB2EAC80A300FBC048 /* DeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DeltaCore.framework;
+			remoteRef = F4EDC9FA2EAC80A300FBC048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4EDCA072EAC80DE00FBC048 /* Roxas.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Roxas.framework;
+			remoteRef = F4EDCA062EAC80DE00FBC048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4EDCA222EAC83A500FBC048 /* GBADeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GBADeltaCore.framework;
+			remoteRef = F4EDCA212EAC83A500FBC048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4EDCA2F2EAC848C00FBC048 /* NESDeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NESDeltaCore.framework;
+			remoteRef = F4EDCA2E2EAC848C00FBC048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4EDCA3A2EAC856800FBC048 /* SNESDeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SNESDeltaCore.framework;
+			remoteRef = F4EDCA392EAC856800FBC048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4EDCA462EAC866A00FBC048 /* MelonDSDeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MelonDSDeltaCore.framework;
+			remoteRef = F4EDCA452EAC866A00FBC048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4EDCA5F2EAC88F000FBC048 /* N64DeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = N64DeltaCore.framework;
+			remoteRef = F4EDCA5E2EAC88F000FBC048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F48B71E72E901A6200EF95A7 /* Resources */ = {
@@ -345,13 +573,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"GoEmulator/Preview Content\"";
 				DEVELOPMENT_TEAM = M4U9PT39CW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoEmulator/Info.plist;
+				INFOPLIST_KEY_GCSupportsControllerUserInteraction = YES;
+				INFOPLIST_KEY_GCSupportsGameMode = YES;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) uses your microphone to emulate the Nintendo DS microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow $(PRODUCT_NAME) to save screenshots to your Photo Library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Press “OK” to allow $(PRODUCT_NAME) to use images from your Photo Library as game artwork.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This will be used to deliver Personalized Ads";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -373,6 +607,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GoEmulator/GameEmulator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,12 +619,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"GoEmulator/Preview Content\"";
 				DEVELOPMENT_TEAM = M4U9PT39CW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoEmulator/Info.plist;
+				INFOPLIST_KEY_GCSupportsControllerUserInteraction = YES;
+				INFOPLIST_KEY_GCSupportsGameMode = YES;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) uses your microphone to emulate the Nintendo DS microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow $(PRODUCT_NAME) to save screenshots to your Photo Library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Press “OK” to allow $(PRODUCT_NAME) to use images from your Photo Library as game artwork.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This will be used to deliver Personalized Ads";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -411,6 +652,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GoEmulator/GameEmulator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,14 +690,6 @@
 				minimumVersion = 4.5.2;
 			};
 		};
-		F48B427B2EABD583008E0C20 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.20;
-			};
-		};
 		F4E17B522E9E5898005D0B3A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -487,11 +721,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F43A7A342EA7E94C0073DD8E /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		F48B427C2EABD583008E0C20 /* ZIPFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F48B427B2EABD583008E0C20 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
-			productName = ZIPFoundation;
 		};
 		F4E17B532E9E5898005D0B3A /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;

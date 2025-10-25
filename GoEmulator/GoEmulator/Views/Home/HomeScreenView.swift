@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     
     @StateObject var homeViewModel = HomeViewModel()
+    @EnvironmentObject var tabViewModel: TabViewModel
     
     var body: some View {
         VStack {
@@ -18,6 +19,8 @@ struct HomeScreenView: View {
             HomeSearchBar(searchText: $homeViewModel.searchText)
             
             HomeGameList()
+                .environmentObject(homeViewModel)
+                .environmentObject(tabViewModel)
         }
     }
 }

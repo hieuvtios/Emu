@@ -91,6 +91,7 @@ struct TabScreenView: View {
             ForEach(AppScreen.allCases) { screen in
                 screen.destination
                     .tag(screen as AppScreen?)
+                    .environmentObject(tabViewModel)
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
@@ -118,15 +119,37 @@ struct TabScreenView: View {
             }
         }
         .sheet(isPresented: $tabViewModel.showDocumentPicker, onDismiss: {}, content: {
-            DocumentPicker(documentTypes: [])
+            DocumentPicker(documentTypes: []) { importedURLs in
+                // Handle imported game files
+                tabViewModel.handleImportedGames(importedURLs)
+            }
         })
+        .fullScreenCover(isPresented: $tabViewModel.showGameView) {
+            if let game = tabViewModel.selectedGame {
+                ContentView(game: game)
+            }
+        }
+        .alert("Success", isPresented: .constant(tabViewModel.importSuccessMessage != nil), presenting: tabViewModel.importSuccessMessage) { _ in
+            Button("OK") {
+                tabViewModel.importSuccessMessage = nil
+            }
+        } message: { message in
+            Text(message)
+        }
+        .alert("Error", isPresented: .constant(tabViewModel.importErrorMessage != nil), presenting: tabViewModel.importErrorMessage) { _ in
+            Button("OK") {
+                tabViewModel.importErrorMessage = nil
+            }
+        } message: { message in
+            Text(message)
+        }
         .applySpotlightOverlay(currentSpot: $tabViewModel.currentSpot)
         .onChange(of: tabViewModel.currentSpot) { newValue in
             if newValue == 3 {
                 tabViewModel.tabSelection = .setting
             }
         }
-        onTapGesture {
+        .onTapGesture {
             hideKeyboard()
         }
     }
